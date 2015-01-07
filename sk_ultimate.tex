@@ -441,7 +441,9 @@ Czyli wpływ kontroli błędów na łącze.\\
 BER $ ~ $ $ 10^{-4} $ \\
 \subsubsection{Przykład}
 Jest do przesłania 2 kB w blokach 256 B, $ w = 3 $\\
-$ N = \frac{2[kB]}{256[B]=8} $\\
+\begin{equation}
+ N = \frac{2[kB]}{256[B]}=8 
+\end{equation}
 Oznacza to, że:
 \begin{itemize}
 	\item 1 na 10 tysięcy bitów zostaje przekłamanych
@@ -454,10 +456,17 @@ Oznacza to, że:
 Wielkość ramek $ \searrow \rightarrow $ Narzut $ \searrow $ W $ \searrow \rightarrow $ Narzut $ \searrow $
 \subsection{Cechy}
 \begin{itemize}
-	\item Stopa błędów\\\\$ q=\frac{ilosc\_bledow}{ilosc\_bitow\_transmitowanych} $
+	\item Stopa błędów 
+	\begin{equation}
+	q=\frac{ilosc\_bledow}{ilosc\_bitow\_transmitowanych} 
+	\end{equation}
 	\item Pole danych w SDLC wynosi 128B, ale może też być 64, 256, 1024
 	\item Licząc stopę błędy bierzemy całą ramkę wraz z flagami, więc do tego 128 dodajemy 6 (134)
-	\item Optymalna długość pola danych\\\\$ D_{opt}=\frac{H+C\times{T_{out}}}{2}\times  [\sqrt{1-\frac{4}{(H+C\times{T})\ln{(1-q)}}}-1] $\\\\Gdzie:
+	\item Optymalna długość pola danych
+	\begin{equation}
+	D_{opt}=\frac{H+C\times{T_{out}}}{2}\times  [\sqrt{1-\frac{4}{(H+C\times{T})\ln{(1-q)}}}-1]
+	\end{equation} 
+	Gdzie:
 		\begin{itemize}
 			\item H - długość nagłówka
 			\item C - przepustowość łącza
