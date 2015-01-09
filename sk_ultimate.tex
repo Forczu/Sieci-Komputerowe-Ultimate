@@ -548,22 +548,136 @@ Ramka musi być dłuższa niż 64B. Taki wymóg ma Ethernet.
 
 
 \part{Sieć typu Ethernet}
-\section{Ramka}
-\section{Zapobieganie kolizji}
-	\subsection{Klasyczny algorytm}
-	\subsection{CSMA/CA}
-	\subsection{CSMA/CR}
-	\subsection{Algorytmy kontrolowanego dostępu}
-		\subsubsection{Z fazą planowania}
-		Algorytm rezerwacyjny
-		\subsubsection{Z przekazywaniem uprawnienia (Token)}
+\section{Budowa}
+	Standard Ethernet 2.0 wykorzystuje kabel koncentryczny.
+	\subsection{Kabel koncentryczny}
+		\includegraphics[width=10cm]{./images/image27.pdf}\\\\
+		\textbf{Parametry}:
 		\begin{itemize}
-			\item Token
-			\item Token Ring
-			\item Kodowanie informacji
-			\item Ramka
-			\item Timery	
+			\item $ U_{IC}=U_{p}\times e^{\alpha{l}} $
+			\item $ \alpha{l} <= 6 dB|_{5 MHz} $
+			\item $ \alpha{l} <= 8.5 dB|_{10 MHz} $
 		\end{itemize}
+	\subsection{Kodowanie}
+		Standard wykorzystuje kodowanie Manchester.\\
+		\includegraphics[width=7cm]{./images/image28.pdf}
+	\subsection{Sprawdzanie kolizji}
+		Chyba chodzi o zapobieganie kolizjom na poziomie sprzętowym.
+		\begin{itemize}
+			\item Sprawdzenie poziomu
+			\item Pomiar wartości średniej prądu
+			\item Wyłapywanie regularności szpilek
+			\item $ T_{ob}=47.7 \mu{s} $
+		\end{itemize}
+		W trakcie transmisji początkowych 64 bajtów ramki może być złe.\\
+		Mogą wystąpić 3 segmenty kolizji + $ 4 \frac{R}{2} $ + 2 segmenty łącza.
+\section{Ramka}
+	To jest (chyba) ramka dla CSMA/CD.\\
+	\begin{table}[h]
+		\begin{tabular}{|c|c|c|}
+			\hline
+			\textbf{Element} & Wielkość & \textbf{Komentarz} \\ \hline
+			\multicolumn{1}{|c|}{Preambuła} 	& 8 B & $ 7\times 10101010$, a na końcu $ 1010101\textbf{1} $. \\ \hline
+			\multicolumn{1}{|c|}{Adres odbiorcy}	& 6 B &	MAC \\ \hline
+			\multicolumn{1}{|c|}{Adres nadawcy}	& 6 B &	MAC \\ \hline
+			\multicolumn{1}{|c|}{Kontrola}		& 2 B & 	\\ \hline
+			\multicolumn{1}{|c|}{Pole danych}	& od 46 B do 1500 B	& \\ \hline
+			\multicolumn{1}{|c|}{CRC}			& 4 B & \\ \hline
+			Cisza na łączu między znakami		& 12 B & 9.6 $ \mu $s \\ \hline
+		\end{tabular}
+	\end{table}\\
+	Każdy adres w Ethernecie powinien kończyć się zerem - adres stacji - jeden oznacza adres grupowy.
+\section{Zapobieganie kolizji}
+	\subsection{Historyczne metody}
+		\begin{itemize}
+			\item Wprowadzenie Hubów - zmiana transmisji z szeregowej na równoległą.
+			\item Switch: usuwa ramki kolizyjne. Zapamiętuje wysyłane ramki, które może bez końca retransmitować $ \rightarrow $ Znosi odpowiednie rozpiętości sieci $ \rightarrow $ wystarczy więcej switchy.
+			\item Logiczny podział na małe sieci lokalne.
+			\item Jumbo frame - pole danych do 9000 B. Wada: faworyzowanie pewnych stacji.
+		\end{itemize}
+	\subsection{Klasyczny algorytm}
+		\subsubsection{Idea}
+			Kilku chce wysłać, czekaj, retransmitują, znów problem.\\
+			"Nie ma sensu czekać na wolne łącze, lepiej wygenerować pewien czas po którym ponownie sprawdzi się dostępność łącza".
+		\subsubsection{Schemat blokowy}
+			\includegraphics[width=10cm]{./images/image21.pdf}
+	\subsection{CSMA/CA}
+		Idea: unikanie kolizji\\
+		\includegraphics[width=10cm]{./images/image22.pdf}\\\\
+		\textbf{Problem}: 1 stacja próbuje wysłać, 2 stacja próbuje wysłać.\\
+		\textbf{Analiza}: jak widać brak kolizji. Najpierw patrzy czy łącze jest wolne, jeśli nie to generuje czas losowy, do następnej retransmisji. Czyli na początku ta generacja czasu, a nie na końcu jak w klasycznym Ethernecie.
+	\subsubsection{Zmodyfikowane CSMA/CA}
+		Wykorzystywane w radiówce.\\
+		\includegraphics[width=10cm]{./images/image23.pdf}\\\\
+		\includegraphics[width=12cm]{./images/image24.pdf}\\\\
+		Czyli blokujemy pozostałe stacje (C i D), by nie zakłócały.\\
+		Stację C blokuje stacja A, a stację D blokuje stacja B.
+	\subsection{CSMA/CR}
+		Umożliwia rozstrzyganie kolizji. Wykorzystywane w mikrosieciach (IIC (I$ ^2 $C)) (HiFi).\\
+		Pierwsza część sygnału to pole adresu nadawcy. Najbardziej efektywny. Do sieci 1000 kB/s. S-7 m sieci.\\
+		Sygnał nadawcy musi się rozejść po całej linii i wrócić, co zabiera ogromną ilość czasu.
+	\subsection{Protokoły MAC}
+		\begin{itemize}
+			\item Swobodny dostęp
+			\item Algorytmy częściowo kontrolowanego dostępu CSMA
+			\item Algorytmy kontrolowanego dostępu
+			\begin{itemize}
+				\item Rezerwacyjne
+				\item Selekcyjne
+				\item Jawnego wskazania
+			\end{itemize}
+		\end{itemize}
+	\subsection{Algorytmy kontrolowanego dostępu}
+		\begin{itemize}
+			\item Algorytm z fazą planowania, gdzie jest dopuszczalne rozstrzyganie kolizji (z limitowaną kolizją).
+			\item Algorytm z przekazywaniem uprawnienia, gdzie jest gwarantowany dostęp do łącza (przekazywanie żetonu (Token))
+		\end{itemize}
+		W tych algorytmach można wyróżnić dwie fazy:
+		\begin{itemize}
+			\item Planowania - widoczna dla wszystkich stacji, podzielona na szczeliny czasowe.
+			\item Wykonania - superramka, uruchamia (...) szczelin czasowych
+		\end{itemize}
+	\subsection{Algorytmy z fazą planowania}
+		Dopuszczalne rozstrzyganie kolizji (z limitowaną kolizją).
+		\subsubsection{Algorytm rezerwacyjny}
+			Rezerwacja prawa nadawania. Dzieli się na dwie fazy:
+			\begin{enumerate}
+				\item Rezerwację (faza planowania)
+				\item Wykonanie (faza wykonania)
+			\end{enumerate}
+			\includegraphics[width=11cm]{./images/image25.pdf}\\
+			\textbf{Faza planowania} - to są szczeliny czasowe.
+			\begin{itemize}
+				\item Każda stacja ma przypisanie do jednej z nich.
+				\item Jeśli stacja chce transmitować to wstawia 1 w swojej szczelinie czasowej.
+				\item Jeśli nie potrzebuje dostępu, to nie.
+				\item Po 1 bit na każdą szczelinę czasową.
+			\end{itemize}
+			Zwykle grupuje się stacje i każda grupa otrzymuje po jednej szczelinie czasowej (wówczas liczba szczelin $ < $ liczba stacji).\\
+			Zawsze musi być minimum jedna ramka, bo musi być widoczny koniec transmisji.\\
+			\textbf{Działanie}: wysyłamy adres stacji z grupy, ale są kolizje. Tu włącza się metoda generacji czasu na retransmisję itp. Jeśli nie zdąży wysłać, bo już zacznie wysyłać, to czeka na ponowne pojawienie się szczelin czasowych.\\
+			W fazie planowania mogą wystąpić kolizje, ale dla każdej szczeliny kolizje są rozdzielane.\\
+			Wykorzystywany w sieciach o dynamicznych priorytetach.
+		\subsubsection{Algorytm selekcyjny}
+			Selekcja wstępna, czyli która stacja ma prawo nadawania. Dzieli się na dwie fazy:
+			\begin{enumerate}
+				\item Selekcję (faza planowania)
+				\item Wykonanie (faza wykonania)
+			\end{enumerate}
+			\includegraphics[width=10cm]{./images/image26.pdf}\\
+			Powyższy rysunek przedstawia malenie priorytetu.\\
+			Na jedną szczelinę może przypaść więcej niż jedna stacja (grupowanie).\\
+			WAŻNE: stacje, które muszą być wykonane są wysyłane jako pierwsze i do tego pojedynczo, a nie w grupie (jedna na jedną szczelinę). Mimo to, zwykle wykonuje się w grupach.
+	\subsection{Algorytmy z przekazywaniem uprawnień (Token)}
+		\subsubsection{Co to jest Token?}
+			Token to specjalna ramka sterująca.
+			\begin{itemize}
+				\item Token
+				\item Token Ring
+				\item Kodowanie informacji
+				\item Ramka
+				\item Timery
+			\end{itemize}
 	\subsection{Sieć pierścieniowa}
 	\subsection{Cambridge Ring}
 	\subsection{Algorytm włączania rejestru}
@@ -606,9 +720,163 @@ Ramka musi być dłuższa niż 64B. Taki wymóg ma Ethernet.
 \section{Back-learning}
 	
 	
-\part{Protocols}
+\part{Protokoły}
 \section{Connection-oriented (X.25 / Frame Relay)}
 \section{Connectionless oriented}
+
+
+
+
+
+% =========================================
+% Lolnotatki 08.01.15
+% =========================================
+\subsection{IPv4}
+
+\begin{itemize}
+	\item A = 10.000 / 8
+	\item 16-B 172.16 - 31.255.255 / 12
+	\item B 192.168.0.0 / 16
+\end{itemize}
+\subsection{Transport}
+\begin{table}[h]
+	\begin{tabular}{|c|c|}
+		\hline
+		IP	&	Port (16)	\\ \hline
+	\end{tabular}
+\end{table}
+APIPA \emph{Automatic Private IP Assigned} - algorytm uruchamiany, kiedy system nie może pobrać adresu z sieci, a ma pobrać adres z sieci.
+169.254.0.0 - generowany jest losowy adres, który przepisywany jest systemowi. Komputery, które sa odłączone od sieci automatycznie konfigurują się tym algorytmem. Kiedys komputery nie mogły sie uruchamiac bez adresu.\\
+Broadcast, przykład:
+\begin{table}[h]
+	\begin{tabular}{|c|c|}
+		\hline
+		27	&	5	\\ \hline
+	\end{tabular}
+\end{table}
+\begin{itemize}
+	\item 00000 - Network
+	\item 11111 - Broadcast
+\end{itemize}
+
+
+
+\subsection{IPv6}
+Rozmiar 128 bitów, znacznie więcej niż w IPv4.
+
+\begin{table}[h]
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		ver       & PRID       & \multicolumn{3}{l|}{Etykieta przepływowa}      \\ \hline
+		\multicolumn{3}{|l|}{Długość danych} & Next Header      & HopLimit      \\ \hline
+		\multicolumn{5}{|l|}{SourceAddress (128 bit)}                           \\ \hline
+		\multicolumn{5}{|l|}{Destination Address}                               \\ \hline
+	\end{tabular}
+\end{table}
+1: 0, 2, 24, 31\\
+2: 8, 8, 8\\
+Next headers:
+\begin{itemize}
+	\item Hop by hop options
+	\item Routing
+	\item Fragmentation
+	\item Authentication
+	\item Destionation options
+	\item Encryption security payload
+	\item Jumbo header - nagłówek sygnalizujący specjalny rozmiar pakietu, ~1 MB.
+\end{itemize}
+\textbf{Routing}\\
+Next Header określa rodzaj.\\
+\begin{table}[h]
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		Next header & Pole związane z nagłówkiem & \multicolumn{3}{l|}{Kod opcji (i1ość adresów + network adres)} \\ \hline
+		x           & \multicolumn{4}{l|}{BitMap}                                                                 \\ \hline
+		\multicolumn{5}{|l|}{}                                                                                    \\ \hline
+		\multicolumn{5}{|l|}{1 do 24 Adres IPv6}                                                                  \\ \hline
+	\end{tabular}
+\end{table}
+
+\textbf{Jumbo}\\
+Dla środowiska superkomputerów
+\begin{table}[h]
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		Next header & Pole związane z nagłówkiem & 194 & \multicolumn{2}{l|}{} \\ \hline
+		\multicolumn{5}{|l|}{Jumbo payload size}                               \\ \hline
+	\end{tabular}
+\end{table}
+RFC 1883 - 1887.
+
+\begin{itemize}
+	\item Unicast address - do jednego
+	\item Multicast address - do wielu
+	\item Anycast address - do jednego z wielu (w obrębie grupy)
+\end{itemize}
+
+2001:cdba:0000:0000:0000:0000:3257:9652 - pełny 128-bitowy adres IP.\\
+CDBA - heksadecymalnie, określają 4 grupy.\\
+W zapisie grupa 4 zer może być zapisana jednym zerem.\\
+2001:cdba:0:0:0:0:3257:9652\\
+2001:cdba::3257:9652
+
+\subsubsection{Specjalne adresy IPv6}
+\begin{itemize}
+	\item \textbf{::/96} - adres zgodny z zapisem IPv4
+	\item \textbf{::/128} - odpowiednik adresu IP składającego się z samych zer i oznacza sieć nieokreśloną (\emph{Unspecified Address}).
+	\item \textbf{::1/128} - adresem local loopback jest adres składający się z samych zer i jednej jedynki.
+	\item \textbf{2001:db8::/32} - \emph{documentation prefix}
+	\item \textbf{fec0::/10} - \emph{side local prefix} - dla pierwszych 16 bitów, jeżeli są one w tym, to definiuje adresy uzywane wewnątrz danej lokalizacji.
+	\item \textbf{fc00::/7} \emph{unic local address}
+	\item \textbf{ff00::/8}
+	\item \textbf{ff80::/10} - adres przydzielony w łączu (\emph{link local prefix})
+\end{itemize}
+
+\subsection{Protokoły}
+\subsubsection{TCP}
+\begin{table}[h]
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\multicolumn{5}{|l|}{Source IP}                 \\ \hline
+		\multicolumn{5}{|l|}{Destination IP}                 \\ \hline
+		\multicolumn{2}{|l|}{Source port} & \multicolumn{3}{l|}{Destination port}                \\ \hline
+		\multicolumn{5}{|l|}{Nr sekwencyjny pakietu}                                             \\ \hline
+		\multicolumn{5}{|l|}{nr potiwerdzenia pakietu}                                           \\ \hline
+		TCP header length       & x       & Flagi          & \multicolumn{2}{l|}{Window Size}    \\ \hline
+		\multicolumn{3}{|l|}{Suma kontrolna}               & \multicolumn{2}{l|}{Urgend pointer} \\ \hline
+		\multicolumn{5}{|l|}{OPCJA}  \\ \hline
+		\multicolumn{5}{|l|}{SAC}  \\ \hline
+	\end{tabular}
+\end{table}
+
+\subsubsection{UDP}
+\begin{table}[h]
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		\multicolumn{2}{|l|}{Source port}   & \multicolumn{3}{l|}{Destination port} \\ \hline
+		\multicolumn{2}{|l|}{Packet length} & \multicolumn{3}{l|}{Suma kontrolna}   \\ \hline
+	\end{tabular}
+\end{table}
+
+\textbf{Flagi i komendy UDP}:
+\begin{itemize}
+	\item URG
+	\item ACK
+	\item PSH
+	\item RST
+	\item SYN
+	\item FIN
+\end{itemize}
+
+\textbf{Algorytmy, które wymuszają pewne mechanizmy zapobiegające przeciążeniu sieci}. odpowiadają za zabezpieczenie transportu z warstwy trzeciej do warstwy czwartej - gubieniu pakietów.
+\begin{itemize}
+	\item slow start
+	\item congestion avoidance
+	\item multiplicative descrease
+\end{itemize}
+
+Obrazek: slow start
+Uzgodniony rozmiar okna (z odbiorcą), którego nie możemy przekroczyć.
 
 
 
