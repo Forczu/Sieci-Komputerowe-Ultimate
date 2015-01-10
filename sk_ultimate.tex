@@ -80,9 +80,18 @@ Jest to mechanizm, który służy do wymiany informacji pomiędzy dwiema stacjam
 	\end{table}
 	\subsection{3-poziomowa architektura komunikacji}
 	\begin{itemize}
-		\item File transfer $\longleftrightarrow$ File transfer (Transport)
+		\item File transfer $\longleftrightarrow$ File transfer (Transport, Aplikacja)
 		\item Transport $\longleftrightarrow$ Transport (Sieć)
-		\item Network Access $\longleftrightarrow$ Communication network $\longleftrightarrow$ Network Access (Link access)
+		\begin{itemize}
+			\item Transport właściwy
+			\item Sieć (Network)
+		\end{itemize}
+		\item Network Access $\longleftrightarrow$ Communication network
+		 $\longleftrightarrow$ Network Access (Link access)
+		 \begin{itemize}
+		 	\item Logiczne połączenie (Link Access)
+		 	\item Fizyczne połączenie (Phisical Access)
+		 \end{itemize}
 	\end{itemize}
 \section{Service Access Point (SAP)}
 SAP jest wykorzystywany w sieciach typu OSI (\emph{Open Systems Interconnection}), jest to etykietę identyfikująca dla punktów końcowych sieci. Innymi słowy, oznacza ich lokalizację w sieci.
@@ -133,6 +142,7 @@ Każda warstwa świadczy pewne usługi warstwie znajdującej się ponad nią. In
 	\begin{itemize}
 		\item Zapewnia niezależność procesom aplikacji od różnic w prezentacji danych (składnia), czyli spełnia rolę tłumacza.
 		\item Jej zadaniem jest świadczenie usług, które umożliwiają komunikującym się aplikacjom zrozumienie wymienianych danych, m.in. kompresja, opis i szyfrowanie danych
+		\item Na tym poziomie następuje enkrypcja (szyfrowanie) danych
 	\end{itemize}  
 	\item \textbf{Warstwa sesji}
 	\begin{itemize}
@@ -202,7 +212,7 @@ Idea jest prosta, natomiast trudna i złożona jest \textbf{implementacja} takie
 Prosty transport danych z punktu widzenia warstwy aplikacji.\\
 \includegraphics[width=7cm]{./images/image03_confirmation.jpg}
 \includegraphics[width=7cm]{./images/image03_no_confirmation.jpg}\\
-Widzimy tutaj \textbf{jednokierunkowy transfer danych} (\emph{half-duplex transfer}) - w danej chwili możÜliuwy jest wyłącznie przesył ze strony nadawczej do odbiorczej.
+Widzimy tutaj \textbf{jednokierunkowy transfer danych} (\emph{half-duplex transfer}) - w danej chwili możliwe jest wyłącznie przesył ze strony nadawczej do odbiorczej.
 \subsection{Wersja z wcześniejszym powrotem}
 Pełny dwukierunkowy transfer (\emph{Full two-way service})\\
 \includegraphics[width=10cm]{./images/image04.jpg}\\
@@ -262,7 +272,8 @@ Najważniejszymi znakami kontrolnymi są ACK oraz NAK - nasze algorytmy muszą t
 Protokół BSC oparty jest o definicje automatów stanów skończonych (\emph{Finite-State Machine} - FSM) dla strony nadawczej i odbiorczej. Warto zauważyć, że dla obu stron istnieją \textit{niezależne} systemy FSM.
 \section{Schematy żądań}
 	\subsection{Odbioru}
-	\includegraphics[width=12cm]{./images/image06.pdf}
+	\includegraphics[width=12cm]{./images/image06.pdf} \\
+	W sekwencji wywołania wybierany jest terminal, z którym zostanie nawiązane połączenie.
 	\subsection{Nadania}
 	\includegraphics[width=12cm]{./images/image07.pdf}
 	\subsection{Charakterystyka powyższych rozwiązań}
