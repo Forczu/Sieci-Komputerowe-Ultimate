@@ -330,7 +330,7 @@ Zastosowanie tego rozwiązania niesie ze sobą konsekwencje:
 	\item Po fladze jest \textbf{ramka} i znów flaga. Można powiedzieć, że każda ramka jest otoczona dwiema flagami.
 \end{itemize}
 \subsection{Flaga}
-Flaga ma wartość $ 01111110 $. Pojawia się problem gdy w pakiecie danych jest coś podobnego. Rozwiązanie: algorytm szpikowania zerami. Pomiędzy 5tą i 6tą jedynkę wstawia się techniczne zero ($ 011111\textbf{0}10 $). przy odbiorze drugiej flagi się je kasuje.
+Flaga ma wartość $ 01111110 $ (inaczej 0x7E). Pojawia się problem gdy w pakiecie danych jest coś podobnego. Rozwiązanie: algorytm szpikowania zerami. Pomiędzy 5tą i 6tą jedynkę wstawia się techniczne zero ($ 011111\textbf{0}10 $). przy odbiorze drugiej flagi się je kasuje.
 \subsection{Format ramki}
 \begin{table}[h]
 	\begin{tabular}{|c|c|c|c|c|c|}
@@ -381,7 +381,7 @@ ADR = 0xFF $ \longrightarrow $ transmisja rozgłoszeniowa.
 \begin{itemize}
 	\item UA - nienumerowane potwierdzenie
 	\item UI - nienumerowana informacja
-	\item CMDR - odrzucenie polecenia (brak zgodny na dany typ)
+	\item CMDR - odrzucenie polecenia (brak zgodny na dany typ, inaczej: Slave nie rozpoznaje komendy)
 	\item FRMR - odrzucenie ramki niepasującej w ustalony schemat
 	\item RD (\emph{remote disconnect}), DISC, DM (\emph{disconnect mode}) - zamykają połączenie
 	\item XID
@@ -440,7 +440,7 @@ ADR = 0xFF $ \longrightarrow $ transmisja rozgłoszeniowa.
 		\includegraphics[width=6cm]{./images/image17.pdf}\\\\
 		Wersja ze \textbf{SREJ} - retransmisja pojedynczej ramki\\
 		\includegraphics[width=6cm]{./images/image18.pdf}
-	\subsubsection{Zrównoważony tryb działania (AMB (E))}
+	\subsubsection{Zrównoważony tryb działania (AMB (E) lub ABM - asynchronous balanced mode)}
 		Dotyczy trybu asynchronicznego. E występuje dla dużych liczników.\\
 		To samo, tylko stacja, która zaczyna nadawać zostaje oznaczona jako "SN".
 	\subsection{Inne}
@@ -450,6 +450,7 @@ ADR = 0xFF $ \longrightarrow $ transmisja rozgłoszeniowa.
 Czyli wpływ kontroli błędów na łącze.\\
 \subsection{Bit Error Rate (BER)}
 BER $ ~ $ $ 10^{-4} $ \\
+Czasami zamiast tego liczy się FER - Frame Error Rate.
 \subsubsection{Przykład}
 Jest do przesłania 2 kB w blokach 256 B, $ w = 3 $\\
 \begin{equation}

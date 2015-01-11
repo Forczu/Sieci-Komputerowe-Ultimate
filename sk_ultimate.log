@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.22)  10 JAN 2015 20:27
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.22)  11 JAN 2015 18:30
 entering extended mode
 **sk_ultimate.tex
 (C:\Users\Bartłomiej\Desktop\sieci\sk_ultimate\sk_ultimate.tex
@@ -1081,8 +1081,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 903.
  (C:\Users\Bartłomiej\Desktop\sieci\sk_ultimate\sk_ultimate.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 903.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 903.
-Package rerunfilecheck Info: File `sk_ultimate.out' has not changed.
-(rerunfilecheck)             Checksum: 7FF4E6D2319E25EB6B660D5996E5838B;20359.
+
+Package rerunfilecheck Warning: File `sk_ultimate.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `sk_ultimate.out':
+(rerunfilecheck)             Before: 7FF4E6D2319E25EB6B660D5996E5838B;20359
+(rerunfilecheck)             After:  6877004010E8E36119E4CCAF2D840854;20562.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 903.
  ) 
 Here is how much of TeX's memory you used:
@@ -1112,7 +1118,7 @@ l/plr7.pfb><C:/Users/Bartłomiej/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/
 pl/plsy10.pfb><C:/Users/Bartłomiej/AppData/Roaming/MiKTeX/2.9/fonts/type1/publ
 ic/pl/plsy7.pfb><C:/Users/Bartłomiej/AppData/Roaming/MiKTeX/2.9/fonts/type1/pu
 blic/pl/plti10.pfb>
-Output written on sk_ultimate.pdf (28 pages, 4695874 bytes).
+Output written on sk_ultimate.pdf (28 pages, 4695956 bytes).
 PDF statistics:
  1106 PDF objects out of 1200 (max. 8388607)
  184 named destinations out of 1000 (max. 500000)
