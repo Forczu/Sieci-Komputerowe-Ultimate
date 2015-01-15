@@ -650,7 +650,7 @@ Ramka musi być dłuższa niż 64B. Taki wymóg ma Ethernet.
 		Czyli blokujemy pozostałe stacje (C i D), by nie zakłócały.\\
 		Stację C blokuje stacja A, a stację D blokuje stacja B.\\
 		Po stwierdzeniu, że kanał jest wolny, stacja musi poczekać jeszcze, bo może przyjść ACK.\\
-		Jeśli stacja ustawi w ramce MORE to NAV u innych stacji jest przedłużony o DURATION + ostatni ACK.
+		Jeśli stacja ustawi w ramce MORE to NAV (chanel busy flag) u innych stacji jest przedłużony o DURATION + ostatni ACK.
 	\subsection{CSMA/CR}
 		Umożliwia rozstrzyganie kolizji. Wykorzystywane w mikrosieciach (IIC (I$ ^2 $C)) (HiFi).\\
 		Pierwsza część sygnału to pole adresu nadawcy. Najbardziej efektywny. Do sieci 1000 kB/s. S-7 m sieci.\\
@@ -663,7 +663,7 @@ Ramka musi być dłuższa niż 64B. Taki wymóg ma Ethernet.
 			\begin{itemize}
 				\item Rezerwacyjne
 				\item Selekcyjne
-				\item Jawnego wskazania
+				\item Jawnego wskazania (tzw Token passing)
 			\end{itemize}
 		\end{itemize}
 	\subsection{Algorytmy kontrolowanego dostępu}
@@ -700,13 +700,18 @@ Ramka musi być dłuższa niż 64B. Taki wymóg ma Ethernet.
 		\subsubsection{Algorytm selekcyjny}
 			Selekcja wstępna, czyli która stacja ma prawo nadawania. Dzieli się na dwie fazy:
 			\begin{enumerate}
-				\item Selekcję (faza planowania)
+				\item Selekcję (faza planowania) - - tu rozstrzyga się, która ramka przypadnie na którą stację.
 				\item Wykonanie (faza wykonania)
 			\end{enumerate}
 			\includegraphics[width=10cm]{./images/image26.pdf}\\
 			Powyższy rysunek przedstawia malenie priorytetu.\\
 			Na jedną szczelinę może przypaść więcej niż jedna stacja (grupowanie).\\
 			WAŻNE: stacje, które muszą być wykonane są wysyłane jako pierwsze i do tego pojedynczo, a nie w grupie (jedna na jedną szczelinę). Mimo to, zwykle wykonuje się w grupach.
+			\begin{itemize}
+				\item  Jeśli w trakcie nadawania superramki w sieci pojawi się nowa stacja, to musi ona poczekać do końca transmisji (początku kolejnej superramki), aby być uwzględniana w algorytmie.
+				\item Problem pojawia się, gdy z sieci zniknie stacja w trakcie nadawania - nie wiadomo, kiedy znów nadejdzie daza planowania, a możliwe że na nieobecną maszynę przypadnie akurat jakaś ramka.
+				\item Zazwyczaj stosuje się algorytmy hybrydowe, aby uniknąć takich sytuacji.
+			\end{itemize}
 	\subsection{Algorytmy z przekazywaniem uprawnień (Token)}
 		\subsubsection{Co to jest Token?}
 			Token to specjalna ramka sterująca.\\
@@ -762,7 +767,7 @@ Ramka musi być dłuższa niż 64B. Taki wymóg ma Ethernet.
 				Gdzie:
 				\begin{itemize}
 					\item SD - Start Delimiter, ma postać NN0NN000, 1B
-					\item FC - Frame Control, czy to transmisja w jednym kierunku czy np. żądanie przesyłu odpowiedzi. Przekazuje informacje sterujące. 1B
+					\item FC - Frame Control (czasami zwany też Flow Control), czy to transmisja w jednym kierunku czy np. żądanie przesyłu odpowiedzi. Przekazuje informacje sterujące. 1B
 					\item DA - Destination Address (6B / 2B)
 					\item SA - Source Address (6B / 2B)
 					\item ED - End Delimiter, ma postać NN1NN111, 1B
@@ -779,6 +784,37 @@ Ramka musi być dłuższa niż 64B. Taki wymóg ma Ethernet.
 					\item AC - adres rozpoznany, 1 - ok, 0 - nie (ramka skopiowana (jakoś tak)). Służy do przekazywania informacji sterujących jak np. wybranie pierwotnego posiadacza tokenu.
 					\item FS - Frame Status
 				\end{itemize}
+		\subsection{Budowa bajtu FC}
+			\subsubsection{Budowa}
+			\begin{tabular}{|c|c|c|}
+				\hline Rodzaj ramki (2b) & Przeznaczenie ramki (3b) & PPP (3b) \\ 
+				\hline 
+			\end{tabular} 
+			\subsubsection{Rodzaje ramki}
+			\begin{itemize}
+				\item 00 - ramka kontrolna
+				\item 01 - ramka  z danymi
+				\item 10 - ramka konfiguracyjna (station management, do ustalania budowy sieci)
+			\end{itemize}
+			\subsubsection{Przeznaczenie ramki}
+			\begin{itemize}
+				\item 000 - żądanie (command), brak odpowiedzi
+				\item 001 - żądanie i odpowiedź
+				\item 010 - odpowiedź
+			\end{itemize}
+			\subsubsection{Bity PPP}
+			\begin{itemize}
+				\item Dla ramki z danymi oznaczają one priorytet
+				\item Dla ramek kontrolnych definiuje się tutaj rodzaj ramki. 
+			\end{itemize}
+		\subsection{Problemy związane z Tokenami (wadliwe stany)}
+		\begin{itemize}
+			\item Brak Tokenu (najczęściej pojawia się przy samym starcie sieci) 
+			\item Więcej niż jeden Token
+			\item Zabezpieczenie przy przekazywaniu tokenu (należy się upewnić, czy token został dobrze przekazany)
+			\item Nagłe zniknięcie Tokenu - zdarza się, gdy stacja aktualnie przetrzymująca Token opuszcza sieć
+			\item Nowa stacja w sieci (zmiany w liście stacji)
+		\end{itemize}
 		\subsection{Timery (dostęp do łącza)}
 			\subsubsection{Parametry}
 				\begin{itemize}
@@ -872,6 +908,11 @@ Ramka musi być dłuższa niż 64B. Taki wymóg ma Ethernet.
 		\subsection{Diagram rozwiązań}
 			Najpierw był routing źródłowy (\emph{source routing}), czyli ręczne wyznaczanie drogi przez nadawcę. Następnie pojawiły się rozwiązania w postaci algorytmów.\\\\
 			\includegraphics[width=8cm]{./images/image35.pdf}
+		\subsection{Nomenklatura}
+		\begin{itemize}
+			\item Dużymi literami oznaczamy węzły
+			\item Małymi literami oznaczamy ścieżki
+		\end{itemize}
 		\subsection{Algorytmy stałego wyboru}
 			Algorytm statyczny, drogę wyznacza administrator na sztywno.
 		\subsection{Algorytmy adaptacyjne}
