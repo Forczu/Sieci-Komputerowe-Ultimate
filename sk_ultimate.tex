@@ -916,11 +916,11 @@ Ramka musi być dłuższa niż 64B. Taki wymóg ma Ethernet.
 		\subsection{Algorytmy stałego wyboru}
 			Algorytm statyczny, drogę wyznacza administrator na sztywno.
 		\subsection{Algorytmy adaptacyjne}
-			Algorytm dynamiczny, każdy węzeł zbiera informacji potrzebne do wyznaczenia trasy. Każdy węzeł wyznacza z osobna gdzie iść dalej.\\
+			Algorytm dynamiczny, każdy węzeł zbiera informacji potrzebne do wyznaczenia trasy. Decyzja jest podejmowana na podstawie informacji uzyskanych na podstawie przesłanych wcześniej pakietów. Każdy węzeł wyznacza z osobna gdzie iść dalej.\\
 			Z tym typem algorytmów związane sa następujące zagadnienia:
 			\subsubsection{Zdobywanie informacji}
 				\begin{itemize}
-					\item \textbf{Uczenie zwrotne} - dodanie dodatkowego pola, gdzie przechowywane sa informacje jak np. znacznik czasu wysłania pakietu. Dzięki temu węzeł wie jak długo szedł pakiet. następnie robi tabelkę. Np.\\
+					\item \textbf{Uczenie zwrotne} - dodanie dodatkowego pola, gdzie przechowywane sa informacje jak np. znacznik czasu (timestamp) wysłania pakietu. Dzięki temu węzeł wie jak długo szedł pakiet. następnie robi tabelkę. Np.\\
 					\begin{tabular}{|c|c|c|c|c|}
 						\hline  &  & Zi &  &  \\
 						\hline  &  & B & C & K \\ 
@@ -929,19 +929,20 @@ Ramka musi być dłuższa niż 64B. Taki wymóg ma Ethernet.
 						\hline  & et3 & $ \inf $ &  &  \\ 
 						\hline 
 					\end{tabular}\\
-					Na początku tablica jest pusta, co jest problemem. należy utworzyć początkową tablicę w jakiś sposób np. algorytmem stałego wyboru. Zamiast czasu, jako informację, lepiej przechowywać liczbę węzłów przez które się przechodzi, ponieważ aktualizacja czasu może powodować oznaczenie drogi jako niedostępną (?).
+					Na początku tablica jest pusta, co jest problemem. należy utworzyć początkową tablicę w jakiś sposób np. algorytmem stałego wyboru. Jeżeli przyjąć, że każdy timestamp jest równy, to wtedy jako jako informację można przechowywać liczbę węzłów, przez którą się przechodzi (jednak prawie zawsze timestampy są różne). \\
+					Problem: konieczne są uaktualnienia tabelki. Jeżeli zabraknie update'u, wartość jest zatępywana przez nieskończoność (w praktyce: nie przesyłaj pakietów tą ścieżką). Początkowo tabela jest wypełniana samym nieskończonościami, dlatego wraz ze startem należy użyć wartości wyliczonych przez inny algorytm (potem uczenie zwrotne staje się samowystarczalne).
 					\item \textbf{Algorytm kooperacji (samodzielnego badania (?))} - każdy węzeł odpytuje otoczenie, jakie węzły sa obok niego, wysyła żądanie echa i otrzymuje odpowiedzi. Dzięki temu zna również czas. Echo musi czekać na obsługę jak każdy inny pakiet. Dzięki temu przesyłaniu (echa itd.) wychodzi metryka łącza.\\
 					Tutaj informacja ma swój czas życia (30 - 60 $ \mu s $). Jeżeli żaden pakiet nie przechodzi ta drogą to znaczy, że coś jest z nią nie tak.\\
 					Rodzaje:
 					\begin{itemize}
 						\item \textbf{\emph{distance vector}} - wysyła pełną tablice routingu do sąsiadów (drogi dostępne w otoczeniu i metryki)
-						\item \textbf{\emph{link state}} - przesyła wszędzie (?) informacje, że istnieje takie a takie łącze i metryka (koszt) tego łącza Np.
+						\item \textbf{\emph{link state}} - przesyła do wszystkich węzłów informacje, że istnieje takie a takie łącze i metryka (koszt) tego łącza. Na podstawie tego, "wizualizowany" jest graf połączeń.
 					\end{itemize}
 				\end{itemize}
 		\subsection{Inne algorytmy}
 			\begin{itemize}
-				\item Zalewania (transmisji \emph{broadcast}) - wysyłanie wszędzie w TTL
-				\item Gorącego ziemniaka - wyślij do najbliższego / najlepszego z TTL
+				\item Zalewania (transmisji \emph{broadcast}) - wysyłanie wszędzie w TTL. Bardzo nieoptymalny, ale zawsze działa (w końcu dotrze...). Pozwala ogarnąć nawet najbardziej zdezinformowaną sieć.
+				\item Gorącego ziemniaka - wyślij do najbliższego / najlepszego z TTL (najmniej obciążonego) sąsiada. Problem: może stworzyć nieskończoną pętlę.
 			\end{itemize}
 		\subsection{Wyznaczanie tablicy routingu}
 			Przykładowa sieć.\\
@@ -1097,6 +1098,7 @@ Ramka musi być dłuższa niż 64B. Taki wymóg ma Ethernet.
 							\multicolumn{1}{|c|}{G}               & b          \\ \hline
 						\end{tabular}
 						\item Zmiany w topologii są rozsyłane natychmiast - nie ma liczenia do nieskończoności.
+						\item Algorytm co jakiś czas wykonuje się ponownie (odświeżanie).
 					\end{itemize}
 				\end{enumerate}
 	\section{Problemy z liczbą węzłów}
@@ -1110,23 +1112,45 @@ Ramka musi być dłuższa niż 64B. Taki wymóg ma Ethernet.
 		\subsection{Routery}
 			Dzielimy je na:
 			\begin{itemize}
-				\item Zewnętrzne - EGP
-				\item Wewnętrzne - IGP
+				\item Zewnętrzne - EGP (External Gateway Protocol)
+				\item Wewnętrzne - IGP (Internal ...)
 			\end{itemize}
-	
-	
+			IGP działa dla routingu w najbliższym sąsiedztwie, natomiast EGP ustala zasady routingu między sąsiedztwami.
+		\subsection{Przeciążenie Sieci}
+		
+		\subsubsection{Oznaki przeciążenia sieci }
+		Wcześniej muszą zostać zdefiniowane (którego używamy).
+		\begin{itemize}
+			\item Przeciętna długość przerwy pomiędzy transmisją kolejnych pakietów.
+			\item Retransmisja pakietu ze względu na timeout
+			\item Przeciętna długość que[ry] (???)
+		\end{itemize}
+		\subsubsection{Poziomy zagrożenia}
+		\begin{itemize}
+			\item Dzielą się na: zielony, żółty, pomarańczowy, czerwony. Osiągnięcie pomarańczowego poziomu zazwyczaj oznacza problemy w sieci.
+			\item Inna notyfikacja: Overload Forward Congestion Notification (OFCN) - obliczana procentowo. Kolejne poziomy obciążenia obliczane są od górnej granicy (100\%, 50\%, 25\%...)
+		\end{itemize}
+		\subsubsection{Ogólna zasada działania}
+		Generowana jest pula wolnych biletów. W sieci może krążyć tylko tyle pakietów, ile jest woolnych biletów. Następne pakiety muszą czekać, aż zwolni się jakiś bilet. Po upływie pewnego czasu generowana jest nowa pula biletów.
+		\subsubsection{Algorytmy zapobiegające obciążeniu}
+		\begin{itemize}
+			\item Random Error Discard/Detection (RED) - wyrzuca się losowe pakiety, żeby zmniejszyć tłok na łączu.
+			\item Error Recovery (algorytm retransmisji) - Aktywowany, kiedy pakiety przestają się mieścić w czasie timeoutu. Tworzy się retransmisję lub retransmisję selektywną (konkretnego pakietu) - jeżeli ponownie nie trafi z pakietem, to jeszcze bardziej obciąży sięć.
+		\end{itemize}
 \part{Protokoły}
 % =========================================
 % Lolnotatki 08.01.15
 % =========================================
 \subsection{IPv4}
 
+\subsubsection{Klasy IP}
 \begin{itemize}
+	\item Nazwa Klasy - zapis / maska bitów 
 	\item A = 10.000 / 8
 	\item 16-B 172.16 - 31.255.255 / 12
 	\item B 192.168.0.0 / 16
 \end{itemize}
-\subsection{Transport}
+\subsubsection{Transport}
 \begin{table}[h]
 	\begin{tabular}{|c|c|}
 		\hline
@@ -1139,7 +1163,7 @@ Broadcast, przykład:
 \begin{table}[h]
 	\begin{tabular}{|c|c|}
 		\hline
-		27	&	5	\\ \hline
+		27(maska) &	5	\\ \hline
 	\end{tabular}
 \end{table}
 \begin{itemize}
@@ -1165,7 +1189,7 @@ Rozmiar 128 bitów, znacznie więcej niż w IPv4.
 2: 8, 8, 8\\
 Next headers:
 \begin{itemize}
-	\item Hop by hop options
+	\item Hop by hop options - opcje wykonywane w kolejnych krokach
 	\item Routing
 	\item Fragmentation
 	\item Authentication
