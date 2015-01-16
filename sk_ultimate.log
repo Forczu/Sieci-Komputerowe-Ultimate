@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.5)  16 JAN 2015 22:41
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.5)  16 JAN 2015 23:19
 entering extended mode
 **sk_ultimate.tex
 ("F:\Uczelnia\Sem 5\SK\sk_ultimate\sk_ultimate.tex"
@@ -1708,20 +1708,20 @@ a-dra-tem do pew-ne-go nu-me-ru ko-li-zji, $[]$
 
 [43]
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <9> on input line 96.
+(Font)              <9> on input line 97.
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--113
+Underfull \hbox (badness 10000) in paragraph at lines 103--117
 
  []
 
-[44] <./images/zadanie01.pdf, id=1590, 539.05211pt x 381.49797pt>
+[44] <./images/zadanie01.pdf, id=1592, 539.05211pt x 381.49797pt>
 File: ./images/zadanie01.pdf Graphic file (type pdf)
 
 <use ./images/zadanie01.pdf>
-Package pdftex.def Info: ./images/zadanie01.pdf used on input line 145.
+Package pdftex.def Info: ./images/zadanie01.pdf used on input line 149.
 (pdftex.def)             Requested size: 170.71652pt x 120.81863pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
@@ -1739,15 +1739,15 @@ Package rerunfilecheck Info: File `sk_ultimate.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 74.
  ) 
 Here is how much of TeX's memory you used:
- 19880 strings out of 493921
- 327506 string characters out of 3147285
+ 19883 strings out of 493921
+ 327533 string characters out of 3147285
  381185 words of memory out of 3000000
- 22458 multiletter control sequences out of 15000+200000
- 29088 words of font info for 76 fonts, out of 3000000 for 9000
+ 22459 multiletter control sequences out of 15000+200000
+ 29598 words of font info for 77 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 68i,13n,98p,10443b,650s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Program Files/Mi
-KTeX 2.9/fonts/enc/dvips/pl/plms.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvi
+ 68i,13n,98p,10443b,629s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plms.enc}{C:/Program Files/Mi
+KTeX 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvi
 ps/pl/plmi.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plit.enc}{C:/Pro
 gram Files/MiKTeX 2.9/fonts/enc/dvips/pl/plsc.enc}{C:/Program Files/MiKTeX 2.9/
 fonts/enc/dvips/pl/plme.enc} <C:\Users\Mati\AppData\Local\MiKTeX\2.9\fonts\pk\l
@@ -1769,9 +1769,9 @@ iKTeX 2.9/fonts/type1/public/pl/plsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/public/pl/plsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/pls
 y9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plti10.pfb><C:/Progra
 m Files/MiKTeX 2.9/fonts/type1/public/pl/plti9.pfb>
-Output written on sk_ultimate.pdf (50 pages, 5101716 bytes).
+Output written on sk_ultimate.pdf (50 pages, 5103467 bytes).
 PDF statistics:
- 1944 PDF objects out of 2073 (max. 8388607)
- 453 named destinations out of 1000 (max. 500000)
+ 1945 PDF objects out of 2073 (max. 8388607)
+ 454 named destinations out of 1000 (max. 500000)
  1869 words of extra memory for PDF output out of 10000 (max. 10000000)
 
