@@ -480,11 +480,13 @@
 			\end{itemize}
 		\subsection{Czas do retransmisji}
 			Oznaczany jako $ T_{R} $\\\\
-			$ T_{R} = r(x)\times 2^{k}\times T_{ob}$\\\\Gdzie:\\
+			$ T_{R} = r(x)\times (2^{k}-1)\times T_{ob}$\\\\Gdzie:\\
 			\begin{itemize}
 				\item $ r(x) $ - liczba losowa z zakresu 0...1
 				\item $ T_{ob} $ - czas obiegu łącza, w najgorszym wypadku podwojony czas propagacji
-				\item $ k $ - liczba kolizji, czyli który raz się te ramki już zderzyły. Próbujemy szczęścia aż do $ k <=16 $
+				\item $ k $ - liczba kolizji, czyli który raz się te ramki już zderzyły.
+				\item Wraz ze zwiększaniem się liczby kolizji, możliwy zakres rośnie ekspotencjalnie. Jednak maksymalna wielkość $ k $ jest równa \textbf{10}. Dla $ k > 10 $ przyjmuje się $ k=10 $.
+				\item Próbujemy szczęścia aż do $ k <=16 $, potem próby są przerywane.
 			\end{itemize}
 		\subsection{Cechy}
 			Maksymalnie 2800 m do pokonania.\\
@@ -1000,7 +1002,7 @@
 				\end{tabular}
 				\begin{itemize}
 					\item Nr sekwencyjny - jeśli ktoś dostanie pakiet o większym numerze, to go przetwarza, a jeśli nie jest większy, to nie.
-					\item Wiek - czas życia pakietu (w cyklu). Jeśli czas życia upływa to węzeł usuwa węzeł W ze swojej tablicy routingu.
+					\item Wiek - czas życia pakietu (w cyklu). Jeśli czas życia upływa to węzeł usuwa węzeł W ze swojej tablicy routingu. Liczony w sekundach (chyba)
 				\end{itemize}
 			\subsubsection{Etapy Link State}
 				\begin{enumerate}
