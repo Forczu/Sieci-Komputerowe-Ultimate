@@ -534,7 +534,7 @@
 				\multicolumn{1}{|c|}{Preambuła} 	& 8 B & $ 7\times 10101010$, a na końcu $ 1010101\textbf{1} $. \\ \hline
 				\multicolumn{1}{|c|}{Adres odbiorcy}	& 6 B &	MAC \\ \hline
 				\multicolumn{1}{|c|}{Adres nadawcy}	& 6 B &	MAC \\ \hline
-				\multicolumn{1}{|c|}{Kontrola}		& 2 B & 	\\ \hline
+				\multicolumn{1}{|c|}{Kontrola}		& 2 B & DIX Ethernet - typ protokołu; IEEE - długość danych	\\ \hline
 				\multicolumn{1}{|c|}{Pole danych}	& od 46 B do 1500 B	& \\ \hline
 				\multicolumn{1}{|c|}{CRC}			& 4 B & \\ \hline
 				Cisza na łączu między znakami		& 12 B & 9.6 $ \mu $s \\ \hline
@@ -1175,20 +1175,33 @@ W zapisie grupa 4 zer może być zapisana jednym zerem.\\
 
 \subsection{Protokoły}
 \subsubsection{TCP}
-\begin{table}[h]
+\textbf{Budowa headera:\\}
+\begin{table}[H]
 	\begin{tabular}{|c|c|c|c|c|}
 		\hline
-		\multicolumn{5}{|l|}{Source IP}                 \\ \hline
-		\multicolumn{5}{|l|}{Destination IP}                 \\ \hline
+		\multicolumn{5}{|l|}{(Preheader)Source IP}                 \\ \hline
+		\multicolumn{5}{|l|}{(Preheader)Destination IP}                 \\ \hline
 		\multicolumn{2}{|l|}{Source port} & \multicolumn{3}{l|}{Destination port}                \\ \hline
 		\multicolumn{5}{|l|}{Nr sekwencyjny pakietu}                                             \\ \hline
 		\multicolumn{5}{|l|}{nr potiwerdzenia pakietu}                                           \\ \hline
 		TCP header length       & x       & Flagi          & \multicolumn{2}{l|}{Window Size}    \\ \hline
-		\multicolumn{3}{|l|}{Suma kontrolna}               & \multicolumn{2}{l|}{Urgend pointer} \\ \hline
+		\multicolumn{3}{|l|}{Suma kontrolna}               & \multicolumn{2}{l|}{Urgent pointer} \\ \hline
 		\multicolumn{5}{|l|}{OPCJA}  \\ \hline
 		\multicolumn{5}{|l|}{SAC}  \\ \hline
 	\end{tabular}
 \end{table}
+
+\textbf{Flagi TCP:\\}
+\begin{itemize}
+	\item FIN
+	\item SYN
+	\item RTS
+	\item PUSH
+	\item ACK
+	\item URG
+	\item ECW
+	\item CWR
+\end{itemize}
 
 \subsubsection{UDP}
 \begin{table}[h]
@@ -1217,4 +1230,22 @@ W zapisie grupa 4 zer może być zapisana jednym zerem.\\
 \end{itemize}
 
 Obrazek: slow start
-Uzgodniony rozmiar okna (z odbiorcą), którego nie możemy przekroczyć.
+Uzgodniony rozmiar okna (z odbiorcą), którego nie możemy przekroczyć.\\
+
+\subsubsection{SMTP (Simple Mail Transfer Protocol)}
+\textbf{Przykład sesji:}
+\begin{enumerate}
+	\item Nawiązanie połączenia z serwerem. Polecenie "helo"
+	\item Podanie adresu nadawcy. Polecenie "mail from ...."
+	\item Podanie adresu odbiorcy. Polecenie "mail to ...."
+	\item Rozpoczęcie podawania wiadomości. Polecenie "data"
+	\item Podanie treści wiadomości.
+	\item Zakończenie treści znakiem "." w nowej linii.
+	\item Rozłączenie z serwerem. Polecenie "quit"
+\end{enumerate}
+
+W oryginalnym protokole, dane wysyłało się do lokalnego MTA (Mail Transfer Agent), który sam już przesyłał dane przez łańcuch serwerów, aż do docelowego MTA. 
+\textbf{Problem} z SMTP był taki, że nie istniał mechanizm autoryzacji nadawcy, wprowadzono poprawkę w postaci protokołu SMTP-AUTH, który wymagał autoryzacji nadawcy na jego MTA, ale nie rozwiązywało to problemu do końca.\\
+
+\subsubsection{POP (Post Office Protocol)}
+Dla zwiększenia bezpieczeństwa transmisji (i kontroli otrzymywanych wiadomości) opracowano protokół POP.
