@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.6.5)  18 JAN 2015 14:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.6.5)  18 JAN 2015 15:25
 entering extended mode
 **sk_ultimate.tex
 (F:\LaTeX\Ultimate\sk_ultimate\sk_ultimate.tex
@@ -1570,107 +1570,106 @@ Underfull \hbox (badness 10000) in paragraph at lines 837--839
 
  []
 
-[31 <F:/LaTeX/Ultimate/sk_ultimate/images/image35.pdf>]
-<./images/image38.pdf, id=1421, 384.97473pt x 249.04558pt>
+[31 <F:/LaTeX/Ultimate/sk_ultimate/images/image35.pdf>] [32]
+<./images/image38.pdf, id=1425, 384.97473pt x 249.04558pt>
 File: ./images/image38.pdf Graphic file (type pdf)
 
 <use ./images/image38.pdf>
-Package pdftex.def Info: ./images/image38.pdf used on input line 877.
+Package pdftex.def Info: ./images/image38.pdf used on input line 887.
 (pdftex.def)             Requested size: 213.39566pt x 138.0471pt.
- [32]
-Underfull \hbox (badness 10000) in paragraph at lines 880--898
+
+Underfull \hbox (badness 10000) in paragraph at lines 890--908
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 880--898
+Underfull \hbox (badness 10000) in paragraph at lines 890--908
 
  []
 
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 904.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 914.
 
 ("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 904.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 914.
+
+Underfull \vbox (badness 4279) has occurred while \output is active []
+
  [33 <F:/LaTeX/Ultimate/sk_ultimate/images/image38.pdf>]
-<./images/image37.pdf, id=1439, 384.97473pt x 249.04558pt>
+<./images/image37.pdf, id=1438, 384.97473pt x 249.04558pt>
 File: ./images/image37.pdf Graphic file (type pdf)
 
 <use ./images/image37.pdf>
-Package pdftex.def Info: ./images/image37.pdf used on input line 918.
+Package pdftex.def Info: ./images/image37.pdf used on input line 928.
 (pdftex.def)             Requested size: 184.9429pt x 119.64311pt.
 
-<./images/image40.pdf, id=1440, 222.2195pt x 192.69582pt>
+<./images/image40.pdf, id=1439, 222.2195pt x 192.69582pt>
 File: ./images/image40.pdf Graphic file (type pdf)
 
 <use ./images/image40.pdf>
-Package pdftex.def Info: ./images/image40.pdf used on input line 938.
+Package pdftex.def Info: ./images/image40.pdf used on input line 948.
 (pdftex.def)             Requested size: 99.58464pt x 86.35359pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 946--959
-
- []
-
-[34 <F:/LaTeX/Ultimate/sk_ultimate/images/image37.pdf> <F:/LaTeX/Ultimate/sk_ul
-timate/images/image40.pdf
-
-pdfTeX warning: pdflatex.exe (file F:/LaTeX/Ultimate/sk_ultimate/images/image40
-.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->]
-Underfull \hbox (badness 10000) in paragraph at lines 959--975
+ [34 <F:/LaTeX/Ultimate/sk_ultimate/images/image37.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 956--969
 
  []
 
-<./images/image42.pdf, id=1460, 222.85083pt x 154.06787pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 969--985
+
+ []
+
+<./images/image42.pdf, id=1453, 222.85083pt x 154.06787pt>
 File: ./images/image42.pdf Graphic file (type pdf)
 
 <use ./images/image42.pdf>
-Package pdftex.def Info: ./images/image42.pdf used on input line 983.
+Package pdftex.def Info: ./images/image42.pdf used on input line 993.
 (pdftex.def)             Requested size: 199.16928pt x 137.69829pt.
-
-<./images/image43.pdf, id=1461, 222.85083pt x 178.42911pt>
+ [35 <F:/LaTeX/Ultimate/sk_ultimate/images/image40.pdf>] <./images/image43.pdf,
+ id=1467, 222.85083pt x 178.42911pt>
 File: ./images/image43.pdf Graphic file (type pdf)
 
 <use ./images/image43.pdf>
-Package pdftex.def Info: ./images/image43.pdf used on input line 985.
+Package pdftex.def Info: ./images/image43.pdf used on input line 995.
 (pdftex.def)             Requested size: 199.16928pt x 159.47115pt.
- [35 <F:/LaTeX/Ultimate/sk_ultimate/images/image42.pdf>] <./images/image44.pdf,
- id=1482, 103.51987pt x 139.03241pt>
+
+<./images/image44.pdf, id=1468, 103.51987pt x 139.03241pt>
 File: ./images/image44.pdf Graphic file (type pdf)
 
 <use ./images/image44.pdf>
-Package pdftex.def Info: ./images/image44.pdf used on input line 992.
+Package pdftex.def Info: ./images/image44.pdf used on input line 1002.
 (pdftex.def)             Requested size: 85.35826pt x 114.64374pt.
+ [36 <F:/LaTeX/Ultimate/sk_ultimate/images/image42.pdf> <F:/LaTeX/Ultimate/sk_u
+ltimate/images/image43.pdf
 
-<./images/image45.pdf, id=1483, 361.2491pt x 155.0965pt>
-File: ./images/image45.pdf Graphic file (type pdf)
-
-<use ./images/image45.pdf>
-Package pdftex.def Info: ./images/image45.pdf used on input line 1015.
-(pdftex.def)             Requested size: 199.16928pt x 85.51158pt.
- [36 <F:/LaTeX/Ultimate/sk_ultimate/images/image43.pdf> <F:/LaTeX/Ultimate/sk_u
-ltimate/images/image44.pdf
+pdfTeX warning: pdflatex.exe (file F:/LaTeX/Ultimate/sk_ultimate/images/image43
+.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <F:/LaTeX/Ultimate/sk_ultimate/images/image44.pdf
 
 pdfTeX warning: pdflatex.exe (file F:/LaTeX/Ultimate/sk_ultimate/images/image44
 .pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] <./images/image46.pdf, id=1513, 360.50021pt x 292.76898pt>
+>] <./images/image45.pdf, id=1509, 361.2491pt x 155.0965pt>
+File: ./images/image45.pdf Graphic file (type pdf)
+
+<use ./images/image45.pdf>
+Package pdftex.def Info: ./images/image45.pdf used on input line 1025.
+(pdftex.def)             Requested size: 199.16928pt x 85.51158pt.
+
+<./images/image46.pdf, id=1510, 360.50021pt x 292.76898pt>
 File: ./images/image46.pdf Graphic file (type pdf)
 
 <use ./images/image46.pdf>
-Package pdftex.def Info: ./images/image46.pdf used on input line 1034.
+Package pdftex.def Info: ./images/image46.pdf used on input line 1044.
 (pdftex.def)             Requested size: 199.16928pt x 161.75159pt.
 
-<./images/image47.pdf, id=1514, 360.50021pt x 303.52196pt>
+<./images/image47.pdf, id=1511, 360.50021pt x 303.52196pt>
 File: ./images/image47.pdf Graphic file (type pdf)
 
 <use ./images/image47.pdf>
-Package pdftex.def Info: ./images/image47.pdf used on input line 1038.
+Package pdftex.def Info: ./images/image47.pdf used on input line 1048.
 (pdftex.def)             Requested size: 199.16928pt x 167.69249pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [37 <F:/LaTeX/Ultimate/sk_ultimate/images/image45.pdf> <F:/LaTeX/Ultimate/sk_u
 ltimate/images/image46.pdf
 
@@ -1679,29 +1678,29 @@ pdfTeX warning: pdflatex.exe (file F:/LaTeX/Ultimate/sk_ultimate/images/image46
 >] [38 <F:/LaTeX/Ultimate/sk_ultimate/images/image47.pdf>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 1073.
+(hyperref)                than one, level fixed on input line 1083.
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 1075.
+(hyperref)                than one, level fixed on input line 1085.
 
 [39]
-Underfull \hbox (badness 10000) in paragraph at lines 1178--1192
+Underfull \hbox (badness 10000) in paragraph at lines 1188--1202
 
  []
 
 [40]
-Underfull \hbox (badness 10000) in paragraph at lines 1194--1195
+Underfull \hbox (badness 10000) in paragraph at lines 1204--1205
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1232--1234
+Underfull \hbox (badness 10000) in paragraph at lines 1242--1244
 
  []
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 1247--1249
+Underfull \hbox (badness 10000) in paragraph at lines 1257--1259
 
  []
 
@@ -1732,22 +1731,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
 [46 <F:/LaTeX/Ultimate/sk_ultimate/images/zadanie01.pdf>])
 (F:\LaTeX\Ultimate\sk_ultimate\tex\sk_slownik.tex [47] [48] [49] [50])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 74.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 72.
  [51]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 74.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
 
 (F:\LaTeX\Ultimate\sk_ultimate\sk_ultimate.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 74.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 74.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 72.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 72.
 Package rerunfilecheck Info: File `sk_ultimate.out' has not changed.
-(rerunfilecheck)             Checksum: 1A8A1B7F6D1886BC7F31E16C3D2B7D1E;32250.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 74.
+(rerunfilecheck)             Checksum: 5E3AC5C5A25291F7BBCF4DB57EFAFB9C;32425.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 72.
  ) 
 Here is how much of TeX's memory you used:
- 19902 strings out of 493921
- 328956 string characters out of 3147283
+ 19903 strings out of 493921
+ 328980 string characters out of 3147283
  381185 words of memory out of 3000000
- 22466 multiletter control sequences out of 15000+200000
+ 22467 multiletter control sequences out of 15000+200000
  29598 words of font info for 77 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  68i,13n,98p,10443b,629s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1776,9 +1775,9 @@ ts/type1/public/pl/plsy10.pfb><G:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
 blic/pl/plsy7.pfb><G:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plsy
 9.pfb><G:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plti10.pfb><G:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plti9.pfb>
-Output written on sk_ultimate.pdf (51 pages, 5109352 bytes).
+Output written on sk_ultimate.pdf (51 pages, 5110457 bytes).
 PDF statistics:
- 1966 PDF objects out of 2073 (max. 8388607)
+ 1967 PDF objects out of 2073 (max. 8388607)
  464 named destinations out of 1000 (max. 500000)
  1885 words of extra memory for PDF output out of 10000 (max. 10000000)
 

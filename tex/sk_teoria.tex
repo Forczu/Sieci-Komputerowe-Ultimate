@@ -248,7 +248,7 @@
 		\end{itemize}
 
 
-\part{Protokół o organizacji bitowej SDLC}
+\part{Protokół o organizacji bitowej SDLC (Synchronous Data Link Control)}
 	Protokół SDLC ma za zadanie rozwiązać problem wydajnościowy związany z BSC. Protokół BSC, który zdefiniowaliśmy pod sam koniec, jest protokołem zatrzymania i czekania. Sprawia, że istnieje zagrożenie nieefektywnego wykorzystania łącza - nadawca może wysyłać znacznie mniej danych w jednostce czasu niż jest to możliwe (nawet tylko ułamek procenta).\\
 	Rozwiązaniem jest zastosowanie mechanizmu \textbf{potokowego} - polega on na wysyłaniu wielu pakietów bez oczekiwania na potwierdzenie. Np. wysyłając 3 pakiety przed uzyskaniem potwierdzenia może przyspieszyć transfer 3-krotnie.\\
 	Zastosowanie tego rozwiązania niesie ze sobą konsekwencje:
@@ -832,7 +832,7 @@
 				\end{itemize}
 	\section{Adresacja}
 		Wykorzystywana jest adresacja \textbf{IP}.
-	\section{Wybór drogi (\emph{routing})}
+	\section{Wybór drogi - \emph{routing}}
 		\subsection{Diagram rozwiązań}
 			Najpierw był routing źródłowy (\emph{source routing}), czyli ręczne wyznaczanie drogi przez nadawcę. Następnie pojawiły się rozwiązania w postaci algorytmów.\\\\
 			\includegraphics[width=8cm]{./images/image35.pdf}
@@ -864,7 +864,17 @@
 					Rodzaje:
 					\begin{itemize}
 						\item \textbf{\emph{distance vector}} - wysyła pełną tablice routingu do sąsiadów (drogi dostępne w otoczeniu i metryki)
-						\item \textbf{\emph{link state}} - przesyła do wszystkich węzłów informacje, że istnieje takie a takie łącze i metryka (koszt) tego łącza. Na podstawie tego, "wizualizowany" jest graf połączeń.
+						\item \textbf{\emph{link state}} - przesyła do wszystkich węzłów informacje, że istnieje takie a takie łącze i metryka (koszt) tego łącza. Na podstawie tego, "wizualizowany" jest graf połączeń. W węźle sieci dostępny jest cały "obraz" sieci. \\
+						Zalety:
+						\begin{itemize}
+							\item Mniej problemów z pętlami w połączeniach (bo każdy węzeł ma obraz całej sieci)
+							\item Łatwiejsza skalowalność
+							\end{itemize}
+						Wady:
+						\begin{itemize}
+							\item Większe użycie CPU i pamięci w węźle
+							\item Droższe i trudniejsze do implementacji i utrzymania
+						\end{itemize}
 					\end{itemize}
 				\end{itemize}
 		\subsection{Inne algorytmy}
