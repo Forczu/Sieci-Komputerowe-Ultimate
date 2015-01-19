@@ -2,6 +2,54 @@
 
 \newpage
 \part{Zadania}
+% ==================================================
+% --- TOPOLOGIA SIECI
+% ==================================================
+\section{Topologia sieci}
+	% ================= ZADANIE 1 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			\begin{wrapfigure}{l}{6.0cm}
+				\includegraphics[width=5.5cm]{./images/zadanie02.pdf}
+			\end{wrapfigure} 
+			W sieci z metryką jak na rysunku routery wymieniają się informacjami co 40 sekund, stosowany jest protokół typu Distance Vector. W chwili $ t_0 $ router F ulega awarii. Określ, po jakim czasie informacja o niedostępności routera F dotrze do węzła A.\\\\\\\\
+		\subsubsection{Odpowiedź}
+			\includegraphics[width=11.0cm]{./images/zadanie03.pdf}\\
+			A więc stacja A dowie się o niedostępności stacji F po $ 12\cdot 40\;s=480\;s $.
+	% ================= ZADANIE 2 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			Dana jest następująca topologia sieci:
+			\begin{itemize}
+				\item Węzeł B ma jako sąsiadów węzły A, C i D
+				\item Węzeł C ma jako sąsiadów węzły A, B, D i E
+				\item Węzeł D ma jako sąsiadów węzły A, B, C i E
+				\item Węzeł E ma jako sąsiadów węzły C i D
+			\end{itemize}
+			W chwili $ t_0 $ węzeł B ulega awarii. Przedstaw sposób rozchodzenia się tej informacji między węzłami, po jakim czasie informacja o tym dotrze do węzła E, jeśli w sieci stosowany jest protokół RIP typu Distance Vector i cykl wymiany wektorów wynosi 30 s. Przyjmij metrykę jednostkową łączy.
+		\subsubsection{Odpowiedź}
+			\includegraphics[width=5.0cm]{./images/zadanie04.pdf}\\\\
+			\begin{tabular}{|c|c|c|c|c|c|p{7cm}|}
+				\hline \textbf{Zmiana} & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{E} & \textbf{Komentarz} \\ 
+				\hline \textbf{-} & 1 & 0 & 1 & 1 & 2 & Działa \\ 
+				\hline \textbf{0} & \color{red}{inf} & \color{red}{X} & \color{red}{inf} & \color{red}{inf} & 2 & B ulega awarii. Sąsiedzi, czyli A, C i D nie mogą się połączyć z nim. \\ 
+				\hline \textbf{1} & \color{red}{4} & X & \color{red}{3} & \color{red}{3} & 2 & Węzły A, B i C próbują się połączyć z B przez E, który nie wie o awarii. \\ 
+				\hline \textbf{2} & 4 & X & 3 & 3 & \color{red}{4} & Ponieważ droga z węzła E do B pierwotnie wiodła przez węzły D i C, po ich zmianie ich tablic, E również musi je aktualizować, nawet pomimo tego, że obecna droga C i D wiedzie przez niego (nie wie o tym). \\
+				\hline \textbf{3} & \color{red}{6} & X & \color{red}{5} & \color{red}{5} & 4 & I zaczyna się pętla. \\ 
+				\hline \textbf{4} & 6 & X & 5 & 5 & \color{red}{6} &  \\ 
+				\hline \textbf{5} & \color{red}{8} & X & \color{red}{7} & \color{red}{7} & 6 &  \\ 
+				\hline \textbf{6} & 8 & X & 7 & 7 & \color{red}{8} &  \\ 
+				\hline \textbf{7} & \color{red}{10} & X & \color{red}{9} & \color{red}{9} & 8 &  \\ 
+				\hline \textbf{8} & 10 & X & 9 & 9 & \color{red}{10} &  \\ 
+				\hline \textbf{9} & \color{red}{12} & X & \color{red}{11} & \color{red}{11} & 10 &  \\ 
+				\hline \textbf{10} & 12 & X & 11 & 11 & \color{red}{12} &  \\ 
+				\hline \textbf{11} & \color{red}{14} & X & \color{red}{13} & \color{red}{13} & 12 &  \\ 
+				\hline \textbf{12} & 14 & X & 13 & 13 & \color{red}{14} &  \\ 
+				\hline \textbf{13} & \color{red}{16} & X & \color{red}{15} & \color{red}{15} & 14 &  \\ 
+				\hline \textbf{14} &  &  &  &  & \color{red}{16} & Koniec \\ 
+				\hline 
+			\end{tabular}\\\\
+			Obliczenia kończą się, gdy koszt trasy z węzła E do B przekroczy 15. Wówczas widzimy, że dokonanych zmian było 14, a więc czas wynosi: $ 14\cdot 30\;s=420\;s=7$ minut.
 
 % ==================================================
 % --- ETHERNET
@@ -115,9 +163,86 @@
 				Nowe $ Z=5 $, czyli to samo co wyżej.\\
 				Nowe $ V=5 $, tego nie ma w obecnej tablicy, więc po prostu jest dodane.
 		\end{enumerate}
+	% ================= ZADANIE 2 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			Węzeł D odebrał / wysłał do chwili $ T_0 $ następujące pakiety.\\
+			\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+				\cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11} \cline{13-14} \cline{16-17} \cline{19-20} \cline{22-23} \cline{25-26} \cline{28-29}
+				\multicolumn{2}{|c|}{G} &  & \multicolumn{2}{c|}{B}  &  & \multicolumn{2}{c|}{C} &  & \multicolumn{2}{c|}{E}  &  & \multicolumn{2}{c|}{D}  &  & \multicolumn{2}{c|}{F}  &  & \multicolumn{2}{c|}{A}  &  & \multicolumn{2}{c|}{H}  &  & \multicolumn{2}{c|}{C}  &  & \multicolumn{2}{c|}{B} \\ \cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11} \cline{13-14} \cline{16-17} \cline{19-20} \cline{22-23} \cline{25-26} \cline{28-29} 
+				\multicolumn{2}{|c|}{9} &  & \multicolumn{2}{c|}{8}  &  & \multicolumn{2}{c|}{9} &  & \multicolumn{2}{c|}{8}  &  & \multicolumn{2}{c|}{9}  &  & \multicolumn{2}{c|}{14} &  & \multicolumn{2}{c|}{10} &  & \multicolumn{2}{c|}{9}  &  & \multicolumn{2}{c|}{10} &  & \multicolumn{2}{c|}{7} \\ \cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11} \cline{13-14} \cline{16-17} \cline{19-20} \cline{22-23} \cline{25-26} \cline{28-29} 
+				\multicolumn{2}{|c|}{3} &  & \multicolumn{2}{c|}{25} &  & \multicolumn{2}{c|}{7} &  & \multicolumn{2}{c|}{28} &  & \multicolumn{2}{c|}{29} &  & \multicolumn{2}{c|}{21} &  & \multicolumn{2}{c|}{23} &  & \multicolumn{2}{c|}{24} &  & \multicolumn{2}{c|}{23} &  & \multicolumn{2}{c|}{6} \\ \cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11} \cline{13-14} \cline{16-17} \cline{19-20} \cline{22-23} \cline{25-26} \cline{28-29} 
+				F          & 1          &  & A           & 3         &  & B          & 1         &  & A           & 1         &  & C           & 2         &  & A           & 1         &  & E           & 1         &  & B           & 1         &  & B           & 3         &  & A          & 1         \\ \cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11} \cline{13-14} \cline{16-17} \cline{19-20} \cline{22-23} \cline{25-26} \cline{28-29} 
+				H          & 1          &  & H           & 2         &  & E          & 2         &  & C           & 2         &  & H           & 1         &  & E           & 1         &  & B           & 2         &  & G           & 2         &  & E           & 1         &  & H          & 1         \\ \cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11} \cline{13-14} \cline{16-17} \cline{19-20} \cline{22-23} \cline{25-26} \cline{28-29} 
+				D          & 1          &  & C           & 2         &  & D          & 2         &  & F           & 1         &  & G           & 1         &  & G           & 1         &  & F           & 2         &  & D           & 2         &  & D           & 1         &  & C          & 2         \\ \cline{1-2} \cline{4-5} \cline{7-8} \cline{10-11} \cline{13-14} \cline{16-17} \cline{19-20} \cline{22-23} \cline{25-26} \cline{28-29}
+				\multicolumn{2}{c}{1} &  & \multicolumn{2}{c}{2} &  & \multicolumn{2}{c}{3} &  & \multicolumn{2}{c}{4} &  & \multicolumn{2}{c}{5} &  & \multicolumn{2}{c}{6} &  & \multicolumn{2}{c}{7} &  & \multicolumn{2}{c}{8} &  & \multicolumn{2}{c}{9} &  & \multicolumn{2}{c}{10} \\ 
+			\end{tabular}\\
+			W czasie $ T_5+5 $ węzeł D rozpoczął wyznaczanie nowej tablicy routingu. Przedstawić nową tablicę routingu dla węzła D.
+		\subsubsection{Odpowiedź}
+			Format pakiety wyraźnie wskazuje, że mamy do czynienia z algorytmem Link State.
+			\begin{itemize}
+				\item Pierwsza wartość oznacza nadawcę.
+				\item Druga wartość to numer sekwencyjny - im większy tym pakiet jest ważniejszy.
+				\item Trzecia wartość to wiek - po tego upływie czasu od momentu odebrania pakiet jest usuwany.
+			\end{itemize}
+			Tak więc na samym początku \textbf{odrzucamy} pakiety nr 1 o czasie życia 3- w momencie wyznaczania nowej tablicy, w momencie $ T_5+5 $ już nie istniał.\\
+			Następnie patrzymy na numery sekwencyjne - jeżeli odebraliśmy 2+ pakietów od tego samego węzła, to interesuje nas tylko ten o najwyższym numerze sekwencyjnym.
+			\begin{itemize}
+				\item Są dwa pakiety od węzła B, nr 2 i 10. Odrzucamy nr 10 o niższym \textit{seq} ($ 8 > 7 $).
+				\item Są dwa pakiety od węzła C, nr 3 i 9. Odrzucamy nr 3 o niższym \textit{seq} ($ 9 < 10 $).
+			\end{itemize}
+			Do obliczeń przystępujemy z 7 pakietami. Wszystko sobie rozrysowujemy:\\
+			\includegraphics[width=7.0cm]{./images/zadanie05.pdf}\\
+			Jeśli węzły da się połączyć na dwa różne sposoby, tworzymy średnią arytmetyczną. Wybieramy najkrótsze możliwe połączenie do każdego węzła, \textbf{pomijamy G}, i rysujemy tabelkę.\\\\
+			\includegraphics[width=7.0cm]{./images/zadanie06.pdf}     
+			\begin{tabular}{c|c|c}
+				Cel & Koszt & Przez \\ \hline
+				A   & 4     & E     \\
+				B   & 3     & H     \\
+				C   & 1.5   & D     \\
+				D   & 0     &       \\
+				E   & 3     & C     \\
+				F   & 4     & E     \\
+				G   & -     &       \\
+				H   & 1.5   & D     
+			\end{tabular}\\
+			\small{ \emph{Forczu: ocenione na 1.0 / 1.0}}.
 			
 \section{Transmisja danych}
-	% ================= ZADANIE 1 ==================
+% ================= ZADANIE 1 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			Stacja robocza połączona jest z serwerem łączem szeregowym o przepustowości 8 MBit/s, z bitową stopą błędów $ BER=2\cdot 10^{-5} $. Określić z jaką średnią szybkością transmisji danych protokołem TCP w wersji standardowej (\emph{plain vanilla}) można uzyskać jeśli uzgodniona maksymalna wielkość segmentu wynosi 768 B (ramki w łączu 832 B), wielkość danych odbiorcy wynosi 27 kB, czas $ RTT=40\;ms $.
+		\subsubsection{Odpowiedź}
+			$ BER=2\cdot 10^{-5} \rightarrow 50000 $ - oznacza to, że 1 na 50k bitów jest przekłamany, czyli co 6250 bajt jest przekłamany.\\\\
+			$ V=8 Mb/s $\\\\
+			$ \cfrac{6250\;[B]}{832\;[B]}=7.51 \rightarrow$ co 7.51 ramka jest przekłamana.\\
+			Teraz stosujemy metodę słupków do wyznaczenia właściwego stosunku liczby ramek, jakie można wysłać. Rysujemy kolejne transmitowane ramki w postaci słupków złożonych z $ 2^n $ ramek: 1, 2, 4, 8 itd. Gdy napotykamy przekłamaną ramkę zaczynamy naliczać od nowa. Kończymy naliczanie gdy przekłamana ramka znajdzie się na szczycie jednego ze słupków.Oznacza ona bowiem zakończenie cyklu, "deja vu" - kolejne kolumny, wraz z przekłamaniami, będą się powtarzać.\\\\
+			\includegraphics[width=5.0cm]{./images/zadanie07.pdf}\\
+			Wynika z tego, że na 16 pakietów 2 zostają przekłamane.\\\\
+			$ 16 - 2 = 14 $ - nieprzekłamane pakiety. Liczba ta nie powinna zostać przekroczona w wysyłaniu danych do okna.\\
+			Efektywna prędkość:
+			$$ SRET=\frac{((Liczba\;ramek - liczba\;ramek\;przekłamanych)\cdot Rozmiar\;segmentu}{Liczba\;kolumn\;w\;cyklu\cdot RTT} $$\\
+			$$ \frac{14\cdot 768\;[B]}{5\cdot 40\;[ms]}=\frac{14\cdot 768\;[B]}{5\cdot 40\cdot 10^{-3}\;[s]}=53760\;[\frac{B}{s}]=52.5 [\frac{kB}{s}]$$
+			\small{ \emph{Forczu: z jakiegoś opracowania, powinno być dobrze.}}.
+	% ================= ZADANIE 2 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			Stacja robocza połączona jest z serwerem łączem szeregowym o przepustowości $ 10\;Mbit/s $, z bitową stopą błędów $ BER=1.3\cdot 10^{-5} $. Określ z jaką średnią szybkością można przesyłać dane z serwera protokołem TCP w wersji standardowej, jeśli wielkość segmentu wynosi 768 kB (ramki 832 B), wielkość okna odbiorcy 29 kB, średni czas $ RTT=45\;ms $.
+		\subsubsection{Odpowiedź}
+			$ \cfrac{1}{1.3\cdot 10^{-5}}\approx 76\;923 $ - 1 bit na 76923 jest przekłamany, ok. 1 bajt na 9600 B, czyli co 12 ramka jest przekłamana.\\\\
+			$ \cfrac{29\;[kB]}{832\;[B]}\approx 36 $ - tyle ramek można maksymalnie przesłać do okna.\\\\
+			Ilustracja przekłamania ramek metodą słupków:\\\\
+			\includegraphics[width=16.0cm]{./images/zadanie08.pdf}\\\\
+			Na 96 pakietów 8 zostaje przekłamanych.\\
+			Możemy wyróżnić dwa parametry spełniające zadanie:
+			\begin{enumerate}
+				\item Szybkość efektywna: $ SRET=\frac{(96-8)\cdot 768\;[B]}{29\cdot 45\;[ms]}=\frac{88\cdot 768\;[B]}{29\cdot 45\;[ms]} $
+				\item $ GND=\frac{(96-36)\cdot 768\;[B]}{29\cdot 45\;[ms]}=\frac{60\cdot 768\;[B]}{29\cdot 45\;[ms]} $
+			\end{enumerate}
+			\small{ \emph{Forczu: w tego typu zadaniach przepustowość chyba zawsze jest maksymalna, a protokoół standardowy, co ma upraszczać całość.
+			Ktoś tam napisał, że wielkość ramki we wzorach jest obojętna, ale należy zaznaczyć, czy bierzemy dane czy dane + narzut.}}.
+	% ================= ZADANIE 3 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Stacja robocza podłączona jest z serwerem łączem o przepustowości $ 55\;Mbit/s $, z bitową stopą błędów $ BER=4.9\cdot 10^{-6} $. określ, ile czasu zajmie przesłanie tym łączem pliku 100 kB danych, od nawiązania do zakończenia połączenia protokołem TCP w wersji standardowej, jeśli uzgodniona maksymalna wielkość segmentu wynosi 1024 B (ramki o łączu 1082 B), wielkość okna odbiorcy wynosi 17 kB, a czas RTT wynosi 25 ms.
@@ -125,19 +250,46 @@
 			$ BER=4.9\cdot 10^{-6} $
 			\begin{itemize}
 				\item Oznacza to, że 4.9 bitu zostaje przekłamanych na 1 milion bitów.
-				\item Czyli 4.9 bajtów zostaje przekłamanych na 12500 bajtów.
+				\item Czyli 4.9 bajtów zostaje przekłamanych na 125000 bajtów.
+				\item $ \cfrac{\frac{125\;000}{4.9}}{1082}\approx 23.58 $ - co 24 ramka jest przekłamana.
 			\end{itemize}
-			Wielkość okna odbiorcy: 17 kB = 17000 B\\
-			Wielkość segmentu: 1024 B\\
-			Ramka w łączu: 1082 B\\
-			Maksymalna liczba ramek w jednym przesyle:
-			$$ \lfloor\frac{17000\;[B]}{1082\;[B]}\rfloor = 15$$
-			Przepustowość = $ 55\;Mbit/s $
-			$$ SRET=\frac{23\cdot 1024\;[B]}{5\cdot 25\;ms}=18841600\;[\cfrac{B}{S}] $$
-			Do przesłania: 100 kB danych = 102400 B\\
-			Czas wysłania 100 kB danych:
-			$$ \frac{102400\;[B]}{18841600\;[\frac{B}{S}]}\approx0.00054\;s$$
-			\small{ \emph{Forczu: jakoś tak, nie widać wszystkiego, jeszcze się poprawi.\\Doxus:lols, do SRET jest wiadomo co, ale od tego równania już nie}}
+			TODO: uzupełnić tej szajs analogicznie.
+	% ================= ZADANIE 4 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			W systemie transmisji posługującym się protokołem SDLC (tryb NRM, w=3, retransmisja grupowa) w łączu ze stopą błędów $ p=10^{-4} $ przesyłane są dane ramkami z polem danych 256 B, ze stacji nadrzędnej do stacji podrzędnej. Przedstaw przebieg transmisji w przesyle 4.5 kB danych, pomiń nawiązanie / zrywanie połączenia. Ile kosztuje (narzut protokołu) obsługa błędów w transmisji?
+		\subsubsection{Odpowiedź}
+	% ================= ZADANIE 5 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			Chcemy zastosować protokół CSMA / CD przy budowie sieci o długości łącza 500 m przy szybkości transmisji 200 MBit/s. Jaka powinna być w tym przypadku minimalna długość ramki?
+		\subsubsection{Odpowiedź}
+	% ================= ZADANIE 6 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			Węzeł W ma za sąsiadów węzły A, B, C, D i E. Po otrzymaniu pakietu Link State węzeł oczekuje 35 ms, następnie przystępuje do dystrybucji pakietu. W chwili $ t_0 $ węzeł odebrał pakiet z węzła B, $ 5\;ms $ później z węzła D, a po 13 $ ms $ pakiet z węzła E. Przedstaw przebieg dystrybucji pakietów\\.
+			\begin{tabular}{|c|c|c|c|c|c|c|c|}
+				\hline \multicolumn{2}{|c|}{\textbf{E}}  & & \multicolumn{2}{|c|}{\textbf{B}} & & \multicolumn{2}{|c|}{\textbf{D}}\\ 
+				\hline \multicolumn{2}{|c|}{55} & &\multicolumn{2}{|c|}{55} & &\multicolumn{2}{|c|}{55} \\ 
+				\hline \multicolumn{2}{|c|}{240} & &\multicolumn{2}{|c|}{238} & &\multicolumn{2}{|c|}{239}   \\ 
+				\hline U & 2 & & U & 1 & & U & 2\\ 
+				\hline V & 3 & & V & 2 & & V & 3\\
+				\hline Z & 6 & & Z & 5 & & Z & 6\\
+				\hline 
+			\end{tabular}
+		\subsubsection{Odpowiedź}
+			Do węzłów, których pakiety miały największy nr sekwencyjny (2gi wiersz) wysyła potwierdzenie
+			Do pozostałych wysyła pakiet tego węzła, który miał największy nr sekwencyjny i age (3ci wiersz).
+			\begin{itemize}
+				\item Do węzła D wyśle: potwierdzenie.
+				\item Do węzła C wyśle: E.
+				\item Do węzła B wyśle: potwierdzenie.
+				\item Do węzła E wyśle: potwierdzenie.
+				\item Do węzła A wyśle: E.
+			\end{itemize}
+	% ================= ZADANIE 7 ==================
+	
+			
 
 \section{Adresacja}
 	% ================= ZADANIE 1 ==================
@@ -183,8 +335,71 @@
 					\end{enumerate}
 					\small{ \emph{Ocenione na 1.0 / 1.0}}
 			\end{enumerate}
+	% ================= ZADANIE 2 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			Dostępna jest pewna ilość kolejnych adresów internetowych, zaczynając od 192.170.0.0. Cztery organizacje A, B, C i D występowały kolejno o przydział puli 1000, 2000, 4000 i 1000 adresów IP. Podaj dla każdej z nich pierwszy i ostatni przyznany adres oraz maskę sieci w notacji w.x.y.z i /m.
+		\subsubsection{Odpowiedź}
+			W treści zadania jest podane, że te firmy przychodziły \textit{kolejno}, więc po prostu w tej kolejności przyznajemy im adresy.
+			\begin{enumerate}
+				\item Firma A, 1000 adresów - maska na 1024 adresy
+				\begin{itemize}
+					\item Pierwszy adres: 192.170.0.0
+					\item Ostatni adres: 192.170.3.255
+					\item w.x.y.z: 255.255.252.0 (1.1.11111100.0)
+					\item Maska: /22
+				\end{itemize}
+				\item Firma B, 2000 adresów - maska na 2048 adresy
+				\begin{itemize}
+					\item Nie możemy w połowie wstawić takiej maski, minimalny przydział takiej podsieci jest „co 2048”. Innymi słowy musimy zostawić przerwę po pierwszej podsieci o długości 1024 adresy, by wyrównać je do 2048.
+					\item Pierwszy adres: 192.170.8.0
+					\item Ostatni adres: 192.170.15.255
+					\item w.x.y.z: 255.255.248.0 (1.1.11111000.0)
+					\item Maska: /21
+				\end{itemize}
+				\item Firma C, 4000 adresów - maska na 4096 adresy
+				\begin{itemize}
+					\item Pierwszy adres: 192.170.16.0
+					\item Ostatni adres: 192.170.31.255
+					\item w.x.y.z: 255.255.240.0 (1.1.11110000.0)
+					\item Maska: /20
+				\end{itemize}
+				\item Firma D, 1000 adresów - maska na 1024 adresy
+				\begin{itemize}
+					\item Mamy wolne miejsce między podsieciami dla firmy A i B, tam dajemy tę sieć.
+					\item Pierwszy adres: 192.170.4.0
+					\item Ostatni adres: 192.170.7.255
+					\item w.x.y.z: 255.255.252.0 (1.1.11111100.0)
+					\item Maska: /22
+				\end{itemize}
+			\end{enumerate}
+	% ================= ZADANIE 3 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			Firma dysponuje pulą 32 adresów IP. Przyjęto, że pierwszy i ostatni użyteczny adres zostaną przydzielone routerowi dostępowemu i serverowi DNS. Jeden z komputerów otrzymał adres 172.19.21.137. Podaj elementy konfiguracji IP tego komputera.
+		\subsubsection{Odpowiedź}
+			\begin{itemize}
+				\item \textbf{Maska podsieci}: 255.255.255.224 (albo /27)\\
+				Firma posiada 32 adresy, które różnią się 5 najmłodszymi bitami. 32 - 5 = 27.
+				\item \textbf{Adres IP}: 172.19.21.137
+				\item \textbf{Host}: 172.19.21.128 /27 (adres sieci)\\
+				Adresem sieci wyliczamy zerując 5 ostatnich bitów. (albo ANDując adres z 1.1.1.11100000)
+				\item \textbf{Brama / Router}: 172.19.21.129\\
+				Adres routera dostępowego, pierwszy użyteczny adres (00001).
+				\item \textbf{Serwer DNS}: 172.19.21.158\\
+				Ostatni użyteczny adres (11110). (Broadcast - 1)
+				\item \textbf{Broadcast}: 172.19.21.159\\
+				Adres rozgłoszeniowy, uzyskany przez "zajedynkowanie" 5 ostatnich bitów. Największy adres w sieci.
+				\item Adresy przydzielamy wg kolejnych potęg dwójki $ 2^n $. Gdyby w treści były 33 adresy, to przydzielalibyśmy 64.
+				\item Gdyby w treści należałoby podpiąć 32 klientów, to musielibyśmy mieć 34 adresy i znów przydzielać 64.
+			\end{itemize}
+	% ================= ZADANIE 4 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
 			
-
+		\subsubsection{Odpowiedź}	
+			
+	
 \section{Poczta e-mail}
 	% ================= ZADANIE 1 ==================
 	\subsection{Zadanie}

@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.6.5)  18 JAN 2015 15:25
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.5)  19 JAN 2015 20:14
 entering extended mode
 **sk_ultimate.tex
-(F:\LaTeX\Ultimate\sk_ultimate\sk_ultimate.tex
+("F:\Uczelnia\Sem 5\SK\sk_ultimate\sk_ultimate.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -13,9 +13,9 @@ german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -30,19 +30,19 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\polski.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\polski\polski.sty"
 Package: polski 2008/02/24 v1.3.3 Polish language package
 
 Document language package `polski' v1.3.3 <2008/02/24>
 \l@nohyphenation=\language69
    Switching to Polish text encoding and Polish maths fonts.
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot4enc.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot4enc.def"
 File: ot4enc.def 2005/09/27 v1.99g Standard LaTeX file
 )
 LaTeX Font Info:    Try loading font information for OT4+cmr on input line 346.
 
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\ot4cmr.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\polski\ot4cmr.fd"
 File: ot4cmr.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
@@ -77,19 +77,19 @@ LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> OMS/plsy/b/n on input line 346.
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -239,7 +239,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -270,7 +270,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -296,31 +296,31 @@ Now handling font encoding OT4 ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count87
@@ -328,24 +328,24 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks17
 \ex@=\dimen105
 ))
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen106
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count88
@@ -386,14 +386,14 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
 Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
 
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
 Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
 Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
@@ -434,32 +434,32 @@ Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
 Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
 Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
 Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
 \@linkdim=\dimen114
 \Hy@linkcounter=\count100
 \Hy@pagecounter=\count101
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
 \Hy@SavedSpaceFactor=\count102
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
 Package hyperref Info: Option `unicode' set `true' on input line 4319.
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\puenc.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\puenc.def"
 File: puenc.def 2012/11/06 v6.83m Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -474,7 +474,7 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
 \c@Hy@tempcnt=\count103
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -499,23 +499,23 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
 \Fld@listcount=\count108
 \c@bookmark@seq@number=\count109
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip46
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\tabto\tabto.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\tabto\tabto.sty"
 Package: tabto 2013/03/25  v 1.3  Another tabbing mechanism
 \CurrentLineWidth=\dimen118
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen119
 \extrarowheight=\dimen120
@@ -523,25 +523,25 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip47
 \backup@length=\skip48
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
 \bigstrutjot=\dimen121
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\dcolumn.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\dcolumn.sty"
 Package: dcolumn 2001/05/28 v1.06 decimal alignment package (DPC)
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\bigstrut.sty")
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\bigstrut.sty")
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Package option `usenames' ignored on input line 216.
@@ -557,28 +557,28 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\dvipsnam.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\dvipsnam.def"
 File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 ))
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\svg\svg.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\svg\svg.sty"
 Package: svg 2012/09/05 v1.0 SVG inclusion and extraction
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty"
 Package: xkeyval 2012/10/14 v2.6b package option processing (HA)
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
 \XKV@toks=\toks23
 \XKV@tempa@toks=\toks24
 \XKV@depth=\count110
 File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
 ))
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
 Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
 Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
 \captionmargin=\dimen122
@@ -606,10 +606,10 @@ Package caption Info: hyperref package is loaded.
 \sf@top=\skip52
 \sf@bottom=\skip53
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\import\import.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\import\import.sty"
 Package: import 2009/03/23  v 5.1
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\transparent.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\transparent.sty"
 Package: transparent 2007/01/08 v1.0 Transparency via pdfTeX's color stack (HO)
 
 )
@@ -617,16 +617,16 @@ Package: transparent 2007/01/08 v1.0 Transparency via pdfTeX's color stack (HO)
 \SVG@out@height=\skip55
 \c@svgfigure=\count119
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\l3packages\xfrac\xfrac.sty"
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\l3packages\l3keys2e\l3keys2e.sty"
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\xfrac\xfrac.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\l3keys2e\l3keys2e.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty"
 Package: expl3 2014/11/25 v5471 L3 programming layer (loader) 
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\l3kernel\expl3-code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\expl3-code.tex"
 Package: expl3 2014/11/25 v5471 L3 programming layer (code) 
 L3 Module: l3bootstrap 2014/08/23 v5354 L3 Bootstrap code
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\misc\etex.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\misc\etex.sty"
 Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
 \et@xins=\count120
 )
@@ -732,16 +732,16 @@ L3 Module: l3candidates 2014/11/23 v5466 L3 Experimental additions to l3kernel
 \l__coffin_scaled_total_height_dim=\dimen159
 \l__coffin_scaled_width_dim=\dimen160
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\l3kernel\l3unicode-data.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\l3unicode-data.def"
 File: l3unicode-data.def 2014/11/23 v5465 L3 Unicode data
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\l3kernel\l3pdfmode.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3kernel\l3pdfmode.def"
 File: l3pdfmode.def 2014/11/23 v5466 L3 Experimental driver: PDF mode
 \l__driver_color_stack_int=\count143
 ))
 Package: l3keys2e 2014/11/25 v5471 LaTeX2e option processing using LaTeX3 keys
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\textcomp.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\textcomp.sty"
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -756,12 +756,12 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1enc.def"
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1enc.dfu"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1enc.dfu"
 File: ts1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A2 (decimal 162)
    defining Unicode char U+00A3 (decimal 163)
@@ -896,7 +896,7 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty"
 Package: xparse 2014/11/25 v5471 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count144
 \l__xparse_m_args_int=\count145
@@ -904,8 +904,7 @@ Package: xparse 2014/11/25 v5471 L3 Experimental document command parser
 \l__xparse_processor_int=\count147
 \l__xparse_v_nesting_int=\count148
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\l3packages\xtemplate\xtemplate.st
-y"
+("C:\Program Files\MiKTeX 2.9\tex\latex\l3packages\xtemplate\xtemplate.sty"
 Package: xtemplate 2014/11/25 v5471 L3 Experimental prototype document function
 s
 \l__xtemplate_tmp_dim=\dimen161
@@ -936,7 +935,8 @@ Package: xfrac 2014/05/04 v4728 L3 Experimental split-level fractions
 . 
 . Defining command \sfrac with sig. 'omom' on line 436.
 .................................................
-) ("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\floatrow\floatrow.sty"
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\floatrow\floatrow.sty"
 Package: floatrow 2008/08/02 v0.3b floatrow: float package extension
 \c@float@type=\count150
 \float@exts=\toks25
@@ -974,10 +974,10 @@ Package floatrow Info: Modified rotfloat package code loaded on input line 473.
 \LTright=\skip76
 \flrow@types=\toks27
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\blindtext\blindtext.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\blindtext\blindtext.sty"
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\xspace.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\xspace.sty"
 Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
 )
 \c@blindtext=\count157
@@ -999,11 +999,11 @@ Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
 \c@blind@pangramcount=\count173
 \c@blind@pangrammax=\count174
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\enumerate.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\enumerate.sty"
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 \@enLab=\toks28
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\wrapfig\wrapfig.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\wrapfig\wrapfig.sty"
 \wrapoverhang=\dimen171
 \WF@size=\dimen172
 \c@WF@wrappedlines=\count175
@@ -1011,7 +1011,7 @@ Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 \WF@everypar=\toks29
 Package: wrapfig 2003/01/31  v 3.6
 )
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\titlesec\titlesec.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\titlesec\titlesec.sty"
 Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \ttl@box=\box49
 \beforetitleunit=\skip77
@@ -1023,7 +1023,7 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \titlewidthlast=\dimen176
 \titlewidthfirst=\dimen177
 )
-(F:\LaTeX\Ultimate\sk_ultimate\sk_ultimate.aux)
+("F:\Uczelnia\Sem 5\SK\sk_ultimate\sk_ultimate.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
 LaTeX Font Info:    ... okay on input line 50.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
@@ -1045,12 +1045,12 @@ LaTeX Font Info:    ... okay on input line 50.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 50.
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 50.
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count176
 \scratchdimen=\dimen178
@@ -1066,10 +1066,10 @@ LaTeX Font Info:    ... okay on input line 50.
 )
 \AtBeginShipoutBox=\box51
 Package hyperref Info: Link coloring OFF on input line 50.
- ("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count182
@@ -1078,8 +1078,8 @@ LaTeX Info: Redefining \ref on input line 50.
 LaTeX Info: Redefining \pageref on input line 50.
 LaTeX Info: Redefining \nameref on input line 50.
 
-(F:\LaTeX\Ultimate\sk_ultimate\sk_ultimate.out)
-(F:\LaTeX\Ultimate\sk_ultimate\sk_ultimate.out)
+("F:\Uczelnia\Sem 5\SK\sk_ultimate\sk_ultimate.out")
+("F:\Uczelnia\Sem 5\SK\sk_ultimate\sk_ultimate.out")
 \@outlinefile=\write3
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
@@ -1089,26 +1089,26 @@ Package caption Info: floatrow package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\floatrow\fr-subfig.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\floatrow\fr-subfig.sty"
 Package: fr-subfig 2007/12/24 v0.1g (beta) floatrow: additions for subfig
 \FBsc@max=\skip79
 \FBso@max=\skip80
 )
 LaTeX Font Info:    Try loading font information for OML+plm on input line 59.
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\omlplm.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omlplm.fd"
 File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    Try loading font information for OMS+plsy on input line 59.
 
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\omsplsy.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omsplsy.fd"
 File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    Try loading font information for OMX+plex on input line 59.
 
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\omxplex.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omxplex.fd"
 File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    External font `plex10' loaded for size
@@ -1120,7 +1120,7 @@ LaTeX Font Info:    External font `plex10' loaded for size
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(F:\LaTeX\Ultimate\sk_ultimate\tex\sk_teoria.tex
+("F:\Uczelnia\Sem 5\SK\sk_ultimate\tex\sk_teoria.tex"
 LaTeX Font Info:    External font `plex10' loaded for size
 (Font)              <10> on input line 19.
 LaTeX Font Info:    External font `plex10' loaded for size
@@ -1131,7 +1131,7 @@ LaTeX Font Info:    External font `plex10' loaded for size
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<./images/image01.jpg, id=843, 395.5578pt x 246.6816pt>
+<./images/image01.jpg, id=979, 395.5578pt x 246.6816pt>
 File: ./images/image01.jpg Graphic file (type jpg)
 
 <use ./images/image01.jpg>
@@ -1141,19 +1141,19 @@ Package pdftex.def Info: ./images/image01.jpg used on input line 63.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[2] [3 <F:/LaTeX/Ultimate/sk_ultimate/images/image01.jpg>]
+[2] [3 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image01.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 131--143
 
  []
 
-[4] <./images/image02.jpg, id=866, 404.2302pt x 284.262pt>
+[4] <./images/image02.jpg, id=1002, 404.2302pt x 284.262pt>
 File: ./images/image02.jpg Graphic file (type jpg)
 
 <use ./images/image02.jpg>
 Package pdftex.def Info: ./images/image02.jpg used on input line 156.
 (pdftex.def)             Requested size: 284.52756pt x 200.08809pt.
 
-<./images/image03_confirmation.jpg, id=867, 233.1912pt x 266.9172pt>
+<./images/image03_confirmation.jpg, id=1003, 233.1912pt x 266.9172pt>
 File: ./images/image03_confirmation.jpg Graphic file (type jpg)
 
 <use ./images/image03_confirmation.jpg>
@@ -1161,7 +1161,7 @@ Package pdftex.def Info: ./images/image03_confirmation.jpg used on input line 1
 60.
 (pdftex.def)             Requested size: 199.16928pt x 227.97627pt.
 
-<./images/image03_no_confirmation.jpg, id=868, 233.1912pt x 266.9172pt>
+<./images/image03_no_confirmation.jpg, id=1004, 233.1912pt x 266.9172pt>
 File: ./images/image03_no_confirmation.jpg Graphic file (type jpg)
 
 <use ./images/image03_no_confirmation.jpg>
@@ -1171,46 +1171,48 @@ e 161.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <F:/LaTeX/Ultimate/sk_ultimate/images/image02.jpg>]
-<./images/image04.jpg, id=873, 476.5002pt x 266.9172pt>
+ [5 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image02.jpg>]
+<./images/image04.jpg, id=1009, 476.5002pt x 266.9172pt>
 File: ./images/image04.jpg Graphic file (type jpg)
 
 <use ./images/image04.jpg>
 Package pdftex.def Info: ./images/image04.jpg used on input line 165.
 (pdftex.def)             Requested size: 284.52756pt x 159.38994pt.
- [6 <F:/LaTeX/Ultimate/sk_ultimate/images/image03_confirmation.jpg> <F:/LaTeX/U
-ltimate/sk_ultimate/images/image03_no_confirmation.jpg> <F:/LaTeX/Ultimate/sk_u
-ltimate/images/image04.jpg>]
-<./images/image06.pdf, id=878, 659.83661pt x 282.639pt>
+ [6 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image03_confirmation.jpg> <F:/Ucze
+lnia/Sem 5/SK/sk_ultimate/images/image03_no_confirmation.jpg> <F:/Uczelnia/Sem 
+5/SK/sk_ultimate/images/image04.jpg>]
+<./images/image06.pdf, id=1014, 659.83661pt x 282.639pt>
 File: ./images/image06.pdf Graphic file (type pdf)
 
 <use ./images/image06.pdf>
 Package pdftex.def Info: ./images/image06.pdf used on input line 214.
 (pdftex.def)             Requested size: 341.43306pt x 146.2529pt.
  [7]
-<./images/image07.pdf, id=885, 659.83661pt x 282.639pt>
+<./images/image07.pdf, id=1021, 659.83661pt x 282.639pt>
 File: ./images/image07.pdf Graphic file (type pdf)
 
 <use ./images/image07.pdf>
 Package pdftex.def Info: ./images/image07.pdf used on input line 217.
 (pdftex.def)             Requested size: 341.43306pt x 146.2529pt.
 
-<./images/image08.pdf, id=886, 768.3164pt x 263.60565pt>
+<./images/image08.pdf, id=1022, 768.3164pt x 263.60565pt>
 File: ./images/image08.pdf Graphic file (type pdf)
 
 <use ./images/image08.pdf>
 Package pdftex.def Info: ./images/image08.pdf used on input line 224.
 (pdftex.def)             Requested size: 398.33858pt x 136.66544pt.
- [8 <F:/LaTeX/Ultimate/sk_ultimate/images/image06.pdf> <F:/LaTeX/Ultimate/sk_ul
-timate/images/image07.pdf
+ [8 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image06.pdf> <F:/Uczelnia/Sem 5/SK
+/sk_ultimate/images/image07.pdf
 
-pdfTeX warning: pdflatex.exe (file F:/LaTeX/Ultimate/sk_ultimate/images/image07
-.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <F:/LaTeX/Ultimate/sk_ultimate/images/image08.pdf
+pdfTeX warning: pdflatex.exe (file F:/Uczelnia/Sem 5/SK/sk_ultimate/images/imag
+e07.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
+e
+> <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image08.pdf
 
-pdfTeX warning: pdflatex.exe (file F:/LaTeX/Ultimate/sk_ultimate/images/image08
-.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] <./images/image09.pdf, id=934, 768.3164pt x 263.60565pt>
+pdfTeX warning: pdflatex.exe (file F:/Uczelnia/Sem 5/SK/sk_ultimate/images/imag
+e08.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
+e
+>] <./images/image09.pdf, id=1070, 768.3164pt x 263.60565pt>
 File: ./images/image09.pdf Graphic file (type pdf)
 
 <use ./images/image09.pdf>
@@ -1226,7 +1228,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 228--230
 
  []
 
-<./images/image10.pdf, id=935, 923.65309pt x 263.60565pt>
+<./images/image10.pdf, id=1071, 923.65309pt x 263.60565pt>
 File: ./images/image10.pdf Graphic file (type pdf)
 
 <use ./images/image10.pdf>
@@ -1237,7 +1239,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 233--235
 
  []
 
-<./images/image11.pdf, id=936, 223.14069pt x 105.15729pt>
+<./images/image11.pdf, id=1072, 223.14069pt x 105.15729pt>
 File: ./images/image11.pdf Graphic file (type pdf)
 
 <use ./images/image11.pdf>
@@ -1246,12 +1248,13 @@ Package pdftex.def Info: ./images/image11.pdf used on input line 238.
 
 Underfull \vbox (badness 1939) has occurred while \output is active []
 
- [9 <F:/LaTeX/Ultimate/sk_ultimate/images/image09.pdf> <F:/LaTeX/Ultimate/sk_ul
-timate/images/image10.pdf
+ [9 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image09.pdf> <F:/Uczelnia/Sem 5/SK
+/sk_ultimate/images/image10.pdf
 
-pdfTeX warning: pdflatex.exe (file F:/LaTeX/Ultimate/sk_ultimate/images/image10
-.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [10 <F:/LaTeX/Ultimate/sk_ultimate/images/image11.pdf>]
+pdfTeX warning: pdflatex.exe (file F:/Uczelnia/Sem 5/SK/sk_ultimate/images/imag
+e10.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
+e
+>] [10 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image11.pdf>]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1260,21 +1263,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 306--307
 
  []
 
-<./images/image12.pdf, id=989, 352.33824pt x 247.6906pt>
+<./images/image12.pdf, id=1125, 352.33824pt x 247.6906pt>
 File: ./images/image12.pdf Graphic file (type pdf)
 
 <use ./images/image12.pdf>
 Package pdftex.def Info: ./images/image12.pdf used on input line 316.
 (pdftex.def)             Requested size: 284.52756pt x 200.03111pt.
  [11]
-<./images/image13.jpg, id=999, 336.2964pt x 159.9576pt>
+<./images/image13.jpg, id=1135, 336.2964pt x 159.9576pt>
 File: ./images/image13.jpg Graphic file (type jpg)
 
 <use ./images/image13.jpg>
 Package pdftex.def Info: ./images/image13.jpg used on input line 339.
 (pdftex.def)             Requested size: 284.52756pt x 135.33975pt.
- [12 <F:/LaTeX/Ultimate/sk_ultimate/images/image12.pdf>] <./images/image14.pdf,
- id=1020, 434.74187pt x 582.56226pt>
+ [12 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image12.pdf>] <./images/image14.p
+df, id=1156, 434.74187pt x 582.56226pt>
 File: ./images/image14.pdf Graphic file (type pdf)
 
 <use ./images/image14.pdf>
@@ -1283,8 +1286,8 @@ Package pdftex.def Info: ./images/image14.pdf used on input line 352.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13 <F:/LaTeX/Ultimate/sk_ultimate/images/image13.jpg>]
-<./images/image15.pdf, id=1026, 252.6103pt x 183.87532pt>
+ [13 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image13.jpg>]
+<./images/image15.pdf, id=1162, 252.6103pt x 183.87532pt>
 File: ./images/image15.pdf Graphic file (type pdf)
 
 <use ./images/image15.pdf>
@@ -1293,15 +1296,15 @@ Package pdftex.def Info: ./images/image15.pdf used on input line 356.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14 <F:/LaTeX/Ultimate/sk_ultimate/images/image14.pdf>]
-<./images/image17.pdf, id=1046, 255.21991pt x 242.6702pt>
+ [14 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image14.pdf>]
+<./images/image17.pdf, id=1182, 255.21991pt x 242.6702pt>
 File: ./images/image17.pdf Graphic file (type pdf)
 
 <use ./images/image17.pdf>
 Package pdftex.def Info: ./images/image17.pdf used on input line 376.
 (pdftex.def)             Requested size: 170.71652pt x 162.32156pt.
 
-<./images/image18.pdf, id=1047, 246.11201pt x 206.66476pt>
+<./images/image18.pdf, id=1183, 246.11201pt x 206.66476pt>
 File: ./images/image18.pdf Graphic file (type pdf)
 
 <use ./images/image18.pdf>
@@ -1312,11 +1315,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 376--379
 
  []
 
-[15 <F:/LaTeX/Ultimate/sk_ultimate/images/image15.pdf> <F:/LaTeX/Ultimate/sk_ul
-timate/images/image17.pdf
+[15 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image15.pdf> <F:/Uczelnia/Sem 5/SK
+/sk_ultimate/images/image17.pdf
 
-pdfTeX warning: pdflatex.exe (file F:/LaTeX/Ultimate/sk_ultimate/images/image17
-.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+pdfTeX warning: pdflatex.exe (file F:/Uczelnia/Sem 5/SK/sk_ultimate/images/imag
+e17.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
+e
 >]
 Underfull \hbox (badness 10000) in paragraph at lines 385--386
 
@@ -1327,8 +1331,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 390--391
 
  []
 
-[16 <F:/LaTeX/Ultimate/sk_ultimate/images/image18.pdf>]
-<./images/image19.pdf, id=1102, 395.97937pt x 268.75406pt>
+[16 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image18.pdf>]
+<./images/image19.pdf, id=1238, 395.97937pt x 268.75406pt>
 File: ./images/image19.pdf Graphic file (type pdf)
 
 <use ./images/image19.pdf>
@@ -1344,8 +1348,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 441--443
 
  []
 
-[17 <F:/LaTeX/Ultimate/sk_ultimate/images/image19.pdf>]
-<./images/image20.pdf, id=1136, 414.04688pt x 365.11406pt>
+[17 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image19.pdf>]
+<./images/image20.pdf, id=1272, 414.04688pt x 365.11406pt>
 File: ./images/image20.pdf Graphic file (type pdf)
 
 <use ./images/image20.pdf>
@@ -1374,8 +1378,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 482--484
 
  []
 
-[19 <F:/LaTeX/Ultimate/sk_ultimate/images/image20.pdf>]
-<./images/image27.pdf, id=1175, 352.85368pt x 140.44238pt>
+[19 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image20.pdf>]
+<./images/image27.pdf, id=1311, 352.85368pt x 140.44238pt>
 File: ./images/image27.pdf Graphic file (type pdf)
 
 <use ./images/image27.pdf>
@@ -1386,23 +1390,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 508--510
 
  []
 
-<./images/image28.pdf, id=1176, 525.13156pt x 231.13405pt>
+<./images/image28.pdf, id=1312, 525.13156pt x 231.13405pt>
 File: ./images/image28.pdf Graphic file (type pdf)
 
 <use ./images/image28.pdf>
 Package pdftex.def Info: ./images/image28.pdf used on input line 517.
 (pdftex.def)             Requested size: 199.16928pt x 87.66255pt.
- [20 <F:/LaTeX/Ultimate/sk_ultimate/images/image27.pdf> <F:/LaTeX/Ultimate/sk_u
-ltimate/images/image28.pdf
+ [20 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image27.pdf> <F:/Uczelnia/Sem 5/S
+K/sk_ultimate/images/image28.pdf
 
-pdfTeX warning: pdflatex.exe (file F:/LaTeX/Ultimate/sk_ultimate/images/image28
-.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+pdfTeX warning: pdflatex.exe (file F:/Uczelnia/Sem 5/SK/sk_ultimate/images/imag
+e28.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
+e
 >]
 Overfull \hbox (41.41087pt too wide) in paragraph at lines 531--542
  [][] 
  []
 
-<./images/image21.pdf, id=1203, 395.97937pt x 251.43938pt>
+<./images/image21.pdf, id=1339, 395.97937pt x 251.43938pt>
 File: ./images/image21.pdf Graphic file (type pdf)
 
 <use ./images/image21.pdf>
@@ -1412,7 +1417,7 @@ Package pdftex.def Info: ./images/image21.pdf used on input line 557.
 Underfull \vbox (badness 4872) has occurred while \output is active []
 
  [21]
-<./images/image22.pdf, id=1209, 555.23273pt x 160.80904pt>
+<./images/image22.pdf, id=1345, 555.23273pt x 160.80904pt>
 File: ./images/image22.pdf Graphic file (type pdf)
 
 <use ./images/image22.pdf>
@@ -1433,14 +1438,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 570--573
 
  []
 
-<./images/image23.pdf, id=1210, 347.48273pt x 210.39795pt>
+<./images/image23.pdf, id=1346, 347.48273pt x 210.39795pt>
 File: ./images/image23.pdf Graphic file (type pdf)
 
 <use ./images/image23.pdf>
 Package pdftex.def Info: ./images/image23.pdf used on input line 576.
 (pdftex.def)             Requested size: 284.52756pt x 172.28343pt.
 
-<./images/image24.pdf, id=1211, 344.27216pt x 153.52306pt>
+<./images/image24.pdf, id=1347, 344.27216pt x 153.52306pt>
 File: ./images/image24.pdf Graphic file (type pdf)
 
 <use ./images/image24.pdf>
@@ -1459,45 +1464,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 575--582
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [22 <F:/LaTeX/Ultimate/sk_ultimate/images/image21.pdf> <F:/LaTeX/Ultimate/sk_u
-ltimate/images/image22.pdf
+ [22 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image21.pdf> <F:/Uczelnia/Sem 5/S
+K/sk_ultimate/images/image22.pdf
 
-pdfTeX warning: pdflatex.exe (file F:/LaTeX/Ultimate/sk_ultimate/images/image22
-.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [23 <F:/LaTeX/Ultimate/sk_ultimate/images/image23.pdf> <F:/LaTeX/Ultimate/sk
-_ultimate/images/image24.pdf
+pdfTeX warning: pdflatex.exe (file F:/Uczelnia/Sem 5/SK/sk_ultimate/images/imag
+e22.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
+e
+>] [23 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image23.pdf> <F:/Uczelnia/Sem 5
+/SK/sk_ultimate/images/image24.pdf
 
-pdfTeX warning: pdflatex.exe (file F:/LaTeX/Ultimate/sk_ultimate/images/image24
-.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] <./images/image25.pdf, id=1275, 436.4557pt x 90.84573pt>
+pdfTeX warning: pdflatex.exe (file F:/Uczelnia/Sem 5/SK/sk_ultimate/images/imag
+e24.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
+e
+>] <./images/image25.pdf, id=1411, 436.4557pt x 90.84573pt>
 File: ./images/image25.pdf Graphic file (type pdf)
 
 <use ./images/image25.pdf>
 Package pdftex.def Info: ./images/image25.pdf used on input line 615.
 (pdftex.def)             Requested size: 312.9803pt x 65.14687pt.
 
-<./images/image26.pdf, id=1276, 238.02711pt x 87.7488pt>
+<./images/image26.pdf, id=1412, 238.02711pt x 87.7488pt>
 File: ./images/image26.pdf Graphic file (type pdf)
 
 <use ./images/image26.pdf>
 Package pdftex.def Info: ./images/image26.pdf used on input line 634.
 (pdftex.def)             Requested size: 284.52756pt x 104.90167pt.
- [24 <F:/LaTeX/Ultimate/sk_ultimate/images/image25.pdf>] <./images/image29.pdf,
- id=1298, 87.74496pt x 57.63246pt>
+ [24 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image25.pdf>] <./images/image29.p
+df, id=1434, 87.74496pt x 57.63246pt>
 File: ./images/image29.pdf Graphic file (type pdf)
 
 <use ./images/image29.pdf>
 Package pdftex.def Info: ./images/image29.pdf used on input line 666.
 (pdftex.def)             Requested size: 199.16928pt x 130.83261pt.
- [25 <F:/LaTeX/Ultimate/sk_ultimate/images/image26.pdf>] <./images/image30.pdf,
- id=1324, 251.3676pt x 256.67287pt>
+ [25 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image26.pdf>] <./images/image30.p
+df, id=1460, 251.3676pt x 256.67287pt>
 File: ./images/image30.pdf Graphic file (type pdf)
 
 <use ./images/image30.pdf>
 Package pdftex.def Info: ./images/image30.pdf used on input line 673.
 (pdftex.def)             Requested size: 199.16928pt x 203.3764pt.
 
-<./images/image31.pdf, id=1325, 250.95076pt x 102.11554pt>
+<./images/image31.pdf, id=1461, 250.95076pt x 102.11554pt>
 File: ./images/image31.pdf Graphic file (type pdf)
 
 <use ./images/image31.pdf>
@@ -1508,16 +1515,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 677--679
 
  []
 
-[26 <F:/LaTeX/Ultimate/sk_ultimate/images/image29.pdf> <F:/LaTeX/Ultimate/sk_ul
-timate/images/image30.pdf
+[26 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image29.pdf> <F:/Uczelnia/Sem 5/SK
+/sk_ultimate/images/image30.pdf
 
-pdfTeX warning: pdflatex.exe (file F:/LaTeX/Ultimate/sk_ultimate/images/image30
-.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <F:/LaTeX/Ultimate/sk_ultimate/images/image31.pdf
+pdfTeX warning: pdflatex.exe (file F:/Uczelnia/Sem 5/SK/sk_ultimate/images/imag
+e30.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
+e
+> <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image31.pdf
 
-pdfTeX warning: pdflatex.exe (file F:/LaTeX/Ultimate/sk_ultimate/images/image31
-.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [27] <./images/image32.pdf, id=1347, 92.12425pt x 89.83263pt>
+pdfTeX warning: pdflatex.exe (file F:/Uczelnia/Sem 5/SK/sk_ultimate/images/imag
+e31.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
+e
+>] [27] <./images/image32.pdf, id=1483, 92.12425pt x 89.83263pt>
 File: ./images/image32.pdf Graphic file (type pdf)
 
 <use ./images/image32.pdf>
@@ -1528,7 +1537,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 764--767
 
  []
 
-[28 <F:/LaTeX/Ultimate/sk_ultimate/images/image32.pdf>]
+[28 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image32.pdf>]
 LaTeX Font Info:    Calculating math sizes for size <6.99997> on input line 770
 .
 LaTeX Font Info:    External font `plex10' loaded for size
@@ -1538,14 +1547,14 @@ LaTeX Font Info:    External font `plex10' loaded for size
 LaTeX Font Info:    External font `plex10' loaded for size
 (Font)              <3.49998> on input line 770.
 
-<./images/image33.pdf, id=1360, 238.02711pt x 45.33487pt>
+<./images/image33.pdf, id=1496, 238.02711pt x 45.33487pt>
 File: ./images/image33.pdf Graphic file (type pdf)
 
 <use ./images/image33.pdf>
 Package pdftex.def Info: ./images/image33.pdf used on input line 772.
 (pdftex.def)             Requested size: 199.16928pt x 37.93504pt.
 
-<./images/image34.pdf, id=1361, 92.092pt x 120.09358pt>
+<./images/image34.pdf, id=1497, 92.092pt x 120.09358pt>
 File: ./images/image34.pdf Graphic file (type pdf)
 
 <use ./images/image34.pdf>
@@ -1554,12 +1563,13 @@ Package pdftex.def Info: ./images/image34.pdf used on input line 782.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29 <F:/LaTeX/Ultimate/sk_ultimate/images/image33.pdf> <F:/LaTeX/Ultimate/sk_u
-ltimate/images/image34.pdf
+ [29 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image33.pdf> <F:/Uczelnia/Sem 5/S
+K/sk_ultimate/images/image34.pdf
 
-pdfTeX warning: pdflatex.exe (file F:/LaTeX/Ultimate/sk_ultimate/images/image34
-.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [30] <./images/image35.pdf, id=1394, 439.35912pt x 333.27238pt>
+pdfTeX warning: pdflatex.exe (file F:/Uczelnia/Sem 5/SK/sk_ultimate/images/imag
+e34.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
+e
+>] [30] <./images/image35.pdf, id=1530, 439.35912pt x 333.27238pt>
 File: ./images/image35.pdf Graphic file (type pdf)
 
 <use ./images/image35.pdf>
@@ -1570,8 +1580,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 837--839
 
  []
 
-[31 <F:/LaTeX/Ultimate/sk_ultimate/images/image35.pdf>] [32]
-<./images/image38.pdf, id=1425, 384.97473pt x 249.04558pt>
+[31 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image35.pdf>] [32]
+<./images/image38.pdf, id=1561, 384.97473pt x 249.04558pt>
 File: ./images/image38.pdf Graphic file (type pdf)
 
 <use ./images/image38.pdf>
@@ -1589,7 +1599,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 890--908
 
 LaTeX Font Info:    Try loading font information for OML+cmr on input line 914.
 
-("G:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
@@ -1597,21 +1607,21 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 
 Underfull \vbox (badness 4279) has occurred while \output is active []
 
- [33 <F:/LaTeX/Ultimate/sk_ultimate/images/image38.pdf>]
-<./images/image37.pdf, id=1438, 384.97473pt x 249.04558pt>
+ [33 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image38.pdf>]
+<./images/image37.pdf, id=1574, 384.97473pt x 249.04558pt>
 File: ./images/image37.pdf Graphic file (type pdf)
 
 <use ./images/image37.pdf>
 Package pdftex.def Info: ./images/image37.pdf used on input line 928.
 (pdftex.def)             Requested size: 184.9429pt x 119.64311pt.
 
-<./images/image40.pdf, id=1439, 222.2195pt x 192.69582pt>
+<./images/image40.pdf, id=1575, 222.2195pt x 192.69582pt>
 File: ./images/image40.pdf Graphic file (type pdf)
 
 <use ./images/image40.pdf>
 Package pdftex.def Info: ./images/image40.pdf used on input line 948.
 (pdftex.def)             Requested size: 99.58464pt x 86.35359pt.
- [34 <F:/LaTeX/Ultimate/sk_ultimate/images/image37.pdf>]
+ [34 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image37.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 956--969
 
  []
@@ -1621,61 +1631,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 969--985
 
  []
 
-<./images/image42.pdf, id=1453, 222.85083pt x 154.06787pt>
+<./images/image42.pdf, id=1589, 222.85083pt x 154.06787pt>
 File: ./images/image42.pdf Graphic file (type pdf)
 
 <use ./images/image42.pdf>
 Package pdftex.def Info: ./images/image42.pdf used on input line 993.
 (pdftex.def)             Requested size: 199.16928pt x 137.69829pt.
- [35 <F:/LaTeX/Ultimate/sk_ultimate/images/image40.pdf>] <./images/image43.pdf,
- id=1467, 222.85083pt x 178.42911pt>
+ [35 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image40.pdf>] <./images/image43.p
+df, id=1603, 222.85083pt x 178.42911pt>
 File: ./images/image43.pdf Graphic file (type pdf)
 
 <use ./images/image43.pdf>
 Package pdftex.def Info: ./images/image43.pdf used on input line 995.
 (pdftex.def)             Requested size: 199.16928pt x 159.47115pt.
 
-<./images/image44.pdf, id=1468, 103.51987pt x 139.03241pt>
+<./images/image44.pdf, id=1604, 103.51987pt x 139.03241pt>
 File: ./images/image44.pdf Graphic file (type pdf)
 
 <use ./images/image44.pdf>
 Package pdftex.def Info: ./images/image44.pdf used on input line 1002.
 (pdftex.def)             Requested size: 85.35826pt x 114.64374pt.
- [36 <F:/LaTeX/Ultimate/sk_ultimate/images/image42.pdf> <F:/LaTeX/Ultimate/sk_u
-ltimate/images/image43.pdf
+ [36 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image42.pdf> <F:/Uczelnia/Sem 5/S
+K/sk_ultimate/images/image43.pdf
 
-pdfTeX warning: pdflatex.exe (file F:/LaTeX/Ultimate/sk_ultimate/images/image43
-.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <F:/LaTeX/Ultimate/sk_ultimate/images/image44.pdf
+pdfTeX warning: pdflatex.exe (file F:/Uczelnia/Sem 5/SK/sk_ultimate/images/imag
+e43.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
+e
+> <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image44.pdf
 
-pdfTeX warning: pdflatex.exe (file F:/LaTeX/Ultimate/sk_ultimate/images/image44
-.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] <./images/image45.pdf, id=1509, 361.2491pt x 155.0965pt>
+pdfTeX warning: pdflatex.exe (file F:/Uczelnia/Sem 5/SK/sk_ultimate/images/imag
+e44.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
+e
+>] <./images/image45.pdf, id=1645, 361.2491pt x 155.0965pt>
 File: ./images/image45.pdf Graphic file (type pdf)
 
 <use ./images/image45.pdf>
 Package pdftex.def Info: ./images/image45.pdf used on input line 1025.
 (pdftex.def)             Requested size: 199.16928pt x 85.51158pt.
 
-<./images/image46.pdf, id=1510, 360.50021pt x 292.76898pt>
+<./images/image46.pdf, id=1646, 360.50021pt x 292.76898pt>
 File: ./images/image46.pdf Graphic file (type pdf)
 
 <use ./images/image46.pdf>
 Package pdftex.def Info: ./images/image46.pdf used on input line 1044.
 (pdftex.def)             Requested size: 199.16928pt x 161.75159pt.
 
-<./images/image47.pdf, id=1511, 360.50021pt x 303.52196pt>
+<./images/image47.pdf, id=1647, 360.50021pt x 303.52196pt>
 File: ./images/image47.pdf Graphic file (type pdf)
 
 <use ./images/image47.pdf>
 Package pdftex.def Info: ./images/image47.pdf used on input line 1048.
 (pdftex.def)             Requested size: 199.16928pt x 167.69249pt.
- [37 <F:/LaTeX/Ultimate/sk_ultimate/images/image45.pdf> <F:/LaTeX/Ultimate/sk_u
-ltimate/images/image46.pdf
+ [37 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image45.pdf> <F:/Uczelnia/Sem 5/S
+K/sk_ultimate/images/image46.pdf
 
-pdfTeX warning: pdflatex.exe (file F:/LaTeX/Ultimate/sk_ultimate/images/image46
-.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [38 <F:/LaTeX/Ultimate/sk_ultimate/images/image47.pdf>]
+pdfTeX warning: pdflatex.exe (file F:/Uczelnia/Sem 5/SK/sk_ultimate/images/imag
+e46.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
+e
+>] [38 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/image47.pdf>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 1083.
@@ -1704,80 +1717,237 @@ Underfull \hbox (badness 10000) in paragraph at lines 1257--1259
 
  []
 
-) (F:\LaTeX\Ultimate\sk_ultimate\tex\sk_zadania.tex [42] [43]
-Overfull \hbox (18.81924pt too wide) in paragraph at lines 60--62
+) ("F:\Uczelnia\Sem 5\SK\sk_ultimate\tex\sk_zadania.tex" [42]
+<./images/zadanie02.pdf, id=1707, 548.29463pt x 252.142pt>
+File: ./images/zadanie02.pdf Graphic file (type pdf)
+
+<use ./images/zadanie02.pdf>
+Package pdftex.def Info: ./images/zadanie02.pdf used on input line 13.
+(pdftex.def)             Requested size: 156.49014pt x 71.96509pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
+
+ []
+
+<./images/zadanie03.pdf, id=1708, 862.54424pt x 949.4341pt>
+File: ./images/zadanie03.pdf Graphic file (type pdf)
+
+<use ./images/zadanie03.pdf>
+Package pdftex.def Info: ./images/zadanie03.pdf used on input line 17.
+(pdftex.def)             Requested size: 312.9803pt x 344.50511pt.
+ [43 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie02.pdf> <F:/Uczelnia/Sem 5
+/SK/sk_ultimate/images/zadanie03.pdf
+
+pdfTeX warning: pdflatex.exe (file F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zada
+nie03.pdf): PDF inclusion: multiple pdfs with page group included in a single p
+age
+>] <./images/zadanie04.pdf, id=1737, 364.15855pt x 337.39049pt>
+File: ./images/zadanie04.pdf Graphic file (type pdf)
+
+<use ./images/zadanie04.pdf>
+Package pdftex.def Info: ./images/zadanie04.pdf used on input line 31.
+(pdftex.def)             Requested size: 142.26378pt x 131.80313pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--53
+
+ []
+
+[44 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie04.pdf>] [45]
+Overfull \hbox (18.81924pt too wide) in paragraph at lines 108--110
 \OT4/cmr/m/it/10 z prze-dzia-ªu \OT4/cmr/bx/it/10 o wiel-ko-±ci ro-sn¡-cej z kw
 a-dra-tem do pew-ne-go nu-me-ru ko-li-zji, $[]$ 
  []
 
-[44]
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <9> on input line 97.
-
-Underfull \hbox (badness 10000) in paragraph at lines 103--117
+(Font)              <9> on input line 145.
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 151--165
 
  []
 
-[45] <./images/zadanie01.pdf, id=1611, 539.05211pt x 381.49797pt>
+
+Overfull \hbox (33.07394pt too wide) in paragraph at lines 169--181
+[] 
+ []
+
+<./images/zadanie05.pdf, id=1777, 703.32059pt x 679.90915pt>
+File: ./images/zadanie05.pdf Graphic file (type pdf)
+
+<use ./images/zadanie05.pdf>
+Package pdftex.def Info: ./images/zadanie05.pdf used on input line 195.
+(pdftex.def)             Requested size: 199.16928pt x 192.53117pt.
+
+<./images/zadanie06.pdf, id=1778, 703.32059pt x 679.90915pt>
+File: ./images/zadanie06.pdf Graphic file (type pdf)
+
+<use ./images/zadanie06.pdf>
+Package pdftex.def Info: ./images/zadanie06.pdf used on input line 197.
+(pdftex.def)             Requested size: 199.16928pt x 192.53117pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--210
+
+ []
+
+[47] <./images/zadanie07.pdf, id=1791, 275.0627pt x 171.89935pt>
+File: ./images/zadanie07.pdf Graphic file (type pdf)
+
+<use ./images/zadanie07.pdf>
+Package pdftex.def Info: ./images/zadanie07.pdf used on input line 221.
+(pdftex.def)             Requested size: 142.26378pt x 88.91078pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--225
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--225
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--225
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 217--225
+
+ []
+
+[48 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie05.pdf> <F:/Uczelnia/Sem 5/
+SK/sk_ultimate/images/zadanie06.pdf
+
+pdfTeX warning: pdflatex.exe (file F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zada
+nie06.pdf): PDF inclusion: multiple pdfs with page group included in a single p
+age
+>]
+
+LaTeX Warning: Command \l invalid in math mode on input line 225.
+
+Missing character: There is no ª in font plmi9!
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--226
+
+ []
+
+<./images/zadanie08.pdf, id=1812, 1370.33171pt x 171.89935pt>
+File: ./images/zadanie08.pdf Graphic file (type pdf)
+
+<use ./images/zadanie08.pdf>
+Package pdftex.def Info: ./images/zadanie08.pdf used on input line 236.
+(pdftex.def)             Requested size: 455.24408pt x 57.10728pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--240
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--240
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--240
+
+ []
+
+
+Overfull \hbox (2.27626pt too wide) in paragraph at lines 233--240
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--240
+
+ []
+
+[49 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie07.pdf> <F:/Uczelnia/Sem 5/
+SK/sk_ultimate/images/zadanie08.pdf
+
+pdfTeX warning: pdflatex.exe (file F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zada
+nie08.pdf): PDF inclusion: multiple pdfs with page group included in a single p
+age
+>] [50] <./images/zadanie01.pdf, id=1841, 539.05211pt x 381.49797pt>
 File: ./images/zadanie01.pdf Graphic file (type pdf)
 
 <use ./images/zadanie01.pdf>
-Package pdftex.def Info: ./images/zadanie01.pdf used on input line 149.
+Package pdftex.def Info: ./images/zadanie01.pdf used on input line 301.
 (pdftex.def)             Requested size: 170.71652pt x 120.81863pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
 
  []
 
-[46 <F:/LaTeX/Ultimate/sk_ultimate/images/zadanie01.pdf>])
-(F:\LaTeX\Ultimate\sk_ultimate\tex\sk_slownik.tex [47] [48] [49] [50])
+[51 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie01.pdf>] [52])
+("F:\Uczelnia\Sem 5\SK\sk_ultimate\tex\sk_slownik.tex" [53] [54] [55] [56])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 72.
- [51]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
 
-(F:\LaTeX\Ultimate\sk_ultimate\sk_ultimate.aux)
+[57]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
+ ("F:\Uczelnia\Sem 5\SK\sk_ultimate\sk_ultimate.aux")
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 72.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 72.
 Package rerunfilecheck Info: File `sk_ultimate.out' has not changed.
-(rerunfilecheck)             Checksum: 5E3AC5C5A25291F7BBCF4DB57EFAFB9C;32425.
+(rerunfilecheck)             Checksum: 7AD13FCAB9612A2AD8E3B7EC6DBA5045;36143.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 72.
  ) 
 Here is how much of TeX's memory you used:
- 19903 strings out of 493921
- 328980 string characters out of 3147283
- 381185 words of memory out of 3000000
- 22467 multiletter control sequences out of 15000+200000
- 29598 words of font info for 77 fonts, out of 3000000 for 9000
+ 20024 strings out of 493921
+ 330212 string characters out of 3147285
+ 402185 words of memory out of 3000000
+ 22535 multiletter control sequences out of 15000+200000
+ 29935 words of font info for 78 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 68i,13n,98p,10443b,629s stack positions out of 5000i,500n,10000p,200000b,50000s
-{G:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plms.enc}{G:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}{G:/Program Files (x86)/MiKTeX
- 2.9/fonts/enc/dvips/pl/plmi.enc}{G:/Program Files (x86)/MiKTeX 2.9/fonts/enc/d
-vips/pl/plit.enc}{G:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plsc.enc
-}{G:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plme.enc} <C:\Users\doxu
-s\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk><G:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><G:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plbx10.pfb><G:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><G:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/pl/plbx9.pfb><G:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/pl/plbxti10.pfb><G:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
-lic/pl/plex10.pfb><G:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plmi
-10.pfb><G:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plmi5.pfb><G:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plmi7.pfb><G:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/pl/plmi9.pfb><G:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/pl/plr10.pfb><G:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/pl/plr12.pfb><G:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
-/pl/plr17.pfb><G:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr5.pfb
-><G:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr6.pfb><G:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr7.pfb><G:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/pl/plr9.pfb><G:/Program Files (x86)/MiKTeX 2.9/fon
-ts/type1/public/pl/plsy10.pfb><G:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
-blic/pl/plsy7.pfb><G:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plsy
-9.pfb><G:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plti10.pfb><G:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plti9.pfb>
-Output written on sk_ultimate.pdf (51 pages, 5110457 bytes).
+ 68i,13n,98p,10443b,650s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Mati\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\t
+crm0900.pk>{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plmi.enc}{C:/Program
+ Files/MiKTeX 2.9/fonts/enc/dvips/pl/plms.enc}{C:/Program Files/MiKTeX 2.9/font
+s/enc/dvips/pl/plrm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plit.en
+c}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plsc.enc}{C:/Program Files/Mi
+KTeX 2.9/fonts/enc/dvips/pl/plme.enc} <C:\Users\Mati\AppData\Local\MiKTeX\2.9\f
+onts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/pl/plbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plbx12.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plbx9.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/pl/plbxti10.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/pl/plex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/pl/plmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plmi5.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plmi6.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/pl/plmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/pl/plmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr10
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/pl/plr17.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/pl/plr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl
+/plr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr7.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/pl/plr9.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/pl/plsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/pl/plsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plsy7.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plsy9.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/pl/plti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/pl/plti9.pfb>
+Output written on sk_ultimate.pdf (57 pages, 5256885 bytes).
 PDF statistics:
- 1967 PDF objects out of 2073 (max. 8388607)
- 464 named destinations out of 1000 (max. 500000)
- 1885 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2225 PDF objects out of 2487 (max. 8388607)
+ 511 named destinations out of 1000 (max. 500000)
+ 2192 words of extra memory for PDF output out of 10000 (max. 10000000)
 
