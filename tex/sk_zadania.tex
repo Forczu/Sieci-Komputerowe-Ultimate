@@ -3,10 +3,10 @@
 \newpage
 \part{Zadania}
 % ==================================================
-% --- TOPOLOGIA SIECI
+% --- 1. TOPOLOGIA SIECI
 % ==================================================
 \section{Topologia sieci}
-	% ================= ZADANIE 1 ==================
+	% ================= ZADANIE 1.1 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			\begin{wrapfigure}{l}{6.0cm}
@@ -16,7 +16,7 @@
 		\subsubsection{Odpowiedź}
 			\includegraphics[width=11.0cm]{./images/zadanie03.pdf}\\
 			A więc stacja A dowie się o niedostępności stacji F po $ 12\cdot 40\;s=480\;s $.
-	% ================= ZADANIE 2 ==================
+	% ================= ZADANIE 1.2 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Dana jest następująca topologia sieci:
@@ -52,10 +52,10 @@
 			Obliczenia kończą się, gdy koszt trasy z węzła E do B przekroczy 15. Wówczas widzimy, że dokonanych zmian było 14, a więc czas wynosi: $ 14\cdot 30\;s=420\;s=7$ minut.
 
 % ==================================================
-% --- ETHERNET
+% --- 2. ETHERNET
 % ==================================================
 \section{Ethernet}
-	% ================= ZADANIE 1 ==================
+	% ================= ZADANIE 2.1 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Kontroler karty sterownika sieci Ethernet odebrał następujące ramki:
@@ -84,7 +84,7 @@
 				\item Błąd protokołu
 				\item Błąd protokołu
 			\end{enumerate}
-	% ================= ZADANIE 2 ==================
+	% ================= ZADANIE 2.2 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			W przypadku wystąpienia kolizji w segmencie sieci Ethernet czas oczekiwania na retransmisję $ T_R $ generowany jest jako liczba losowa z przedziału:
@@ -109,10 +109,10 @@
 			{\small \emph{Forczu: jeszcze to sprawdzę}}.
 			
 % ==================================================
-% --- TCP / IP
+% --- 3. TCP / IP
 % ==================================================
 \section{TCP / IP}
-% ================= ZADANIE 1 ==================
+% ================= ZADANIE 3.1 ==================
 \subsection{Zadanie}
 	\subsubsection{Treść}
 		Przedstaw i porównaj dostępne mechanizmy działania protokołu sterowania przypływem w połączeniach warstwy transportowej i w połączeniach warstwy liniowej (np. SDLC, TCP). W jaki sposób odbierająca stacja transportowa może uzyskać czasowe powstrzymanie transmisji przez nadawcę?
@@ -123,10 +123,10 @@
 		\end{itemize}
 	
 % ==================================================
-% --- ROUTING
+% --- 4. ROUTING
 % ==================================================
 \section{Routing}
-	% ================= ZADANIE 1 ==================
+	% ================= ZADANIE 4.1 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			\begin{wraptable}{r}{5.5cm}
@@ -177,7 +177,7 @@
 				Nowe $ Z=5 $, czyli to samo co wyżej.\\
 				Nowe $ V=5 $, tego nie ma w obecnej tablicy, więc po prostu jest dodane.
 		\end{enumerate}
-	% ================= ZADANIE 2 ==================
+	% ================= ZADANIE 4.2 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Węzeł D odebrał / wysłał do chwili $ T_0 $ następujące pakiety.\\
@@ -221,7 +221,7 @@
 				H   & 1.5   & D     
 			\end{tabular}\\
 			\small{ \emph{Forczu: ocenione na 1.0 / 1.0}}.
-	% ================= ZADANIE 2 ==================
+	% ================= ZADANIE 4.3 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Węzeł K po restarcie wysłał do sąsiadów L, I, F swoją początkową tablicę routingu i otrzymał od nich ich tablice routingu. Wyznacz nową tablicę routingu węzła K.\\\\
@@ -257,8 +257,12 @@
 		\end{wraptable}
 		W tym wszystkim interesują nas tylko drogi lokalnie najbliższe - te z punktu widzenia węzła K i "ofert" dróg sąsiadów. Jeśli dwie drogi mają ten sam koszt to wybór powinien być obojętny. Sąsiedzi (L, I, D) mają się w końcowej tabeli również znajdować.\\
 		\small{ \emph{Forczu: ocenione na 1.0 / 1.0}}.\\\\\\\\\\\\\\\\\\\\\\\\
+		
+% ==================================================
+% --- 5. TRANSMISJA DANYCH
+% ==================================================
 \section{Transmisja danych}
-% ================= ZADANIE 1 ==================
+% ================= ZADANIE 5.1 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Stacja robocza połączona jest z serwerem łączem szeregowym o przepustowości 8 MBit/s, z bitową stopą błędów $ BER=2\cdot 10^{-5} $. Określić z jaką średnią szybkością transmisji danych protokołem TCP w wersji standardowej (\emph{plain vanilla}) można uzyskać jeśli uzgodniona maksymalna wielkość segmentu wynosi 768 B (ramki w łączu 832 B), wielkość danych odbiorcy wynosi 27 kB, czas $ RTT=40\;ms $.
@@ -273,8 +277,9 @@
 			Efektywna prędkość:
 			$$ SRET=\frac{((Liczba\;ramek - liczba\;ramek\;przekłamanych)\cdot Rozmiar\;segmentu}{Liczba\;kolumn\;w\;cyklu\cdot RTT} $$\\
 			$$ \frac{14\cdot 768\;[B]}{5\cdot 40\;[ms]}=\frac{14\cdot 768\;[B]}{5\cdot 40\cdot 10^{-3}\;[s]}=53760\;[\frac{B}{s}]=52.5 [\frac{kB}{s}]$$
-			\small{ \emph{Forczu: z jakiegoś opracowania, powinno być dobrze.}}.
-	% ================= ZADANIE 2 ==================
+			\small{\emph{Forczu: z jakiegoś opracowania, powinno być dobrze.}}\\\\
+			\textbf{WAŻNE}: w TCP są dwie możliwości, słupki rosną 1-2-4-8-16-32-... (\emph{slow start}) albo 1-2-4-8-9-10-11-12-... (\emph{congestion avoidance}). W poleceniach najprawdopodobniej chodzi o ten drugi - od pewnej wartości słupki rosną \textbf{liniowo}. Podobno liniowość zaczyna się od połowy transferu.
+	% ================= ZADANIE 5.2 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Stacja robocza połączona jest z serwerem łączem szeregowym o przepustowości $ 10\;Mbit/s $, z bitową stopą błędów $ BER=1.3\cdot 10^{-5} $. Określ z jaką średnią szybkością można przesyłać dane z serwera protokołem TCP w wersji standardowej, jeśli wielkość segmentu wynosi 768 kB (ramki 832 B), wielkość okna odbiorcy 29 kB, średni czas $ RTT=45\;ms $.
@@ -291,7 +296,7 @@
 			\end{enumerate}
 			\small{ \emph{Forczu: w tego typu zadaniach przepustowość chyba zawsze jest maksymalna, a protokoół standardowy, co ma upraszczać całość.
 			Ktoś tam napisał, że wielkość ramki we wzorach jest obojętna, ale należy zaznaczyć, czy bierzemy dane czy dane + narzut.}}.
-	% ================= ZADANIE 3 ==================
+	% ================= ZADANIE 5.3 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Stacja robocza podłączona jest z serwerem łączem o przepustowości $ 55\;Mbit/s $, z bitową stopą błędów $ BER=4.9\cdot 10^{-6} $. określ, ile czasu zajmie przesłanie tym łączem pliku 100 kB danych, od nawiązania do zakończenia połączenia protokołem TCP w wersji standardowej, jeśli uzgodniona maksymalna wielkość segmentu wynosi 1024 B (ramki o łączu 1082 B), wielkość okna odbiorcy wynosi 17 kB, a czas RTT wynosi 25 ms.
@@ -303,7 +308,7 @@
 				\item $ \cfrac{\frac{125\;000}{4.9}}{1082}\approx 23.58 $ - co 24 ramka jest przekłamana.
 			\end{itemize}
 			TODO: uzupełnić tej szajs analogicznie.
-	% ================= ZADANIE 4 ==================
+	% ================= ZADANIE 5.4 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			W systemie transmisji posługującym się protokołem SDLC (tryb NRM, w=3, retransmisja grupowa) w łączu ze stopą błędów $ p=10^{-4} $ przesyłane są dane ramkami z polem danych 256 B, ze stacji nadrzędnej do stacji podrzędnej. Przedstaw przebieg transmisji w przesyle \textbf{4.5 kB} danych, pomiń nawiązanie / zrywanie połączenia. Ile kosztuje (narzut protokołu) obsługa błędów w transmisji?
@@ -317,7 +322,7 @@
 			Następnie należy policzyć narzut (ilość wszystkich ramek - ilość wymaganych ramek)\\
 			$$ Narzut = 28 - 18  = 10\;ramek = 10 * 256\;B = 2560\;B $$
 			\small{ \emph{Forczu: ocenione na 1.0 / 1.0}}.
-	% ================= ZADANIE 5 ==================
+	% ================= ZADANIE 5.5 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			W systemie z protokołem SDLC (tryb NRM, w=3, retransmisja grupowa), ze stopą błędów $ p=10^{-4} $, ramki są wysyłane z polem danych 256 B ze stacji nadrzędnej do podrzędnej. Przedstaw przebieg transmisji przy przesyle \textbf{4 kB} danych. Pomiń nawiązanie i zerwanie połączenia. Ile kosztuje (narzut protokołu) obsługa błędów w transmisji?
@@ -326,7 +331,7 @@
 			$$ \cfrac{4\;[kB]}{256\;[B]}=16\;[ramek] $$
 			\includegraphics[width=8.0cm]{./images/zadanie10.pdf}\\\\
 			Wysłaliśmy łącznie 24 ramki. Narzut: 24 - 16 = 8 ramek = 2048 B
-	% ================= ZADANIE 6 ==================
+	% ================= ZADANIE 5.6 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			W systemie transmisji z protokołem HDLC średnio jeden na 9000 bitów jest przekłamany. Jaki będzie koszt obsługi błędów transmisji przy przesyle bloku 4 kB danych ze stacji B do stacji A w tym systemie, jeśli wielkość pola danych to 256 B, okno w=4, tryb NRM z retransmisją grupową.
@@ -335,7 +340,7 @@
 			$ \cfrac{1}{9000} $ bitów przekłamanych $ \rightarrow \cfrac{1}{1125}\;[B] \rightarrow $ co 5 ramka przekłamana.\\\\
 			\includegraphics[width=8.0cm]{./images/zadanie12.pdf}\\\\
 			Wysłano 28 ramek. Narzut: 28 - 16 = 12 ramek = 3 kB = 3072 B.
-	% ================= ZADANIE 7 ==================
+	% ================= ZADANIE 5.7 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Chcemy zastosować protokół CSMA / CD przy budowie sieci o długości łącza 500 m przy szybkości transmisji 200 MBit/s. Jaka powinna być w tym przypadku minimalna długość ramki?
@@ -347,8 +352,7 @@
 			$$ N=szybkosc\_transmisji\cdot t_p $$
 			Razy dwa ponieważ "Istnieje możliwość, że dwa lub więcej urządzeń przystąpi do wysyłania danych w tej samej chwili lub zanim sygnał z pierwszego węzła dotrze do drugiego. W takiej sytuacji żadne z nich nie wykryje sygnału nośnego drugiego. W efekcie obydwa urządzenia wysyłając dane w (prawie) tym samym czasie spowodują kolizję w sieci Ethernet."
 			$$ N=200\:000\:000\:[bit]\cdot \frac{5}{10^6} =200\cdot5=1000\:bit=125\:B $$
-						
-	% ================= ZADANIE 6 ==================
+	% ================= ZADANIE 5.8 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Węzeł W ma za sąsiadów węzły A, B, C, D i E. Po otrzymaniu pakietu Link State węzeł oczekuje 35 ms, następnie przystępuje do dystrybucji pakietu. W chwili $ t_0 $ węzeł odebrał pakiet z węzła B, $ 5\;ms $ później z węzła D, a po 13 $ ms $ pakiet z węzła E. Przedstaw przebieg dystrybucji pakietów\\.
@@ -371,12 +375,27 @@
 				\item Do węzła E wyśle: potwierdzenie.
 				\item Do węzła A wyśle: E.
 			\end{itemize}
-	% ================= ZADANIE 7 ==================
-	
+	% ================= ZADANIE 5.9 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			Drukarka wierszowa posiada jeden bufor na 80 znaków (1 wiersz tekstu). Wydruk bufora zajmuje 25 ms, w czasie których drukarka nie przyjmuje danych. Stacja nadrzędna przesyła notatkę - 3 wiesze (bloki po 80 znaków) łączem o szybkości transmisji 19200 bitów / s, protokół BSC (2 znaki SYN). Przedstaw przebieg komunikacji SN-SP (drukarka). Załóż brak przekłamań, pomiń fazę nawiązania połączenia. Przyjmij czas przetwarzania żądania / odpowiedzi i propagacji sygnału łączem 2.5 $ \mu s $.
+		\subsubsection{Odpowiedź}
+			19200 $ [\cfrac{b}{s}] $ = 2400 $ [\cfrac{B}{s}] $, czyli 2.4k $ \cfrac{znakow}{s} $, ostatecznie ok. 0.4 ms na jeden znak.
+			\includegraphics[width=9.0cm]{./images/zadanie13.pdf}\\\\
+			\begin{itemize}
+				\item Sprowadzamy prędkość transmisji do czasu przesyłu jednego znaku: 1 znak / 0.4 ms. Jest to podstawa do większości czasów.
+				\item Stacja nadrzędna, jak się połączy, zaczyna nadawać. Drukarka odbiera i zaczyna drukować.
+				\item Drukowanie ma trwać (minimum) 25 ms. W tym czasie drukarka wysyła WACKi - SN nie wysyła danych, ale zostaje utrzymana komunikacja. SN następnie wysyła zapytania ENQ - czy może przesłać następny wiersz.
+				\item Drukarka kończy działanie po 4 wymianach jałowej informacji, po czym wysyła SYN SYN ACK. Po tym sygnale komputer może wysłać kolejne 80 znaków do drukarki.
+				\item Podobno swetrowi chodziło bardziej o zilustrowanie procesu niż wyliczania czasów.
+			\end{itemize}
 			
-
+			
+% ==================================================
+% --- 6. ADRESACJA
+% ==================================================
 \section{Adresacja}
-	% ================= ZADANIE 1 ==================
+	% ================= ZADANIE 6.1 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Jak przebiega (po raz pierwszy w danych środowisku) proces tłumaczenia nazwy na adres IP dla nazwy daisy.sales.euro.hp.com? Czy zwracany wynik i proces tłumaczenia różni się czymś przy drugiej próbie w stosunku do pierwszej (odstęp między żądaniami kilka minut, pierwsza zakończona pomyślnie)? Jak będzie przebiegał późniejszy o kilka minut proces tłumaczenia nazwy dino.support.americas.hp.com?
@@ -419,7 +438,7 @@
 					\end{enumerate}
 					\small{ \emph{Ocenione na 1.0 / 1.0}}
 			\end{enumerate}
-	% ================= ZADANIE 2 ==================
+	% ================= ZADANIE 6.2 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Dostępna jest pewna ilość kolejnych adresów internetowych, zaczynając od 192.170.0.0. Cztery organizacje A, B, C i D występowały kolejno o przydział puli 1000, 2000, 4000 i 1000 adresów IP. Podaj dla każdej z nich pierwszy i ostatni przyznany adres oraz maskę sieci w notacji w.x.y.z i /m.
@@ -457,7 +476,7 @@
 					\item Maska: /22
 				\end{itemize}
 			\end{enumerate}
-	% ================= ZADANIE 3 ==================
+	% ================= ZADANIE 6.3 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Firma dysponuje pulą 32 adresów IP. Przyjęto, że pierwszy i ostatni użyteczny adres zostaną przydzielone routerowi dostępowemu i serverowi DNS. Jeden z komputerów otrzymał adres 172.19.21.137. Podaj elementy konfiguracji IP tego komputera.
@@ -483,9 +502,11 @@
 			
 		\subsubsection{Odpowiedź}	
 			
-	
+% ==================================================
+% --- 7. POCZTA E-MAIL
+% ==================================================
 \section{Poczta e-mail}
-	% ================= ZADANIE 1 ==================
+	% ================= ZADANIE 7.1 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Przedstawić z jakich elementów składa się koperta przesyłki poczty elektronicznej.
