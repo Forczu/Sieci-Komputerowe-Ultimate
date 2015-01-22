@@ -329,6 +329,15 @@
 	% ================= ZADANIE 6 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
+			W systemie transmisji z protokołem HDLC średnio jeden na 9000 bitów jest przekłamany. Jaki będzie koszt obsługi błędów transmisji przy przesyle bloku 4 kB danych ze stacji B do stacji A w tym systemie, jeśli wielkość pola danych to 256 B, okno w=4, tryb NRM z retransmisją grupową.
+		\subsubsection{Odpowiedź}
+			$$ \cfrac{4\;[kB]}{256\;[B]}=16\;[ramek] $$
+			$ \cfrac{1}{9000} $ bitów przekłamanych $ \rightarrow \cfrac{1}{1125}\;[B] \rightarrow $ co 5 ramka przekłamana.\\\\
+			\includegraphics[width=8.0cm]{./images/zadanie12.pdf}\\\\
+			Wysłano 28 ramek. Narzut: 28 - 16 = 12 ramek = 3 kB = 3072 B.
+	% ================= ZADANIE 7 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
 			Chcemy zastosować protokół CSMA / CD przy budowie sieci o długości łącza 500 m przy szybkości transmisji 200 MBit/s. Jaka powinna być w tym przypadku minimalna długość ramki?
 		\subsubsection{Odpowiedź}
 			Najpierw liczymy czas propagacji $$ t_p = \cfrac{dystans}{predkosc\_lacza} $$
