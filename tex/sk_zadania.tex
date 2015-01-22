@@ -109,6 +109,20 @@
 			{\small \emph{Forczu: jeszcze to sprawdzę}}.
 			
 % ==================================================
+% --- TCP / IP
+% ==================================================
+\section{TCP / IP}
+% ================= ZADANIE 1 ==================
+\subsection{Zadanie}
+	\subsubsection{Treść}
+		Przedstaw i porównaj dostępne mechanizmy działania protokołu sterowania przypływem w połączeniach warstwy transportowej i w połączeniach warstwy liniowej (np. SDLC, TCP). W jaki sposób odbierająca stacja transportowa może uzyskać czasowe powstrzymanie transmisji przez nadawcę?
+	\subsubsection{Odpowiedź}
+		\begin{itemize}
+			\item \textbf{TCP} - kontrolowanie poprzez zmianę rozmiaru okna odbiorcy.
+			\item \textbf{SDLC / HDLC} - kontrolowanie przez sygnały typu WACK / ACK w protokole znakowym BSC (RR, RNR).
+		\end{itemize}
+	
+% ==================================================
 % --- ROUTING
 % ==================================================
 \section{Routing}
@@ -303,7 +317,7 @@
 			Następnie należy policzyć narzut (ilość wszystkich ramek - ilość wymaganych ramek)\\
 			$$ Narzut = 28 - 18  = 10\;ramek = 10 * 256\;B = 2560\;B $$
 			\small{ \emph{Forczu: ocenione na 1.0 / 1.0}}.
-	% ================= ZADANIE 4 ==================
+	% ================= ZADANIE 5 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			W systemie z protokołem SDLC (tryb NRM, w=3, retransmisja grupowa), ze stopą błędów $ p=10^{-4} $, ramki są wysyłane z polem danych 256 B ze stacji nadrzędnej do podrzędnej. Przedstaw przebieg transmisji przy przesyle \textbf{4 kB} danych. Pomiń nawiązanie i zerwanie połączenia. Ile kosztuje (narzut protokołu) obsługa błędów w transmisji?
@@ -312,7 +326,7 @@
 			$$ \cfrac{4\;[kB]}{256\;[B]}=16\;[ramek] $$
 			\includegraphics[width=8.0cm]{./images/zadanie10.pdf}\\\\
 			Wysłaliśmy łącznie 24 ramki. Narzut: 24 - 16 = 8 ramek = 2048 B
-	% ================= ZADANIE 5 ==================
+	% ================= ZADANIE 6 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Chcemy zastosować protokół CSMA / CD przy budowie sieci o długości łącza 500 m przy szybkości transmisji 200 MBit/s. Jaka powinna być w tym przypadku minimalna długość ramki?
