@@ -16,6 +16,7 @@
 		\subsubsection{Odpowiedź}
 			\includegraphics[width=11.0cm]{./images/zadanie03.pdf}\\
 			A więc stacja A dowie się o niedostępności stacji F po $ 12\cdot 40\;s=480\;s $.
+\newpage
 	% ================= ZADANIE 1.2 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
@@ -107,6 +108,19 @@
 			\end{itemize}
 			Dlatego poprawna odpowiedź to: \textit{Czas oczekiwania na retransmisję $ T_R $ generowany jest jako liczba losowa z przedziału \textbf{o wielkości rosnącej z kwadratem do pewnego numeru kolizji, \underline{a tym numerem jest 10}}}\\
 			{\small \emph{Forczu: jeszcze to sprawdzę}}.
+	% ================= ZADANIE 2.3 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			Chcemy zastosować protokół CSMA / CD przy budowie sieci o długości łącza 500 m przy szybkości transmisji 200 MBit/s. Jaka powinna być w tym przypadku minimalna długość ramki?
+		\subsubsection{Odpowiedź}
+			Najpierw liczymy czas propagacji $$ t_p = \cfrac{dystans}{predkosc\_lacza} $$
+			Prędkości łącza nie mylić z szybkością transmisji. W przypadku światłowodu wynosi ono 2/3 prędkości światła czyli 200 000 000 m/s, tu takie założenie można dać. O tej wartości należy pamiętać na sztywno. Następnie liczmy czas propagacji sygnału przez 500 [m]:
+			$$ t_p=\frac{500\;[m]}{200\:000\:000\:[m/s]}=2.5\:\mu s $$
+			W obie strony czas ten wynosi $ 2.5\:\mu s = 5\:\mu s$.\\
+			Bierzemy czas 2 razy, ponieważ "istnieje możliwość, że dwa lub więcej urządzeń przystąpi do wysyłania danych w tej samej chwili lub zanim sygnał z pierwszego węzła dotrze do drugiego. W takiej sytuacji żadne z nich nie wykryje sygnału nośnego drugiego. W efekcie obydwa urządzenia wysyłając dane w (prawie) tym samym czasie spowodują kolizję w sieci Ethernet."\\
+			Aby CSMA/CD działało poprawnie cała ramka musi być wysłana w tych $5\:\mu s$, czyli wyliczamy jej długość:
+			$$ N=szybkosc\_transmisji\cdot t_p $$
+			$$ N=200\:000\:000\:[bit]\cdot \frac{5}{10^6} =200\cdot5=1000\:bit=125\:B $$
 			
 % ==================================================
 % --- 3. TCP / IP
@@ -121,12 +135,52 @@
 			\item \textbf{TCP} - kontrolowanie poprzez zmianę rozmiaru okna odbiorcy.
 			\item \textbf{SDLC / HDLC} - kontrolowanie przez sygnały typu WACK / ACK w protokole znakowym BSC (RR, RNR).
 		\end{itemize}
-	
+
 % ==================================================
 % --- 4. ROUTING
 % ==================================================
 \section{Routing}
 	% ================= ZADANIE 4.1 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			Opisz zasadę działa algorytmu dystrybucji pakietów Link State. Przedstaw działanie algorytmu w węźle A w przypadku, gdy węzeł ma jako sąsiadów węzły B, C, D, E i F oraz otrzymał w czasie ostatnich 5 ms pakiety z węzłów C, F i D. Przyjąć, że maksymalny czas oczekiwania na kolejne kopie to 10 ms i węzeł nie odebrał w tym czasie innych pakietów.
+		\subsubsection{Odpowiedź}
+				\begin{tabular}{|c|c|c|c|c|c|c|c|}
+					\hline \multicolumn{2}{|c|}{\textbf{C}}  & & \multicolumn{2}{|c|}{\textbf{F}} & & \multicolumn{2}{|c|}{\textbf{D}}\\ 
+					\hline \multicolumn{2}{|c|}{213} & &\multicolumn{2}{|c|}{214} & &\multicolumn{2}{|c|}{214} \\ 
+					\hline \multicolumn{2}{|c|}{178} & &\multicolumn{2}{|c|}{260} & &\multicolumn{2}{|c|}{259}   \\ 
+					\hline U & 3 & & U & 2 & & U & 2\\ 
+					\hline V & 5 & & V & 4 & & V & 4\\
+					\hline Z & 4 & & Z & 5 & & Z & 5\\
+					\hline 
+				\end{tabular}\\\\\\
+			Przykładowy zestaw pakietów zadziała następująco: stacja A wyśle potwierdzenia do węzłów F i D. Do węzłów B, C i E wyśle pakiet z F. Dlaczego?\\
+			Potwierdzenia wysyłane są do węzłów z których przyszły pakiety z najwyższym numerem sekwencyjnym (drugi wiersz). W tym przypadku są to węzły F i D, których $ seq $ są równie 214. Do sąsiadów, którzy nie otrzymali potwierdzenia (B, C i E) wysyłany jest ten spośród pakietów z najwyższym numerem sekwencyjnym, którego pole Age (trzeci wiersz) jest największe. Dlatego co tych trzech węzłów zostanie wysłany pakiet z F.
+\newpage
+	% ================= ZADANIE 4.2 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			Węzeł W ma za sąsiadów węzły A, B, C, D i E. Po otrzymaniu pakietu Link State węzeł oczekuje 35 ms, następnie przystępuje do dystrybucji pakietu. W chwili $ t_0 $ węzeł odebrał pakiet z węzła B, $ 5\;ms $ później z węzła D, a po 13 $ ms $ pakiet z węzła E. Przedstaw przebieg dystrybucji pakietów\\.
+			\begin{tabular}{|c|c|c|c|c|c|c|c|}
+				\hline \multicolumn{2}{|c|}{\textbf{E}}  & & \multicolumn{2}{|c|}{\textbf{B}} & & \multicolumn{2}{|c|}{\textbf{D}}\\ 
+				\hline \multicolumn{2}{|c|}{55} & &\multicolumn{2}{|c|}{55} & &\multicolumn{2}{|c|}{55} \\ 
+				\hline \multicolumn{2}{|c|}{240} & &\multicolumn{2}{|c|}{238} & &\multicolumn{2}{|c|}{239}   \\ 
+				\hline U & 2 & & U & 1 & & U & 2\\ 
+				\hline V & 3 & & V & 2 & & V & 3\\
+				\hline Z & 6 & & Z & 5 & & Z & 6\\
+				\hline 
+			\end{tabular}
+		\subsubsection{Odpowiedź}
+			Do węzłów, których pakiety miały największy nr sekwencyjny (2gi wiersz) wysyła potwierdzenie
+			Do pozostałych wysyła pakiet tego węzła, który miał największy nr sekwencyjny i age (3ci wiersz).
+			\begin{itemize}
+				\item Do węzła D wyśle: potwierdzenie.
+				\item Do węzła C wyśle: E.
+				\item Do węzła B wyśle: potwierdzenie.
+				\item Do węzła E wyśle: potwierdzenie.
+				\item Do węzła A wyśle: E.
+			\end{itemize}
+	% ================= ZADANIE 4.3 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			\begin{wraptable}{r}{5.5cm}
@@ -152,6 +206,7 @@
 				\item Nr sekwencyjny - jeśli ktoś dostanie pakiet o większym numerze, to go przetwarza (i przesyła dalej), a jeśli nie jest większy, to nie.
 				\item Wiek - czas życia pakietu (w cyklu). Jeśli czas życia upływa to jest usuwany z tablicy routingu. Liczony w sekundach.
 			\end{itemize}
+\newpage
 			\textbf{Odpowiedzi}:
 			\begin{enumerate}
 				\item Węzły odrzucają pakiet z niższym numerem sekwencyjnym, więc nowy pakiet będzie uwzględniony po wygaśnięciu wa(żności?) pierwszego, czyli za $ 275\;s $.\\
@@ -177,7 +232,7 @@
 				Nowe $ Z=5 $, czyli to samo co wyżej.\\
 				Nowe $ V=5 $, tego nie ma w obecnej tablicy, więc po prostu jest dodane.
 		\end{enumerate}
-	% ================= ZADANIE 4.2 ==================
+	% ================= ZADANIE 4.4 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Węzeł D odebrał / wysłał do chwili $ T_0 $ następujące pakiety.\\
@@ -192,6 +247,7 @@
 				\multicolumn{2}{c}{1} &  & \multicolumn{2}{c}{2} &  & \multicolumn{2}{c}{3} &  & \multicolumn{2}{c}{4} &  & \multicolumn{2}{c}{5} &  & \multicolumn{2}{c}{6} &  & \multicolumn{2}{c}{7} &  & \multicolumn{2}{c}{8} &  & \multicolumn{2}{c}{9} &  & \multicolumn{2}{c}{10} \\ 
 			\end{tabular}\\
 			W czasie $ T_0+5 $ węzeł D rozpoczął wyznaczanie nowej tablicy routingu. Przedstawić nową tablicę routingu dla węzła D.
+\newpage
 		\subsubsection{Odpowiedź}
 			Format pakiety wyraźnie wskazuje, że mamy do czynienia z algorytmem Link State.
 			\begin{itemize}
@@ -225,7 +281,7 @@
 				H   & 1.5   & D     
 			\end{tabular}\\
 			\small{ \emph{Forczu: ocenione na 1.0 / 1.0}}.
-	% ================= ZADANIE 4.3 ==================
+	% ================= ZADANIE 4.5 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Węzeł K po restarcie wysłał do sąsiadów L, I, F swoją początkową tablicę routingu i otrzymał od nich ich tablice routingu. Wyznacz nową tablicę routingu węzła K.\\\\
@@ -262,6 +318,7 @@
 		W tym wszystkim interesują nas tylko drogi lokalnie najbliższe - te z punktu widzenia węzła K i "ofert" dróg sąsiadów. Jeśli dwie drogi mają ten sam koszt to wybór powinien być obojętny. Sąsiedzi (L, I, D) mają się w końcowej tabeli również znajdować.\\
 		\small{ \emph{Forczu: ocenione na 1.0 / 1.0}}.\\\\\\\\\\\\\\\\\\\\\\\\
 		
+\newpage
 % ==================================================
 % --- 5. TRANSMISJA DANYCH
 % ==================================================
@@ -271,18 +328,43 @@
 		\subsubsection{Treść}
 			Stacja robocza połączona jest z serwerem łączem szeregowym o przepustowości 8 MBit/s, z bitową stopą błędów $ BER=2\cdot 10^{-5} $. Określić z jaką średnią szybkością transmisji danych protokołem TCP w wersji standardowej (\emph{plain vanilla}) można uzyskać jeśli uzgodniona maksymalna wielkość segmentu wynosi 768 B (ramki w łączu 832 B), wielkość danych odbiorcy wynosi 27 kB, czas $ RTT=40\;ms $.
 		\subsubsection{Odpowiedź}
-			$ BER=2\cdot 10^{-5} \rightarrow 50000 $ - oznacza to, że 1 na 50k bitów jest przekłamany, czyli co 6250 bajt jest przekłamany.\\\\
-			$ V=8 Mb/s $\\\\
-			$ \cfrac{6250\;[B]}{832\;[B]}=7.51 \rightarrow$ co 7.51 ramka jest przekłamana.\\
-			Teraz stosujemy metodę słupków do wyznaczenia właściwego stosunku liczby ramek, jakie można wysłać. Rysujemy kolejne transmitowane ramki w postaci słupków złożonych z $ 2^n $ ramek: 1, 2, 4, 8 itd. Gdy napotykamy przekłamaną ramkę zaczynamy naliczać od nowa. Kończymy naliczanie gdy przekłamana ramka znajdzie się na szczycie jednego ze słupków.Oznacza ona bowiem zakończenie cyklu, "deja vu" - kolejne kolumny, wraz z przekłamaniami, będą się powtarzać.\\\\
-			\includegraphics[width=5.0cm]{./images/zadanie07.pdf}\\
-			Wynika z tego, że na 16 pakietów 2 zostają przekłamane.\\\\
-			$ 16 - 2 = 14 $ - nieprzekłamane pakiety. Liczba ta nie powinna zostać przekroczona w wysyłaniu danych do okna.\\
-			Efektywna prędkość:
-			$$ SRET=\frac{((Liczba\;ramek - liczba\;ramek\;przekłamanych)\cdot Rozmiar\;segmentu}{Liczba\;kolumn\;w\;cyklu\cdot RTT} $$\\
-			$$ \frac{14\cdot 768\;[B]}{5\cdot 40\;[ms]}=\frac{14\cdot 768\;[B]}{5\cdot 40\cdot 10^{-3}\;[s]}=53760\;[\frac{B}{s}]=52.5 [\frac{kB}{s}]$$
-			\small{\emph{Forczu: z jakiegoś opracowania, powinno być dobrze.}}\\\\
-			\textbf{WAŻNE}: w TCP są dwie możliwości, słupki rosną 1-2-4-8-16-32-... (\emph{slow start}) albo 1-2-4-8-9-10-11-12-... (\emph{congestion avoidance}). W poleceniach najprawdopodobniej chodzi o ten drugi - od pewnej wartości słupki rosną \textbf{liniowo}. Podobno liniowość zaczyna się od połowy transferu.
+			Algorytm wykonywania zadań z przekłamaniem:
+			\begin{enumerate}
+				\item Obliczamy liczbę przekłamań w jednostce czasu jako odwrotność BERu:
+				$ \cfrac{1}{BER} = \cfrac{1}{2\cdot 10^{-5}}=50000 \rightarrow$ - oznacza to, że 1 na 50k bitów jest przekłamany $ \rightarrow $ co 6250 bajt jest przekłamany $ \rightarrow $ co 7.51 ramka jest przekłamana.
+				\item Następnie obliczamy ile ramek zostaje przekłamanych jako:
+				$$ \cfrac{Odwrotnosc\;BERu}{Rozmiar\;ramki\;w\;laczu} $$
+				W naszym przypadku jest to $ \cfrac{6250\;[B]}{832\;[B]}=7.51$
+				\item Powyższy wynik oznacza, że 7 ramek zostało wysłanych poprawie, a 8 jest przekłamana. Czyli zakładamy, że \textbf{co 8 ramka} jest błędna (bierzemy sufit wyniku).
+				\item Obliczamy liczbę ramek jaką można maksymalnie przesłać w jednym RTT jako:
+				$$ \cfrac{Rozmiar\;okna}{Rozmiar\;ramki\;w\;laczu} $$
+				Czyli u nas: $ \cfrac{27\:000}{832}\approx32 $
+				\item Następnie stosujemy \textbf{metodę słupków} do wyznaczenia właściwego stosunku liczby ramek, jakie można wysłać.
+				\begin{enumerate}
+					\item Rysujemy kolejne transmitowane ramki w postaci słupków złożonych z $ 2^n $ ramek: 1, 2, 4, 8 itd.
+					\begin{enumerate}
+						\item Jeżeli protokół jest typu \emph{slow start} - naliczamy bezwzględnie wg $ 2^n $ - kolejne słupki mają 16, 32 itd. wysokości
+						\item Jeżeli protokół jest typu \emph{congestion avoidance} - po wartości 8 zaczynamy zwiększać wysokość \textbf{liniowo}, czyli kolejne słupki będą mieć 9, 10, 11 itd. wysokości. Liczba 8 jest granicą na protokołu standardowego TCP - \emph{"plain vanilla"}.
+					\end{enumerate}
+					\item Gdy napotykamy przekłamaną ramkę zaczynamy naliczać od nowa.
+					\item Liczba ramek w słupku nie może przekroczyć maksymalnej liczby ramek jaką można wysłać w czasie RTT.
+					\item Kończymy naliczanie gdy przekłamana ramka znajdzie się na szczycie jednego ze słupków, czyli po zakończeniu jednego cyklu.
+				\end{enumerate}
+				\item Przystępując do rysowania słupków należy zaznaczyć jaki algorytm wybraliśmy. Niech będzie "slow start":\\
+				\includegraphics[width=6.0cm]{./images/zadanie07.pdf}\\\\
+				Wynika z tego, że na 16 pakietów 2 zostają przekłamane. $ 16 - 2 = 14 $ - nieprzekłamane pakiety. Liczba ta nie powinna zostać przekroczona w wysyłaniu danych do okna.
+				\item Na koniec pozostaje obliczyć efektywną prędkość. Może ona zostać obliczona wg dwóch wzorów:
+				\begin{enumerate}
+					\item \textbf{SRET}
+					$$ SRET=\frac{((Liczba\;ramek - liczba\;ramek\;przekłamanych)\cdot Rozmiar\;segmentu}{Liczba\;kolumn\;w\;cyklu\cdot RTT} $$
+					\item \textbf{GBN} - Go-Back-N
+					$$ GBN=\frac{((Liczba\;ramek - (Ramki\;przekłamane + Ramki\;w\;slupkach\;ponad\;nimi))\cdot Rozmiar\;segmentu}{Liczba\;kolumn\;w\;cyklu\cdot RTT} $$
+				\end{enumerate}
+				\item W naszym zadaniu są to:
+				$$ SRET=\frac{(16-2)\cdot 768\;[B]}{5\cdot 40\;[ms]}=\frac{14\cdot 768\;[B]}{5\cdot 40\;[ms]}=\frac{14\cdot 768\;[B]}{5\cdot 40\cdot 10^{-3}\;[s]}=53760\;[\frac{B}{s}]=52.5\; [\frac{kB}{s}]$$\\
+				$$ GNB=\frac{(16-9)\cdot 768\;[B]}{5\cdot 40\;[ms]}=\frac{7\cdot 768\;[B]}{5\cdot 40\cdot 10^{-3}\;[s]}=26880\;[\frac{B}{s}]=26.25\;[\frac{kB}{s}] $$
+			\end{enumerate}
+
 	% ================= ZADANIE 5.2 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
@@ -295,102 +377,102 @@
 			Na 96 pakietów 8 zostaje przekłamanych.\\
 			Możemy wyróżnić dwa parametry spełniające zadanie:
 			\begin{enumerate}
-				\item Szybkość efektywna: $ SRET=\frac{(96-8)\cdot 768\;[B]}{29\cdot 45\;[ms]}=\frac{88\cdot 768\;[B]}{29\cdot 45\;[ms]} $
-				\item $ GND=\frac{(96-36)\cdot 768\;[B]}{29\cdot 45\;[ms]}=\frac{60\cdot 768\;[B]}{29\cdot 45\;[ms]} $
+				\item $$ SRET=\frac{(96-8)\cdot 768\;[B]}{29\cdot 45\;[ms]}=\frac{88\cdot 768\;[B]}{29\cdot 45\;[ms]} $$
+				\item $$ GND=\frac{(96-36)\cdot 768\;[B]}{29\cdot 45\;[ms]}=\frac{60\cdot 768\;[B]}{29\cdot 45\;[ms]} $$
 			\end{enumerate}
 			\small{ \emph{Forczu: w tego typu zadaniach przepustowość chyba zawsze jest maksymalna, a protokoół standardowy, co ma upraszczać całość.
 			Ktoś tam napisał, że wielkość ramki we wzorach jest obojętna, ale należy zaznaczyć, czy bierzemy dane czy dane + narzut.}}.
+\newpage
 	% ================= ZADANIE 5.3 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
-			Stacja robocza podłączona jest z serwerem łączem o przepustowości $ 55\;Mbit/s $, z bitową stopą błędów $ BER=4.9\cdot 10^{-6} $. określ, ile czasu zajmie przesłanie tym łączem pliku 100 kB danych, od nawiązania do zakończenia połączenia protokołem TCP w wersji standardowej, jeśli uzgodniona maksymalna wielkość segmentu wynosi 1024 B (ramki o łączu 1082 B), wielkość okna odbiorcy wynosi 17 kB, a czas RTT wynosi 25 ms.
+			Stacja robocza podłączona jest z serwerem łączem Fast Ethernet o przepustowości $100\;Mbit/s $, z bitową stopą błędów $ BER=6.6\cdot 10^{-6} $. Uzgodniona wielkość segmentu to 1024 [B] (1088 [B] w łączu), wielkość okna odbiorcy wynosi 27 [kB], czas RTT wynosi 40 [ms]. Określić, ile czasu zajmie przesył 1 [MB] tym łączem protokołu TCP w wersji standardowej.
 		\subsubsection{Odpowiedź}
-			$ BER=4.9\cdot 10^{-6} $
-			\begin{itemize}
-				\item Oznacza to, że 4.9 bitu zostaje przekłamanych na 1 milion bitów.
-				\item Czyli 4.9 bajtów zostaje przekłamanych na 125000 bajtów.
-				\item $ \cfrac{\frac{125\;000}{4.9}}{1082}\approx 23.58 $ - co 24 ramka jest przekłamana.
-			\end{itemize}
-			TODO: uzupełnić tej szajs analogicznie.
+		\begin{enumerate}
+			\item $ \cfrac{1}{BER}=\cfrac{1}{6.6\cdot 10^{-6}}=151515$, co oznacza, że 1 na 151515 bitów jest przekłamany $ \rightarrow $ 1 na 18939 bajtów $ \rightarrow $ co 18 ramka jest przekłamana.\\
+			\item $ \cfrac{27\:[kB]}{1088\:[B]}=\cfrac{27648\:[B]}{1088\:[B]}=24,8 \rightarrow $, co oznacza maksymalnie 24 ramki w słupku.
+			\item
+				\begin{center}
+					\includegraphics[width=9.0cm]{./images/zadanie14.pdf}
+				\end{center}
+			\item Odpowiedź
+			$$ SRET=\cfrac{68\cdot1024\:[B]}{15\cdot40\:[ms]}=\approx113\;[\cfrac{kB}{s}]$$
+			$$ GNB=\cfrac{38\cdot1024\:[B]}{15\cdot40\:[ms]}=\approx63\;[\cfrac{kB}{s}]$$
+		\end{enumerate}
+	% ================= ZADANIE 5.4 ==================
+\newpage
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			Użytkownik połączony jest z routerem łączem sieci lokalnej 10 Mbps Ethernet, czas RTT = 35 ms, router dostępowy na obsługę użytkownika przeznacza bufor 12 kB, rozmiar okna protokołu TCP = 27 kB. Określić maksymalną średnią szybkość transmisji możliwą do uzyskania przez użytkownika przez standardowej wersji protokołu TCP.
+		\subsubsection{Odpowiedź}
+			{\small \emph{Forczu: ponieważ w treści zadania jest podane, że mamy do czynienia z użytkownikiem łączącej się przez router z Internetem to WYDAJE MI SIĘ, że należy wykorzystać algorytm \emph{congestion avoidance}, który ma zastosowanie m.in. w przeglądarkach internetowych. Stąd ta różnica.}}\\
+			\begin{enumerate}
+				\item Ramka w Ethernecie: 1500 [B] (1460 [B] dla danych)
+				\item W routerze jest dostępne 12000 [B].
+				\item $ \cfrac{12\:000\;[B]}{1500\;[B]}=8 \rightarrow $ oznacza, że razem można wysłać 8 ramek, przy 9tej przepełni się bufor.
+				\item \includegraphics[width=8.0cm]{./images/zadanie15.pdf}
+				\item Na 24 ramki 1 została przekłamana. mamy więc 23 poprawne ramki oraz 5 słupków.
+				\item $$ SRET=\cfrac{23\cdot1460\:[B]}{5\cdot35\:[ms]}=\cfrac{33580000\:[B]}{175\:[s]}=191885\:[\cfrac{B}{s}]=187\;[\cfrac{kB}{s}] $$
+			\end{enumerate}
+			
+\newpage
 	% ================= ZADANIE 5.4 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
-			W systemie transmisji posługującym się protokołem SDLC (tryb NRM, w=3, retransmisja grupowa) w łączu ze stopą błędów $ p=10^{-4} $ przesyłane są dane ramkami z polem danych 256 B, ze stacji nadrzędnej do stacji podrzędnej. Przedstaw przebieg transmisji w przesyle \textbf{4.5 kB} danych, pomiń nawiązanie / zrywanie połączenia. Ile kosztuje (narzut protokołu) obsługa błędów w transmisji?
+			W systemie transmisji posługującym się protokołem SDLC / HDLC (tryb NRM, w=3, retransmisja grupowa) w łączu ze stopą błędów $ p=10^{-4} $ przesyłane są dane ramkami z polem danych 256 B, ze stacji nadrzędnej do stacji podrzędnej. Przedstaw przebieg transmisji w przesyle \textbf{4.5 kB} danych, pomiń nawiązanie / zrywanie połączenia. Ile kosztuje (narzut protokołu) obsługa błędów w transmisji?
 		\subsubsection{Odpowiedź}
 			Najpierw liczymy ilość potrzebnych ramek
 			$$ \cfrac{4.5\;kB}{256\;B}=18\;[ramek] $$
 			Następnie należy wyliczyć, co którą ramkę pojawi się przekłamanie. Stopa błędu wynosi 1/10000, czyli to oznacza, że co 10000 bit następuje przekłamanie, co równa się 1250 B. Teraz należy oblicz, co którą ramkę następuje błąd (i teraz nie jestem pewien ale chyba do tych 256 B danych należy dodać 6B nagłówka).
 			$$ \cfrac{1250}{262}={4.77}\approx5 $$
-			Co piąta ramka zawiera przekłamanie. Teraz można zacząć przedstawiać przebieg transmisji. "w" oznacza ile ramek możemy przesłać w takiej jednej sekwencji.\\
-			\includegraphics[width=9.0cm]{./images/zadanie09.pdf}\\\\
+			Co piąta ramka zawiera przekłamanie. Teraz można zacząć przedstawiać przebieg transmisji. "w" oznacza ile ramek możemy przesłać w takiej jednej sekwencji.
+			\begin{center}
+				\includegraphics[width=9.0cm]{./images/zadanie09.pdf}
+			\end{center}
 			Następnie należy policzyć narzut (ilość wszystkich ramek - ilość wymaganych ramek)\\
-			$$ Narzut = 28 - 18  = 10\;ramek = 10 * 256\;B = 2560\;B $$
+			$$ Narzut = 28 - 18  = 10\;ramek = 10 * 256\;B = 2560\;B =2,5\; [kB] $$
 			\small{ \emph{Forczu: ocenione na 1.0 / 1.0}}.
+
+\newpage
 	% ================= ZADANIE 5.5 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			W systemie z protokołem SDLC (tryb NRM, w=3, retransmisja grupowa), ze stopą błędów $ p=10^{-4} $, ramki są wysyłane z polem danych 256 B ze stacji nadrzędnej do podrzędnej. Przedstaw przebieg transmisji przy przesyle \textbf{4 kB} danych. Pomiń nawiązanie i zerwanie połączenia. Ile kosztuje (narzut protokołu) obsługa błędów w transmisji?
 		\subsubsection{Odpowiedź}
-			1 błąd co 10 000 bitów $ \rightarrow $ 1 błąd do 1250 bajów $ \rightarrow $ 1 błąd w przybliżeniu co 5 ramek.\\
+			$ BER=p=10^{-4} \rightarrow$ 1 błąd co 10 000 bitów $ \rightarrow $ 1 błąd do 1250 bajów $ \rightarrow $ 1 błąd w przybliżeniu co 5 ramek.\\
 			$$ \cfrac{4\;[kB]}{256\;[B]}=16\;[ramek] $$
-			\includegraphics[width=8.0cm]{./images/zadanie10.pdf}\\\\
-			Wysłaliśmy łącznie 24 ramki. Narzut: 24 - 16 = 8 ramek = 2048 B
+			\begin{center}
+				\includegraphics[width=8.0cm]{./images/zadanie10.pdf}
+			\end{center}
+			Wysłaliśmy łącznie 24 ramki. Narzut: 24 - 16 = 8 ramek = 2048 B = 2 kB
+\newpage
 	% ================= ZADANIE 5.6 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			W systemie transmisji z protokołem HDLC średnio jeden na 9000 bitów jest przekłamany. Jaki będzie koszt obsługi błędów transmisji przy przesyle bloku 4 kB danych ze stacji B do stacji A w tym systemie, jeśli wielkość pola danych to 256 B, okno w=4, tryb NRM z retransmisją grupową.
 		\subsubsection{Odpowiedź}
 			$$ \cfrac{4\;[kB]}{256\;[B]}=16\;[ramek] $$
+			Musimy przesłać 16 ramek.\\
 			$ \cfrac{1}{9000} $ bitów przekłamanych $ \rightarrow \cfrac{1}{1125}\;[B] \rightarrow $ co 5 ramka przekłamana.\\\\
-			\includegraphics[width=8.0cm]{./images/zadanie12.pdf}\\\\
-			Wysłano 28 ramek. Narzut: 28 - 16 = 12 ramek = 3 kB = 3072 B.
+			\begin{center}
+				\includegraphics[width=8.0cm]{./images/zadanie12.pdf}
+			\end{center}
+			Wysłano 28 ramek. Narzut: 28 - 16 = 12 ramek = 3072 B = 3 kB.
+\newpage		
 	% ================= ZADANIE 5.7 ==================
-	\subsection{Zadanie}
-		\subsubsection{Treść}
-			Chcemy zastosować protokół CSMA / CD przy budowie sieci o długości łącza 500 m przy szybkości transmisji 200 MBit/s. Jaka powinna być w tym przypadku minimalna długość ramki?
-		\subsubsection{Odpowiedź}
-			Najpierw liczymy czas propagacji $$ t_p = \cfrac{dystans}{predkosc\_lacza} $$
-			Prędkości łącza nie mylić z szybkością transmisji. W przypadku światłowodu wynosi ono 2/3 prędkości światła czyli 200 000 000 m/s, tu takie założenie można dać.
-			$$ t_p=\frac{500\;[m]}{200\:000\:000\:[m/s]}=2.5\:\mu s $$
-			Następnie wyliczamy długość ramki
-			$$ N=szybkosc\_transmisji\cdot t_p $$
-			Razy dwa ponieważ "Istnieje możliwość, że dwa lub więcej urządzeń przystąpi do wysyłania danych w tej samej chwili lub zanim sygnał z pierwszego węzła dotrze do drugiego. W takiej sytuacji żadne z nich nie wykryje sygnału nośnego drugiego. W efekcie obydwa urządzenia wysyłając dane w (prawie) tym samym czasie spowodują kolizję w sieci Ethernet."
-			$$ N=200\:000\:000\:[bit]\cdot \frac{5}{10^6} =200\cdot5=1000\:bit=125\:B $$
-	% ================= ZADANIE 5.8 ==================
-	\subsection{Zadanie}
-		\subsubsection{Treść}
-			Węzeł W ma za sąsiadów węzły A, B, C, D i E. Po otrzymaniu pakietu Link State węzeł oczekuje 35 ms, następnie przystępuje do dystrybucji pakietu. W chwili $ t_0 $ węzeł odebrał pakiet z węzła B, $ 5\;ms $ później z węzła D, a po 13 $ ms $ pakiet z węzła E. Przedstaw przebieg dystrybucji pakietów\\.
-			\begin{tabular}{|c|c|c|c|c|c|c|c|}
-				\hline \multicolumn{2}{|c|}{\textbf{E}}  & & \multicolumn{2}{|c|}{\textbf{B}} & & \multicolumn{2}{|c|}{\textbf{D}}\\ 
-				\hline \multicolumn{2}{|c|}{55} & &\multicolumn{2}{|c|}{55} & &\multicolumn{2}{|c|}{55} \\ 
-				\hline \multicolumn{2}{|c|}{240} & &\multicolumn{2}{|c|}{238} & &\multicolumn{2}{|c|}{239}   \\ 
-				\hline U & 2 & & U & 1 & & U & 2\\ 
-				\hline V & 3 & & V & 2 & & V & 3\\
-				\hline Z & 6 & & Z & 5 & & Z & 6\\
-				\hline 
-			\end{tabular}
-		\subsubsection{Odpowiedź}
-			Do węzłów, których pakiety miały największy nr sekwencyjny (2gi wiersz) wysyła potwierdzenie
-			Do pozostałych wysyła pakiet tego węzła, który miał największy nr sekwencyjny i age (3ci wiersz).
-			\begin{itemize}
-				\item Do węzła D wyśle: potwierdzenie.
-				\item Do węzła C wyśle: E.
-				\item Do węzła B wyśle: potwierdzenie.
-				\item Do węzła E wyśle: potwierdzenie.
-				\item Do węzła A wyśle: E.
-			\end{itemize}
-	% ================= ZADANIE 5.9 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Drukarka wierszowa posiada jeden bufor na 80 znaków (1 wiersz tekstu). Wydruk bufora zajmuje 25 ms, w czasie których drukarka nie przyjmuje danych. Stacja nadrzędna przesyła notatkę - 3 wiesze (bloki po 80 znaków) łączem o szybkości transmisji 19200 bitów / s, protokół BSC (2 znaki SYN). Przedstaw przebieg komunikacji SN-SP (drukarka). Załóż brak przekłamań, pomiń fazę nawiązania połączenia. Przyjmij czas przetwarzania żądania / odpowiedzi i propagacji sygnału łączem 2.5 $ \mu s $.
 		\subsubsection{Odpowiedź}
 			19200 $ [\cfrac{b}{s}] $ = 2400 $ [\cfrac{B}{s}] $, czyli 2.4k $ \cfrac{znakow}{s} $, ostatecznie ok. 0.4 ms na jeden znak.
-			\includegraphics[width=9.0cm]{./images/zadanie13.pdf}\\\\
+			\begin{center}
+				\includegraphics[width=16.0cm]{./images/zadanie13.pdf}
+			\end{center}
 			\begin{itemize}
 				\item Sprowadzamy prędkość transmisji do czasu przesyłu jednego znaku: 1 znak / 0.4 ms. Jest to podstawa do większości czasów.
-				\item Stacja nadrzędna, jak się połączy, zaczyna nadawać. Drukarka odbiera i zaczyna drukować.
+				\item Stacja nadrzędna, jak się połączy, zaczyna nadawać. Przesyłamy 80 znaków oraz 6 rozkazów. Drukarka odbiera i zaczyna drukować.
 				\item Drukowanie ma trwać (minimum) 25 ms. W tym czasie drukarka wysyła WACKi - SN nie wysyła danych, ale zostaje utrzymana komunikacja. SN następnie wysyła zapytania ENQ - czy może przesłać następny wiersz.
-				\item Drukarka kończy działanie po 4 wymianach jałowej informacji, po czym wysyła SYN SYN ACK. Po tym sygnale komputer może wysłać kolejne 80 znaków do drukarki.
+				\item Drukarka kończy działanie po 4 wymianach jałowej informacji, po czym wysyła SYN SYN ACK. Po tym sygnale komputer może wysłać kolejne 80 znaków do drukarki. Aby wysłać kolejne 2 wiersze należy całość powtórzyć jeszcze 2 razy.
 				\item Podobno swetrowi chodziło bardziej o zilustrowanie procesu niż wyliczania czasów.
 			\end{itemize}
 			
@@ -398,6 +480,7 @@
 % ==================================================
 % --- 6. ADRESACJA
 % ==================================================
+\newpage
 \section{Adresacja}
 	% ================= ZADANIE 6.1 ==================
 	\subsection{Zadanie}
@@ -449,26 +532,30 @@
 		\subsubsection{Odpowiedź}
 			W treści zadania jest podane, że te firmy przychodziły \textit{kolejno}, więc po prostu w tej kolejności przyznajemy im adresy.
 			\begin{enumerate}
-				\item Firma A, 1000 adresów - maska na 1024 adresy
+				\item Firma A, 1000 adresów - maska na 1024 adresy (niezbędne minimum), czyli odcinamy 10 bitów by utworzyć maskę:
+				$$ 11111111.11111111.11111100.00000000=/22=255.255.252.0$$
 				\begin{itemize}
 					\item Pierwszy adres: 192.170.0.0
 					\item Ostatni adres: 192.170.3.255
-					\item w.x.y.z: 255.255.252.0 (1.1.11111100.0)
+					\item w.x.y.z: 255.255.252.0
 					\item Maska: /22
 				\end{itemize}
-				\item Firma B, 2000 adresów - maska na 2048 adresy
+				\item Firma B, 2000 adresów - maska na 2048 adresy.
+				$$ 11111111.11111111.11111000.00000000=/21=255.255.248.0$$
 				\begin{itemize}
-					\item Nie możemy w połowie wstawić takiej maski, minimalny przydział takiej podsieci jest „co 2048”. Innymi słowy musimy zostawić przerwę po pierwszej podsieci o długości 1024 adresy, by wyrównać je do 2048.
+					\item Nie możemy w połowie wstawić takiej maski, ponieważ wcześniej utworzyliśmy podsieć na 1024 adresy. Dlatego wymagana jest przerwa do uzupełnienia do 2048. Innymi słowy musimy zostawić przerwę po pierwszej podsieci o długości 1024 adresy, by wyrównać je.
 					\item Pierwszy adres: 192.170.8.0
 					\item Ostatni adres: 192.170.15.255
-					\item w.x.y.z: 255.255.248.0 (1.1.11111000.0)
+					\item w.x.y.z: 255.255.248.0
 					\item Maska: /21
 				\end{itemize}
-				\item Firma C, 4000 adresów - maska na 4096 adresy
+				\item Firma C, 4000 adresów - maska na 4096 adresy.
+				$$ 11111111.11111111.11110000.00000000=/20=255.255.240.0$$
 				\begin{itemize}
+					\item Tutaj nie musimy dokonywać analogicznego uzupełnienia. W dwóch poprzednich procesach łącznie przeszliśmy przez 4096 adresów, więc tę sieć możemy wstawić bezpośrednio za drugą.
 					\item Pierwszy adres: 192.170.16.0
 					\item Ostatni adres: 192.170.31.255
-					\item w.x.y.z: 255.255.240.0 (1.1.11110000.0)
+					\item w.x.y.z: 255.255.240.0
 					\item Maska: /20
 				\end{itemize}
 				\item Firma D, 1000 adresów - maska na 1024 adresy
@@ -476,10 +563,11 @@
 					\item Mamy wolne miejsce między podsieciami dla firmy A i B, tam dajemy tę sieć.
 					\item Pierwszy adres: 192.170.4.0
 					\item Ostatni adres: 192.170.7.255
-					\item w.x.y.z: 255.255.252.0 (1.1.11111100.0)
+					\item w.x.y.z: 255.255.252.0
 					\item Maska: /22
 				\end{itemize}
 			\end{enumerate}
+\newpage
 	% ================= ZADANIE 6.3 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
@@ -500,15 +588,24 @@
 				\item Adresy przydzielamy wg kolejnych potęg dwójki $ 2^n $. Gdyby w treści były 33 adresy, to przydzielalibyśmy 64.
 				\item Gdyby w treści należałoby podpiąć 32 klientów, to musielibyśmy mieć 34 adresy i znów przydzielać 64.
 			\end{itemize}
-	% ================= ZADANIE 4 ==================
+	% ================= ZADANIE 6.4 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
-			
+			Rekord SOA domeny abc.com zawiera następujące wartości:
+			\begin{itemize}
+				\item refresh = 10800
+				\item retry = 5400
+				\item expire = 86400
+				\item default TTL = 7200
+			\end{itemize}
+			Administrator domeny zaplanował zastąpienie wysłużonego głównego \emph{name servera} nowym systemem (noy adres IP). Po jakim czasie (od dokonania zmiany rekordu NS) równoległej pracy obu \emph{name serverów} będzie można wyłączyć stary serwer.
 		\subsubsection{Odpowiedź}	
+			Po czasie TTL + refresh = 10 800 + 7200 = 18 000.
 			
 % ==================================================
 % --- 7. POCZTA E-MAIL
 % ==================================================
+\newpage
 \section{Poczta e-mail}
 	% ================= ZADANIE 7.1 ==================
 	\subsection{Zadanie}
@@ -526,3 +623,21 @@
 				\item Listy odbierane są za pomocą protokołów POP3. Klient żąda listy wiadomości poleceniem "list". Następnie pobiera cały żądany list i usuwa go z serwera : "Retr" i "Dele". Sesja kończy się poleceniem "quit". Oczywiście zanim to wszystko nastąpi musi zostać przeprowadzona autentyfikacja. Klient POP3 zaczyna sesję od podania nazwy użytkownika "user" i hasła "pass".
 			\end{enumerate}
 			\small{ \emph{Ocenione na 1.0 / 1.0}}
+	
+	% ================= ZADANIE 7.2 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			Przesyłka e-mail zawiera fragment tekstu: "płoną góry, płoną lasy..." . Przedstaw sposób zakodowania pierwszych słów treści listu zapewniający (dowolnym łączem) poprawny przesył znaków narodowych.
+		\subsubsection{Odpowiedź}
+			Treść wiadomości:
+			\begin{center}
+				p\textbf{=B3}on=B9 g\textbf{=F3}ry, p\textbf{=B3}on=B9 lasy
+			\end{center}
+			Gdzie:
+			\begin{itemize}
+				\item =B3 - dziesiętnie 179 - ł w ASCII
+				\item =B9 - dziesiętnie 185 - ą w ASCII
+				\item =F3 - dziesiętnie 243 - ó w ASCII
+			\end{itemize}
+			Dziesiętne kody w ASCII były podane w poleceniu, należało je zmienić na zapis szesnastkowy.
+			
