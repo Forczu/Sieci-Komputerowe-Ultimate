@@ -199,16 +199,20 @@
 				\item Druga wartość to numer sekwencyjny - im większy tym pakiet jest ważniejszy.
 				\item Trzecia wartość to wiek - po tego upływie czasu od momentu odebrania pakiet jest usuwany.
 			\end{itemize}
-			Tak więc na samym początku \textbf{odrzucamy} pakiety nr 1 o czasie życia 3 - w momencie wyznaczania nowej tablicy, w momencie $ T_0+5 $ już nie istniał.\\
-			Następnie patrzymy na numery sekwencyjne - jeżeli odebraliśmy 2+ pakietów od tego samego węzła, to interesuje nas tylko ten o najwyższym numerze sekwencyjnym.
-			\begin{itemize}
-				\item Są dwa pakiety od węzła B, nr 2 i 10. Odrzucamy nr 10 o niższym \textit{seq} ($ 8 > 7 $).
-				\item Są dwa pakiety od węzła C, nr 3 i 9. Odrzucamy nr 3 o niższym \textit{seq} ($ 9 < 10 $).
-			\end{itemize}
+			A więc przed rozpoczęciem wyznaczania topologii sieci:
+			\begin{enumerate}
+				\item Na samym początku \textbf{odrzucamy} pakiety nr 1 o czasie życia 3 - w momencie wyznaczania nowej tablicy, w momencie $ T_0+5 $ już nie istniał.
+				\item Następnie patrzymy na numery sekwencyjne - jeżeli odebraliśmy 2+ pakietów od tego samego węzła, to interesuje nas tylko ten o najwyższym numerze sekwencyjnym.
+				\begin{itemize}
+					\item Są dwa pakiety od węzła B, nr 2 i 10. Odrzucamy nr 10 o niższym \textit{seq} ($ 8 > 7 $).
+					\item Są dwa pakiety od węzła C, nr 3 i 9. Odrzucamy nr 3 o niższym \textit{seq} ($ 9 < 10 $).
+				\end{itemize}
+				\item Odrzucamy te węzły, do których istnieje droga z pakietów innych węzłów, ale owe węzły już nie istnieją, bo zostały odrzucone w dwóch poprzednich krokach. W topologii skutkuje to tylko pojedynczą drogą z jednego węzła do drugiego, a interesują nas tylko te z dwiema możliwościami.
+			\end{enumerate}
 			Do obliczeń przystępujemy z 7 pakietami. Wszystko sobie rozrysowujemy:\\
-			\includegraphics[width=7.0cm]{./images/zadanie05.pdf}\\
-			Jeśli węzły da się połączyć na dwa różne sposoby, tworzymy średnią arytmetyczną. Wybieramy najkrótsze możliwe połączenie do każdego węzła, \textbf{pomijamy G}, i rysujemy tabelkę.\\\\
-			\includegraphics[width=7.0cm]{./images/zadanie06.pdf}     
+				\includegraphics[width=8.0cm]{./images/zadanie05.pdf}
+				\includegraphics[width=8.0cm]{./images/zadanie06.pdf}\\
+			Jeśli węzły da się połączyć na dwa różne sposoby, tworzymy średnią arytmetyczną. Wybieramy najkrótsze możliwe połączenie do każdego węzła, \textbf{pomijamy G}, i rysujemy tabelkę.\\\\ 
 			\begin{tabular}{c|c|c}
 				Cel & Koszt & Przez \\ \hline
 				A   & 4     & E     \\
