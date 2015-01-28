@@ -343,7 +343,7 @@
 					\item Rysujemy kolejne transmitowane ramki w postaci słupków złożonych z $ 2^n $ ramek: 1, 2, 4, 8 itd.
 					\begin{enumerate}
 						\item Jeżeli protokół jest typu \emph{slow start} - naliczamy bezwzględnie wg $ 2^n $ - kolejne słupki mają 16, 32 itd. wysokości
-						\item Jeżeli protokół jest typu \emph{congestion avoidance} - po wartości 8 zaczynamy zwiększać wysokość \textbf{liniowo}, czyli kolejne słupki będą mieć 9, 10, 11 itd. wysokości. Liczba 8 jest granicą na protokołu standardowego TCP - \emph{"plain vanilla"}.
+						\item Jeżeli protokół jest typu \emph{congestion avoidance} - po przekroczeniu połowy okna zaczynamy zwiększać wysokość \textbf{liniowo}, czyli np. dla granicy (\emph{thresholdu}) 8 kolejne słupki będą mieć 9, 10, 11 itd. wysokości.
 					\end{enumerate}
 					\item Gdy napotykamy przekłamaną ramkę zaczynamy naliczać od nowa.
 					\item Liczba ramek w słupku nie może przekroczyć maksymalnej liczby ramek jaką można wysłać w czasie RTT.
@@ -408,7 +408,7 @@
 			\begin{enumerate}
 				\item Ramka w Ethernecie: 1500 [B] (1460 [B] dla danych)
 				\item W routerze jest dostępne 12000 [B].
-				\item $ \cfrac{12\:000\;[B]}{1500\;[B]}=8 \rightarrow $ oznacza, że razem można wysłać 8 ramek, przy 9tej przepełni się bufor.
+				\item $ \cfrac{12\:228\;[B]}{1500\;[B]}=8.192 \rightarrow $ oznacza, że razem można wysłać 8 ramek, przy 9tej przepełni się bufor.
 				\item \includegraphics[width=8.0cm]{./images/zadanie15.pdf}
 				\item Na 24 ramki 1 została przekłamana. mamy więc 23 poprawne ramki oraz 5 słupków.
 				\item $$ SRET=\cfrac{23\cdot1460\:[B]}{5\cdot35\:[ms]}=\cfrac{33580000\:[B]}{175\:[s]}=191885\:[\cfrac{B}{s}]=187\;[\cfrac{kB}{s}] $$
