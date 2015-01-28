@@ -1259,3 +1259,146 @@ W oryginalnym protokole, dane wysyłało się do lokalnego MTA (Mail Transfer Ag
 
 \subsubsection{POP (Post Office Protocol)}
 Dla zwiększenia bezpieczeństwa transmisji (i kontroli otrzymywanych wiadomości) opracowano protokół POP.
+
+\subsubsection{Parametry czasowe}
+	\begin{itemize}
+		\item refresh - czas odświeżania
+		\item retry - czas po którym nastepuje kolejna próba połączenia
+		\item expire - czas po którym połączenie się poddaje
+	\end{itemize}
+\subsubsection{Name Serwery}
+	\begin{itemize}
+		\item Primary
+		\item Secondary
+		\item Resolver - klient DNS
+		\item Couching - primary lub secondary. Serwer notatnikowy.
+	\end{itemize}
+
+\section{Poczta elektorniczna}
+	\subsection{Historia}
+		Rok 1982: rdc 822 - definiuje metody komunikacji między klientami, tzw. systemy agentowe.\\
+		Powstał jako wersja przejściowa wielkich standardów ISO.
+		\begin{itemize}
+			\item user-agent
+			\item mail-transfer-agent
+		\end{itemize}
+		Bardzo trwała prowizorka.
+	\subsection{STMP}
+		\emph{Simple Transter Mail Protocol}. Przypisany do portu 25.
+		\subsubsection{Adres użytkownika}
+			\begin{itemize}
+				\item Zbiór par: atrybut = wartość
+			\end{itemize}
+		\subsubsection{przykład}
+			$ |\;C=US\;|\;ST=NewYork\;|\;L=WestPoint\;|\;PA=360\:Memorialdrive\;|\;CN=TomSmith\;| $\\
+			Gdzie:
+			\begin{itemize}
+				\item SL - slot
+				\item L - locality
+				\item PA - present address
+			\end{itemize}
+			\includegraphics[width=9cm]{./images/drawing10.pdf}
+			\subsubsection{Nagłówki}
+				Nagłówek: [do 1024 znaków][znak ENTER]
+				\begin{itemize}
+					\item To: 
+					\item Cc: (\emph{carbon copy}) - wysyła kopie listu
+					\item Bcc: (\emph{black carbon copy}) - to co wyżej, ale odbiorcy są niewidoczni (??)
+					\item From:
+					\item Sender: - autor listu np. sekretarz, nie prezes
+					\item Reply-to:
+					\item Received:
+					\item Return-path: - informacja pozwalająca odesłać przesyłkę
+				\end{itemize}
+			\subsubsection{Indentyfikatory}
+				\begin{itemize}
+					\item Message Id: unikalne id przesyłki nadane przez serwer
+					\item In-Reply-to: identyfikator przesyłki do której przesyłający sie odwołuje
+					\item References: id jeszcze wcześniejszych przesyłek
+					\item Keyword: słowa kluczowe dla danej przesyłki, sprawy
+					\item Subject: temat, 1 linijka, podsumowanie przesyłki
+					\item X- : dodatkowy tekst na możliwe nowe nagłówki dla konkretnych aplikacji
+				\end{itemize}
+				Cały standard jest oparty o standard ASCII. Wraz z rozwojem sieci i internetu pojawiła się potrzeba rozwoju poczty.\\
+				rfd 1341, potem 2045-2049.\\
+				Multipurpose Internet Mail Extension (MIME).
+				\begin{itemize}
+					\item 5 dodatkowych nagłówków
+					\begin{itemize}
+						\item \textbf{MIME-version}: - oznaczenie standardu MIME
+						\item \textbf{Content-description}: - słowy opis co to jest za zawartość
+						\item \textbf{Content-Id}: - identyfikator zawartości (?)
+						\item \textbf{Content-Transfer-Encoding}: - sposób zakodowania przesyłu
+						\item \textbf{Content-Type}: - informacja co to za zawartość i jak ją interpretować
+					\end{itemize}
+					\item Kilka dodatkowych algorytmów związanych z transferem
+				\end{itemize}
+			\subsubsection{Kodowanie transferu}
+				\begin{itemize}
+					\item 7-bit ASCII
+					\item 8-bit ASCII
+					\item BINARY
+					\item Dwa ostatnie niosą ze sobą ryzyko związane np. z polskimi znakami.
+					\begin{itemize}
+						\item BASE-64\\
+						3 bajty = 24 bity dzielone na części po 6 bitów.
+						\begin{itemize}
+							\item a-z
+							\item A-Z
+							\item 0-9
+							\item + /
+							\item razem 64 znaki.
+						\end{itemize}
+						\item Quted Printable Encoding - drukowalne przesłanie.
+						\begin{itemize}
+							\item Jeżeli w treści listu jest mniej znaków narodowych to przepychamy je inaczej, za pomocą dwóch znaków np.
+							\item np. ą = 9Dh = 39 45 = "9", "d"
+							\item Jest to algorytm przekodowywania treści
+						\end{itemize}
+					\end{itemize}
+				\end{itemize}
+
+			\subsubsection{Typy zawartości}
+				\begin{tabular}{|c|c|}
+					\hline Typ & Podtyp \\ 
+					\hline Text & Plain, Enriched, HTML, XML \\ 
+					\hline Image & gif, jpeg \\ 
+					\hline Audio & basic, mpeg (rfe 3003) \\ 
+					\hline Video & mpeg \\ 
+					\hline Application & octet-stream, postscript, pdf \\ 
+					\hline Message & rfe822, partial, external-body \\ 
+					\hline Multipart & mixed, alternative, parallel (np. równoczesne odczytywanie video i audio), digest \\ 
+					\hline 
+				\end{tabular} 
+
+		\subsection{Rozszerzenia MIME}
+			\subsubsection{S-MIME}
+				Security MIME, stworzone do przekazywania zakodowanych zawartości.\\
+				Typy zawartości:
+				\begin{tabular}{|c|p{8cm}|}
+					\hline Typ & Podtyp \\ 
+					\hline multipart & signed (podpisany) \\ 
+					\hline application & (dla danych kryptograficznych) pkcs7-mime - signed Data; pkcs7-mime enveloped Data; pkcs7-degenerated signed Data - PKI certyfikat; pkcs7-signature - podpis elektroniczny; pkcs10-mime - żądanie wystawienie certyfikatu (wstawka, która pozwala przekazać dane do systemu, który generuje klucze i tworzy certyfikaty) \\ 
+					\hline 
+				\end{tabular}
+
+		\subsection{HTML}
+			Zdefiniowany tak jak protokół HTTP. Przydzielono mu nr portu 80. Case-sensitive - rozróżnia się duże i małe litery.
+			\subsubsection{Metody}
+				\begin{itemize}
+					\item GET - nazwa pliku + wersja protokołu (np. HTTP/1.0)
+					\item HEAD - pozwala na ściągnięcie dokumentu
+					\item POST
+					\item PUT - załadowanie na serwer dokumentów (zdalna aktualizacja)
+					\item DELETE - usuwania wskazanych dokumentów
+					\item OPTIONS
+					\item TRACE - jak ping, sprawdza czy dokument wysłany do serwera po powrocie nie podlega modyfikacjom
+					\item CONNECT - brak zastosowania XDDDDD
+					\item PATCH
+				\end{itemize}
+			\subsubsection{Połączenie}
+			Standard zakłada pojedyncze połączenie i rozłączenie się.\\
+			\includegraphics[width=9cm]{./images/drawing11.pdf}\\
+			Zawiera się tu całość zawarta w <body> ... </body>
+			Dokument zawiera szereg nagłówków (\emph{message headers}), które zawierają informacje identyfikujące klienta przed serwerem oraz serwer przed klientem.\\
+			udziela informacje jakie wersje MIME jest w stanie obsługiwać, jakiego rozmiaru dane klient może pobierać (jakimi porcjami), mówi też kiedy dokument był modyfikowany.

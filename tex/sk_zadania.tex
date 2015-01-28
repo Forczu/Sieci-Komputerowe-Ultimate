@@ -1,6 +1,10 @@
 % !TeX spellcheck = pl_PL
 
 \newpage
+\begin{center}
+	{\LARGE \textbf{k - 1000, K - 1024 !!!}}
+\end{center}
+
 \part{Zadania}
 % ==================================================
 % --- 1. TOPOLOGIA SIECI
@@ -14,7 +18,7 @@
 			\end{wrapfigure} 
 			W sieci z metryką jak na rysunku routery wymieniają się informacjami co 40 sekund, stosowany jest protokół typu Distance Vector. W chwili $ t_0 $ router F ulega awarii. Określ, po jakim czasie informacja o niedostępności routera F dotrze do węzła A.\\\\\\\\
 		\subsubsection{Odpowiedź}
-			\includegraphics[width=11.0cm]{./images/zadanie03.pdf}\\
+			\includegraphics[width=16.0cm]{./images/zadanie03.pdf}\\
 			A więc stacja A dowie się o niedostępności stacji F po $ 12\cdot 40\;s=480\;s $.
 \newpage
 	% ================= ZADANIE 1.2 ==================
@@ -279,7 +283,8 @@
 				G   & -     &       \\
 				H   & 1.5   & D     
 			\end{tabular}\\
-			\small{ \emph{Forczu: ocenione na 1.0 / 1.0}}.
+			\small{ \emph{Forczu: ocenione na 1.0 / 1.0\\
+					Podobno uwzględnienie G to 0.0 / 1.0}}.
 	% ================= ZADANIE 4.5 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
@@ -330,7 +335,7 @@
 			Algorytm wykonywania zadań z przekłamaniem:
 			\begin{enumerate}
 				\item Obliczamy liczbę przekłamań w jednostce czasu jako odwrotność BERu:
-				$ \cfrac{1}{BER} = \cfrac{1}{2\cdot 10^{-5}}=50000 \rightarrow$ - oznacza to, że 1 na 50k bitów jest przekłamany $ \rightarrow $ co 6250 bajt jest przekłamany $ \rightarrow $ co 7.51 ramka jest przekłamana.
+				$ \cfrac{1}{BER} = \cfrac{1}{2\cdot 10^{-5}}=50000 \rightarrow$ - oznacza to, że 1 na 50k bitów jest przekłamany $ \rightarrow $ co 6250 bajt jest przekłamany.
 				\item Następnie obliczamy ile ramek zostaje przekłamanych jako:
 				$$ \cfrac{Odwrotnosc\;BERu}{Rozmiar\;ramki\;w\;laczu} $$
 				W naszym przypadku jest to $ \cfrac{6250\;[B]}{832\;[B]}=7.51$
@@ -349,7 +354,7 @@
 					\item Liczba ramek w słupku nie może przekroczyć maksymalnej liczby ramek jaką można wysłać w czasie RTT.
 					\item Kończymy naliczanie gdy przekłamana ramka znajdzie się na szczycie jednego ze słupków, czyli po zakończeniu jednego cyklu.
 				\end{enumerate}
-				\item Przystępując do rysowania słupków należy zaznaczyć jaki algorytm wybraliśmy. Niech będzie "slow start":\\
+				\item Przystępując do rysowania słupków należy zaznaczyć jaki algorytm wybraliśmy. Niech będzie "slow start", ale podobno jest zalecany CA na examie.\\
 				\includegraphics[width=6.0cm]{./images/zadanie07.pdf}\\\\
 				Wynika z tego, że na 16 pakietów 2 zostają przekłamane. $ 16 - 2 = 14 $ - nieprzekłamane pakiety. Liczba ta nie powinna zostać przekroczona w wysyłaniu danych do okna.
 				\item Na koniec pozostaje obliczyć efektywną prędkość. Może ona zostać obliczona wg dwóch wzorów:
@@ -367,10 +372,13 @@
 	% ================= ZADANIE 5.2 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
-			Stacja robocza połączona jest z serwerem łączem szeregowym o przepustowości $ 10\;Mbit/s $, z bitową stopą błędów $ BER=1.3\cdot 10^{-5} $. Określ z jaką średnią szybkością można przesyłać dane z serwera protokołem TCP w wersji standardowej, jeśli wielkość segmentu wynosi 768 kB (ramki 832 B), wielkość okna odbiorcy 29 kB, średni czas $ RTT=45\;ms $.
+			Stacja robocza połączona jest z serwerem łączem szeregowym o przepustowości $ 10\;Mbit/s $, z bitową stopą błędów $ BER=1.3\cdot 10^{-5} $. Określ z jaką średnią szybkością można przesyłać dane z serwera protokołem TCP w wersji standardowej, jeśli wielkość segmentu wynosi 768 B (ramki 832 B), wielkość okna odbiorcy 29 kB, średni czas $ RTT=45\;ms $.
 		\subsubsection{Odpowiedź}
-			$ \cfrac{1}{1.3\cdot 10^{-5}}\approx 76\;923 $ - 1 bit na 76923 jest przekłamany, ok. 1 bajt na 9600 B, czyli co 12 ramka jest przekłamana.\\\\
-			$ \cfrac{29\;[kB]}{832\;[B]}\approx 36 $ - tyle ramek można maksymalnie przesłać do okna.\\\\
+			\begin{enumerate}
+				\item $ \cfrac{1}{1.3\cdot 10^{-5}}\approx 76\;923 $ - 1 bit na 76923 jest przekłamany, ok. 1 bajt na 9600 B.
+				\item $ \cfrac{9600\:[B]}{832\:[B]}\approx11.54 $ - co 12 ramka jest przekłamana.
+				\item $ \cfrac{29\;[kB]}{832\;[B]}=\cfrac{29\:000\;[B]}{832\;[B]}\approx 35 $ - tyle ramek można maksymalnie przesłać do okna.
+			\end{enumerate}
 			Ilustracja przekłamania ramek metodą słupków:\\\\
 			\includegraphics[width=16.0cm]{./images/zadanie08.pdf}\\\\
 			Na 96 pakietów 8 zostaje przekłamanych.\\
@@ -388,15 +396,16 @@
 			Stacja robocza podłączona jest z serwerem łączem Fast Ethernet o przepustowości $100\;Mbit/s $, z bitową stopą błędów $ BER=6.6\cdot 10^{-6} $. Uzgodniona wielkość segmentu to 1024 [B] (1088 [B] w łączu), wielkość okna odbiorcy wynosi 27 [kB], czas RTT wynosi 40 [ms]. Określić, ile czasu zajmie przesył 1 [MB] tym łączem protokołu TCP w wersji standardowej.
 		\subsubsection{Odpowiedź}
 		\begin{enumerate}
-			\item $ \cfrac{1}{BER}=\cfrac{1}{6.6\cdot 10^{-6}}=151515$, co oznacza, że 1 na 151515 bitów jest przekłamany $ \rightarrow $ 1 na 18939 bajtów $ \rightarrow $ co 18 ramka jest przekłamana.\\
-			\item $ \cfrac{27\:[kB]}{1088\:[B]}=\cfrac{27648\:[B]}{1088\:[B]}=24,8 \rightarrow $, co oznacza maksymalnie 24 ramki w słupku.
+			\item $ \cfrac{1}{BER}=\cfrac{1}{6.6\cdot 10^{-6}}=151515$, co oznacza, że 1 na 151515 bitów jest przekłamany $ \rightarrow $ 1 na 18939 bajtów.
+			\item $ \cfrac{18939\;[B]}{1\:088\;[B]}\approx17.41 \rightarrow $ co 18 ramka jest przekłamana.
+			\item $ \cfrac{27\;[kB]}{1\:088\;[B]}=\cfrac{27\:000\;[B]}{1088\;[B]}=24.82 \rightarrow $, co oznacza maksymalnie 24 ramki w słupku.
 			\item
 				\begin{center}
 					\includegraphics[width=9.0cm]{./images/zadanie14.pdf}
 				\end{center}
 			\item Odpowiedź
 			$$ SRET=\cfrac{68\cdot1024\:[B]}{15\cdot40\:[ms]}=\approx113\;[\cfrac{kB}{s}]$$
-			$$ GNB=\cfrac{38\cdot1024\:[B]}{15\cdot40\:[ms]}=\approx63\;[\cfrac{kB}{s}]$$
+			$$\\\\ GNB=\cfrac{38\cdot1024\:[B]}{15\cdot40\:[ms]}=\approx63\;[\cfrac{kB}{s}]$$
 		\end{enumerate}
 	% ================= ZADANIE 5.4 ==================
 \newpage
@@ -408,21 +417,21 @@
 			\begin{enumerate}
 				\item Ramka w Ethernecie: 1500 [B] (1460 [B] dla danych)
 				\item W routerze jest dostępne 12000 [B].
-				\item $ \cfrac{12\:228\;[B]}{1500\;[B]}=8.192 \rightarrow $ oznacza, że razem można wysłać 8 ramek, przy 9tej przepełni się bufor.
+				\item $ \cfrac{12\:000\;[B]}{1500\;[B]}=8 \rightarrow $ oznacza, że razem można wysłać 8 ramek, przy 9tej przepełni się bufor.
 				\item \includegraphics[width=8.0cm]{./images/zadanie15.pdf}
 				\item Na 24 ramki 1 została przekłamana. mamy więc 23 poprawne ramki oraz 5 słupków.
 				\item $$ SRET=\cfrac{23\cdot1460\:[B]}{5\cdot35\:[ms]}=\cfrac{33580000\:[B]}{175\:[s]}=191885\:[\cfrac{B}{s}]=187\;[\cfrac{kB}{s}] $$
 			\end{enumerate}
 			
 \newpage
-	% ================= ZADANIE 5.4 ==================
+	% ================= ZADANIE 5.5 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			W systemie transmisji posługującym się protokołem SDLC / HDLC (tryb NRM, w=3, retransmisja grupowa) w łączu ze stopą błędów $ p=10^{-4} $ przesyłane są dane ramkami z polem danych 256 B, ze stacji nadrzędnej do stacji podrzędnej. Przedstaw przebieg transmisji w przesyle \textbf{4.5 kB} danych, pomiń nawiązanie / zrywanie połączenia. Ile kosztuje (narzut protokołu) obsługa błędów w transmisji?
 		\subsubsection{Odpowiedź}
 			Najpierw liczymy ilość potrzebnych ramek
-			$$ \cfrac{4.5\;kB}{256\;B}=18\;[ramek] $$
-			Następnie należy wyliczyć, co którą ramkę pojawi się przekłamanie. Stopa błędu wynosi 1/10000, czyli to oznacza, że co 10000 bit następuje przekłamanie, co równa się 1250 B. Teraz należy oblicz, co którą ramkę następuje błąd (i teraz nie jestem pewien ale chyba do tych 256 B danych należy dodać 6B nagłówka).
+			$$ \cfrac{4.5\;[kB]}{256\;[B]}=\cfrac{4\:500\;[B]}{256\;[B]}\approx17.58\;[ramek] $$Należy przesłać 18 ramek.\\
+			Następnie należy wyliczyć, co którą ramkę pojawi się przekłamanie. Stopa błędu wynosi 1/10000, czyli to oznacza, że co 10000 bit następuje przekłamanie, co równa się 1250 B. Teraz należy obliczyć, co którą ramkę następuje błąd (i teraz nie jestem pewien ale chyba do tych 256 B danych należy dodać 6B nagłówka).
 			$$ \cfrac{1250}{262}={4.77}\approx5 $$
 			Co piąta ramka zawiera przekłamanie. Teraz można zacząć przedstawiać przebieg transmisji. "w" oznacza ile ramek możemy przesłać w takiej jednej sekwencji.
 			\begin{center}
@@ -433,7 +442,7 @@
 			\small{ \emph{Forczu: ocenione na 1.0 / 1.0}}.
 
 \newpage
-	% ================= ZADANIE 5.5 ==================
+	% ================= ZADANIE 5.6 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			W systemie z protokołem SDLC (tryb NRM, w=3, retransmisja grupowa), ze stopą błędów $ p=10^{-4} $, ramki są wysyłane z polem danych 256 B ze stacji nadrzędnej do podrzędnej. Przedstaw przebieg transmisji przy przesyle \textbf{4 kB} danych. Pomiń nawiązanie i zerwanie połączenia. Ile kosztuje (narzut protokołu) obsługa błędów w transmisji?
@@ -445,7 +454,7 @@
 			\end{center}
 			Wysłaliśmy łącznie 24 ramki. Narzut: 24 - 16 = 8 ramek = 2048 B = 2 kB
 \newpage
-	% ================= ZADANIE 5.6 ==================
+	% ================= ZADANIE 5.7 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			W systemie transmisji z protokołem HDLC średnio jeden na 9000 bitów jest przekłamany. Jaki będzie koszt obsługi błędów transmisji przy przesyle bloku 4 kB danych ze stacji B do stacji A w tym systemie, jeśli wielkość pola danych to 256 B, okno w=4, tryb NRM z retransmisją grupową.
@@ -458,7 +467,7 @@
 			\end{center}
 			Wysłano 28 ramek. Narzut: 28 - 16 = 12 ramek = 3072 B = 3 kB.
 \newpage		
-	% ================= ZADANIE 5.7 ==================
+	% ================= ZADANIE 5.8 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Drukarka wierszowa posiada jeden bufor na 80 znaków (1 wiersz tekstu). Wydruk bufora zajmuje 25 ms, w czasie których drukarka nie przyjmuje danych. Stacja nadrzędna przesyła notatkę - 3 wiesze (bloki po 80 znaków) łączem o szybkości transmisji 19200 bitów / s, protokół BSC (2 znaki SYN). Przedstaw przebieg komunikacji SN-SP (drukarka). Załóż brak przekłamań, pomiń fazę nawiązania połączenia. Przyjmij czas przetwarzania żądania / odpowiedzi i propagacji sygnału łączem 2.5 $ \mu s $.
@@ -628,9 +637,9 @@
 		\subsubsection{Treść}
 			Przesyłka e-mail zawiera fragment tekstu: "płoną góry, płoną lasy..." . Przedstaw sposób zakodowania pierwszych słów treści listu zapewniający (dowolnym łączem) poprawny przesył znaków narodowych.
 		\subsubsection{Odpowiedź}
-			Treść wiadomości:
+			Zastosowany algorytm to QPE (\emph{Quoted Printable Encoding}). Treść wiadomości:
 			\begin{center}
-				p\textbf{=B3}on=B9 g\textbf{=F3}ry, p\textbf{=B3}on=B9 lasy
+				p\textbf{=B3}on=B9 g\textbf{=F3}ry, p\textbf{=B3}on\textbf{=B9} lasy
 			\end{center}
 			Gdzie:
 			\begin{itemize}

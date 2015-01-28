@@ -25,8 +25,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.7"
-     inkscape:cx="949.83331"
-     inkscape:cy="970.50512"
+     inkscape:cx="1004.152"
+     inkscape:cy="513.36226"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -36,11 +36,11 @@
      fit-margin-bottom="2"
      fit-margin-right="2"
      fit-margin-left="2"
-     inkscape:window-width="1366"
-     inkscape:window-height="706"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
+     inkscape:window-width="1038"
+     inkscape:window-height="958"
+     inkscape:window-x="25"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
      units="cm">
     <sodipodi:guide
        orientation="1,0"
@@ -55,7 +55,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -230,12 +230,12 @@
          x="625"
          y="130.50504"
          id="tspan4431"
-         style="font-size:40px">Najpierw tworzymy tabelę z kosztami dotarcia</tspan><tspan
+         style="font-size:34px">Najpierw tworzymy tabelę z kosztami dotarcia</tspan><tspan
          sodipodi:role="line"
          x="625"
          y="180.50504"
          id="tspan4433"
-         style="font-size:40px">informacji z poszczególnych węzłów do F.</tspan></text>
+         style="font-size:34px">informacji z poszczególnych węzłów do F.</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -366,19 +366,18 @@
          y="230.21933"
          x="625"
          sodipodi:role="line"
-         id="tspan4670">Następuje awaria F. Węzeł E nie może się</tspan><tspan
-         y="255.21933"
+         id="tspan4674"
+         style="font-size:32px">Następuje awaria F. Węzeł E nie może się dostać do niego,</tspan><tspan
+         y="272.71933"
          x="625"
          sodipodi:role="line"
-         id="tspan4674">dostać do niego, więc próbuje przez C lub D,</tspan><tspan
-         y="280.21933"
+         id="tspan4676"
+         style="font-size:32px">więc próbuje przez C lub D, bo wie, że mają do F koszt</tspan><tspan
+         y="315.21933"
          x="625"
          sodipodi:role="line"
-         id="tspan4676">bo wie, że mają do F koszt równy 2.</tspan><tspan
-         y="305.21933"
-         x="625"
-         sodipodi:role="line"
-         id="tspan4678">Więc 1 + 2  = 3.</tspan></text>
+         id="tspan4678"
+         style="font-size:32px">równy 2. Więc 1 + 2  = 3.</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4659"
@@ -476,22 +475,21 @@
        y="351.43765"
        id="text4704"
        sodipodi:linespacing="125%"><tspan
-         id="tspan4712"
          sodipodi:role="line"
          x="625"
-         y="351.43765">E się zaktualiował, jednak drogi C i D do F</tspan><tspan
+         y="351.43765"
+         id="tspan4729"
+         style="font-size:32px">E się zaktualiował, jednak drogi C i D do F zależały od E,</tspan><tspan
          sodipodi:role="line"
          x="625"
-         y="376.43765"
-         id="tspan4729">zależały od E, dlatego one też muszą się</tspan><tspan
+         y="391.43765"
+         id="tspan4731"
+         style="font-size:32px">dlatego one też muszą się zaktualizować. Ponieważ obecnie</tspan><tspan
          sodipodi:role="line"
          x="625"
-         y="401.43765"
-         id="tspan4731">zaktualizować. Ponieważ obecnie E do F ma</tspan><tspan
-         sodipodi:role="line"
-         x="625"
-         y="426.43765"
-         id="tspan4733">3, one też tyle dodają, 1 + 3 = 4.</tspan></text>
+         y="431.43765"
+         id="tspan4733"
+         style="font-size:32px">E do F ma 3, one też tyle dodają, 1 + 3 = 4.</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -545,7 +543,7 @@
          id="tspan4745"
          x="272.26691"
          y="490.39899"
-         style="font-size:36px">2</tspan></text>
+         style="font-size:36px">4</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4747"
@@ -557,7 +555,7 @@
          y="490.39899"
          x="364.40976"
          id="tspan4749"
-         sodipodi:role="line">2</tspan></text>
+         sodipodi:role="line">4</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -585,34 +583,30 @@
     <text
        sodipodi:linespacing="125%"
        id="text4759"
-       y="478.71689"
+       y="480.71689"
        x="625"
        style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
        xml:space="preserve"><tspan
-         id="tspan4767"
-         y="478.71689"
-         x="625"
-         sodipodi:role="line">Teraz B widzi, że C i D się zaktualizowały,</tspan><tspan
-         y="503.71689"
+         y="480.71689"
          x="625"
          sodipodi:role="line"
-         id="tspan4792">a od nich zależała droga z B do F, więc ten</tspan><tspan
-         y="528.71686"
+         id="tspan4792"
+         style="font-size:30px">Teraz B widzi, że C i D się zaktualizowały, a od nich zależała</tspan><tspan
+         y="518.21692"
          x="625"
          sodipodi:role="line"
-         id="tspan4794">tez robi update. 2 + 4 = 6.</tspan><tspan
-         y="553.71686"
+         style="font-size:30px"
+         id="tspan6802">droga z B do F, więc ten tez robi update. 2 + 4 = 6. Równocześnie E</tspan><tspan
+         y="555.71692"
          x="625"
          sodipodi:role="line"
-         id="tspan4796">Równocześnie E widzi tę akutalizację, a od C i D</tspan><tspan
-         y="578.71686"
+         id="tspan4800"
+         style="font-size:30px">widzi tę akutalizację, a od C i D zależy jego droga do F</tspan><tspan
+         y="593.21692"
          x="625"
          sodipodi:role="line"
-         id="tspan4798">zależy jego droga do F (po zerwanym połączeniu),</tspan><tspan
-         y="603.71686"
-         x="625"
-         sodipodi:role="line"
-         id="tspan4800">więc dodaje nowy koszt: 1 + 4 = 5.</tspan></text>
+         style="font-size:30px"
+         id="tspan6810">(po zerwanym połączeniu), więc dodaje nowy koszt: 1 + 4 = 5.</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text4769"
@@ -717,29 +711,24 @@
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
        x="625"
-       y="653.47327"
+       y="665.47327"
        id="text4826"
        sodipodi:linespacing="125%"><tspan
-         id="tspan4838"
          sodipodi:role="line"
          x="625"
-         y="653.47327">Teraz wreszcie A widzi aktualizację B, od </tspan><tspan
+         y="665.47327"
+         id="tspan4868"
+         style="font-size:32px">Teraz wreszcie A widzi aktualizację B, od  którego zależy jego</tspan><tspan
          sodipodi:role="line"
          x="625"
-         y="678.47327"
-         id="tspan4868">którego zależy jego droga do F. Uaktualnia się,</tspan><tspan
+         y="705.47327"
+         id="tspan4874"
+         style="font-size:32px">droga do F. Uaktualnia się, 1 + 6 = 7. To samo robią C i D,</tspan><tspan
          sodipodi:role="line"
          x="625"
-         y="703.47327"
-         id="tspan4872">1 + 6 = 7.</tspan><tspan
-         sodipodi:role="line"
-         x="625"
-         y="728.47327"
-         id="tspan4874">To samo robią C i D, których droga</tspan><tspan
-         sodipodi:role="line"
-         x="625"
-         y="753.47327"
-         id="tspan4876">do F zależy, po awarii, przez B.</tspan></text>
+         y="745.47327"
+         id="tspan4876"
+         style="font-size:32px">których droga do F zależy, po awarii, przez B.</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
@@ -833,22 +822,20 @@
     <text
        sodipodi:linespacing="125%"
        id="text4902"
-       y="809.03674"
+       y="815.03674"
        x="625"
        style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
        xml:space="preserve"><tspan
-         id="tspan4912"
-         y="809.03674"
-         x="625"
-         sodipodi:role="line">I w tym momencie wpadamy w pętlę</tspan><tspan
-         y="834.03674"
+         y="815.03674"
          x="625"
          sodipodi:role="line"
-         id="tspan4936">zbędnych aktualizacji.</tspan><tspan
-         y="859.03674"
+         id="tspan4936"
+         style="font-size:32px">I w tym momencie wpadamy w pętlę aktualizacji.</tspan><tspan
+         y="855.03674"
          x="625"
          sodipodi:role="line"
-         id="tspan4934" /></text>
+         id="tspan4934"
+         style="font-size:32px" /></text>
     <text
        sodipodi:linespacing="125%"
        id="text4914"
@@ -1519,20 +1506,18 @@
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
        x="614.17273"
-       y="1168.5297"
+       y="1170.5297"
        id="text5246"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         id="tspan5248"
          x="614.17273"
-         y="1168.5297">Tutaj następuje koniec obliczeń. W standardzie</tspan><tspan
+         y="1170.5297"
+         id="tspan5250"
+         style="font-size:32px">Tutaj następuje koniec obliczeń. W standardzie &gt;= 15 oznacza</tspan><tspan
          sodipodi:role="line"
          x="614.17273"
-         y="1193.5297"
-         id="tspan5250">&gt;= 15 oznacza nieistniejący węzeł i oznaczany</tspan><tspan
-         sodipodi:role="line"
-         x="614.17273"
-         y="1218.5297"
-         id="tspan5252">jest jako nieskończoność.</tspan></text>
+         y="1210.5297"
+         id="tspan5252"
+         style="font-size:32px">nieistniejący węzeł i oznaczany jest jako nieskończoność.</tspan></text>
   </g>
 </svg>
