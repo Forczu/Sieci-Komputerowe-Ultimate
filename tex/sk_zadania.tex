@@ -349,6 +349,7 @@
 					\begin{enumerate}
 						\item Jeżeli protokół jest typu \emph{slow start} - naliczamy bezwzględnie wg $ 2^n $ - kolejne słupki mają 16, 32 itd. wysokości
 						\item Jeżeli protokół jest typu \emph{congestion avoidance} - po przekroczeniu połowy okna zaczynamy zwiększać wysokość \textbf{liniowo}, czyli np. dla granicy (\emph{thresholdu}) 8 kolejne słupki będą mieć 9, 10, 11 itd. wysokości.
+						\item \emph{congestion avoidance} wykorzystujemy, gdy w poleceniu mamy bufor (podobno).
 					\end{enumerate}
 					\item Gdy napotykamy przekłamaną ramkę zaczynamy naliczać od nowa.
 					\item Liczba ramek w słupku nie może przekroczyć maksymalnej liczby ramek jaką można wysłać w czasie RTT.
@@ -472,6 +473,7 @@
 		\subsubsection{Treść}
 			Drukarka wierszowa posiada jeden bufor na 80 znaków (1 wiersz tekstu). Wydruk bufora zajmuje 25 ms, w czasie których drukarka nie przyjmuje danych. Stacja nadrzędna przesyła notatkę - 3 wiesze (bloki po 80 znaków) łączem o szybkości transmisji 19200 bitów / s, protokół BSC (2 znaki SYN). Przedstaw przebieg komunikacji SN-SP (drukarka). Załóż brak przekłamań, pomiń fazę nawiązania połączenia. Przyjmij czas przetwarzania żądania / odpowiedzi i propagacji sygnału łączem 2.5 $ \mu s $.
 		\subsubsection{Odpowiedź}
+		Jak mamy bufor to liczymy wg \emph{congestion avoidance}
 			19200 $ [\cfrac{b}{s}] $ = 2400 $ [\cfrac{B}{s}] $, czyli 2.4k $ \cfrac{znakow}{s} $, ostatecznie ok. 0.4 ms na jeden znak.
 			\begin{center}
 				\includegraphics[width=16.0cm]{./images/zadanie13.pdf}
