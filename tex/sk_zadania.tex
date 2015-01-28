@@ -212,7 +212,7 @@
 				\item Węzły odrzucają pakiet z niższym numerem sekwencyjnym, więc nowy pakiet będzie uwzględniony po wygaśnięciu wa(żności?) pierwszego, czyli za $ 275\;s $.\\
 				\small{ \emph{Ocenione na 0.9 / 1.0}}
 				\item \small{ \emph{Forczu:}} dlaczego ujebano ten 0.1? Wg mnie dlatego, że kruczek tkwi w słowie "reset". Pakiety są wysyłane co 60 sekund, ale od momentu resetu ($ t_0+25\;s $) zaczynamy liczyć od nowa, czyli nowe pakiety są wysyłane w momentach $ 85\;s, 145\;s, 205\;s $ itd.\\
-				Dlatego prawidłową odpowiedzią imo jest $ t_0+25+\textbf{6}\cdot{60}=325\;s $, czyli dopiero 6ty pakiet zostanie uwzględniony przez tablicę routingu.
+				Dlatego prawidłową odpowiedzią imo jest $ t_0+25+\textbf{5}\cdot{60}=325\;s $, czyli dopiero \textbf{5ty} pakiet zostanie uwzględniony przez tablicę routingu.
 				\item \small{ \emph{Inna odpowiedź, ocena nienzna:}}\\
 				W momencie restartu, po 25 sekundach, oba pakiety żyją i ważniejszy jest Pierwszy z nich, o numerze sekwencyjnym $ seq=23321 $. Dlatego pakiet o $ seq=1 $ zostanie uwzględniony po przedawnieniu $ seq=23321 $, czyli po:
 				$$ 300 - 25 - t_0\;[s]= 275\;[s] $$
