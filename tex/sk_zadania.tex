@@ -36,22 +36,21 @@
 			\includegraphics[width=5.0cm]{./images/zadanie04.pdf}\\\\
 			\begin{tabular}{|c|c|c|c|c|c|p{7cm}|}
 				\hline \textbf{Zmiana} & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{E} & \textbf{Komentarz} \\ 
-				\hline \textbf{-} & 1 & 0 & 1 & 1 & 2 & Działa \\ 
-				\hline \textbf{0} & \color{red}{inf} & \color{red}{X} & \color{red}{inf} & \color{red}{inf} & 2 & B ulega awarii. Sąsiedzi, czyli A, C i D nie mogą się połączyć z nim. \\ 
-				\hline \textbf{1} & \color{red}{4} & X & \color{red}{3} & \color{red}{3} & 2 & Węzły A, B i C próbują się połączyć z B przez E, który nie wie o awarii. \\ 
-				\hline \textbf{2} & 4 & X & 3 & 3 & \color{red}{4} & Ponieważ droga z węzła E do B pierwotnie wiodła przez węzły D i C, po ich zmianie ich tablic, E również musi je aktualizować, nawet pomimo tego, że obecna droga C i D wiedzie przez niego (nie wie o tym). \\
-				\hline \textbf{3} & \color{red}{6} & X & \color{red}{5} & \color{red}{5} & 4 & I zaczyna się pętla. \\ 
-				\hline \textbf{4} & 6 & X & 5 & 5 & \color{red}{6} &  \\ 
-				\hline \textbf{5} & \color{red}{8} & X & \color{red}{7} & \color{red}{7} & 6 &  \\ 
-				\hline \textbf{6} & 8 & X & 7 & 7 & \color{red}{8} &  \\ 
-				\hline \textbf{7} & \color{red}{10} & X & \color{red}{9} & \color{red}{9} & 8 &  \\ 
-				\hline \textbf{8} & 10 & X & 9 & 9 & \color{red}{10} &  \\ 
-				\hline \textbf{9} & \color{red}{12} & X & \color{red}{11} & \color{red}{11} & 10 &  \\ 
-				\hline \textbf{10} & 12 & X & 11 & 11 & \color{red}{12} &  \\ 
-				\hline \textbf{11} & \color{red}{14} & X & \color{red}{13} & \color{red}{13} & 12 &  \\ 
-				\hline \textbf{12} & 14 & X & 13 & 13 & \color{red}{14} &  \\ 
-				\hline \textbf{13} & \color{red}{16} & X & \color{red}{15} & \color{red}{15} & 14 &  \\ 
-				\hline \textbf{14} &  &  &  &  & \color{red}{16} & Koniec \\ 
+				\hline \textbf{0} & 1 & \color{red}{X} & 1 & 1 & 2 & Moment awarii \\ 
+				\hline \textbf{1} & \color{red}{2} & X & \color{red}{2} & \color{red}{2} & 2 & B ulega awarii. Sąsiedzi, czyli A, C i D próbują połączyć się z przez swoich sąsiadów. \\ 
+				\hline \textbf{2} & \color{red}{3} & X & \color{red}{3} & \color{red}{3} & \color{red}{3} & Węzły aktualizują się wzajemnie oraz E musi zrobić swoją. \\ 
+				\hline \textbf{3} & \color{red}{4} & X & \color{red}{4} & \color{red}{4} & \color{red}{4} & I zaczyna się pętla. \\
+				\hline \textbf{4} & \color{red}{5} & X & \color{red}{5} & \color{red}{5} & \color{red}{5} &  \\ 
+				\hline \textbf{5} & \color{red}{6} & X & \color{red}{6} & \color{red}{6} & \color{red}{6} &  \\ 
+				\hline \textbf{6} & \color{red}{7} & X & \color{red}{7} & \color{red}{7} & \color{red}{7} &  \\ 
+				\hline \textbf{7} & \color{red}{8} & X & \color{red}{8} & \color{red}{8} & \color{red}{8} &  \\ 
+				\hline \textbf{8} & \color{red}{9} & X & \color{red}{9} & \color{red}{9} & \color{red}{9} &  \\ 
+				\hline \textbf{9} & \color{red}{10} & X & \color{red}{10} & \color{red}{10} & \color{red}{10} &  \\ 
+				\hline \textbf{10} & \color{red}{11} & X & \color{red}{11} & \color{red}{11} & \color{red}{11} &  \\ 
+				\hline \textbf{11} & \color{red}{12} & X & \color{red}{12} & \color{red}{12} & \color{red}{12} &  \\ 
+				\hline \textbf{12} & \color{red}{13} & X & \color{red}{13} & \color{red}{13} & \color{red}{13} &  \\ 
+				\hline \textbf{13} & \color{red}{14} & X & \color{red}{14} & \color{red}{14} & \color{red}{14} &  \\ 
+				\hline \textbf{14} & \color{red}{15} & X & \color{red}{15} & \color{red}{15} & \color{red}{15} &  Koniec. \\
 				\hline 
 			\end{tabular}\\\\
 			Obliczenia kończą się, gdy koszt trasy z węzła E do B przekroczy 15. Wówczas widzimy, że dokonanych zmian było 14, a więc czas wynosi: $ 14\cdot 30\;s=420\;s=7$ minut.
@@ -349,7 +348,7 @@
 					\begin{enumerate}
 						\item Jeżeli protokół jest typu \emph{slow start} - naliczamy bezwzględnie wg $ 2^n $ - kolejne słupki mają 16, 32 itd. wysokości
 						\item Jeżeli protokół jest typu \emph{congestion avoidance} - po przekroczeniu połowy okna zaczynamy zwiększać wysokość \textbf{liniowo}, czyli np. dla granicy (\emph{thresholdu}) 8 kolejne słupki będą mieć 9, 10, 11 itd. wysokości.
-						\item \emph{congestion avoidance} wykorzystujemy, gdy w poleceniu mamy bufor (podobno).
+						\item \emph{Congestion avoidance} wykorzystujemy, gdy w poleceniu mamy bufor (podobno).
 					\end{enumerate}
 					\item Gdy napotykamy przekłamaną ramkę zaczynamy naliczać od nowa.
 					\item Liczba ramek w słupku nie może przekroczyć maksymalnej liczby ramek jaką można wysłać w czasie RTT.
@@ -649,5 +648,25 @@
 				\item =B9 - dziesiętnie 185 - ą w ASCII
 				\item =F3 - dziesiętnie 243 - ó w ASCII
 			\end{itemize}
-			Dziesiętne kody w ASCII były podane w poleceniu, należało je zmienić na zapis szesnastkowy.
+			Dziesiętne kody w ASCII były podane w poleceniu, należało je zmienić na zapis szesnastkowy.	
+\newpage
+	% ================= ZADANIE 7.2 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			Tekst w języku polskim zawiera średnio 5\% znaków narodowych. Porównać efektywność kodowania (zwiększenie objętości) przesyłek e-mailowych dla obu (dostępnych w MIME) metod bezpiecznego przesyłu rozszerzonego zestawu znaków ASCI. Przy jakim procencie znaków narodowych w przesyłanym tekście efektywność obu metod będzie taka sama?
+		\subsubsection{Odpowiedź}
+			1 znak polski = 3 znaki dla QP.\\
+			Np. 5\% polskich znaków - na 100 znaków przypada 5 polskich. Zostanie wysłanych 110 znaków - nadmiarowość QP wynosi 10\%.\\
+			Dostępne rozwiązania:
+			\begin{enumerate}
+				\item Queted Printable - nadmiarowość 10\%
+				\item Base64 - nadmiarowość 33\%
+			\end{enumerate}
+			Oznacza to, że dla 5\% znaków obie metody będą miały równą sprawność przy
+			$$ \cfrac{10}{100}\cdot5=\cfrac{33}{100}\cdot x \rightarrow x = \cfrac{10}{100}\cdot\cfrac{100}{33}\cdot 5 = 16.5 $$
+			znakach.
+			
+			
+			
+			
 			
