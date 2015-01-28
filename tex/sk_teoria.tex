@@ -535,8 +535,8 @@
 				\multicolumn{1}{|c|}{Adres odbiorcy}	& 6 B &	MAC \\ \hline
 				\multicolumn{1}{|c|}{Adres nadawcy}	& 6 B &	MAC \\ \hline
 				\multicolumn{1}{|c|}{Kontrola}		& 2 B & DIX Ethernet - typ protokołu; IEEE - długość danych	\\ \hline
-				\multicolumn{1}{|c|}{Pole danych}	& od 46 B do 1500 B	& \\ \hline
-				\multicolumn{1}{|c|}{CRC}			& 4 B & \\ \hline
+				\multicolumn{1}{|c|}{Pole danych}& od 46 B do 1500 B	& \\ \hline
+				\multicolumn{1}{|c|}{CRC}			& 4 B & \\ \hline	
 				Cisza na łączu między znakami		& 12 B & 9.6 $ \mu $s \\ \hline
 			\end{tabular}
 		\end{table}\\
@@ -669,10 +669,16 @@
 					\item Stacje nie wiedzą co się dzieje u innych.
 					\item Ciężko w niej znaleźć miejsce przerwania.
 				\end{itemize}
-				Sieć dwupierścieniowa (Token Ring).\\
-				\includegraphics[width=7cm]{./images/image30.pdf}\\
-				Dwa pierścienie: jeden zewnętrzny, drugi wewnętrzny (rezerwowy). Jeśli jeden przesyła w lewo, to drugi w prawo. Jeżeli zewnętrzny zostanie przerwany, to wewnętrzny zajmuje się załataniem tego.\\
-				\textbf{Wada}: jeżeli w sieci nie ma Tokenu to występują kolizje.
+				\subsubsection{Sieć pierścieniowa dla CSMA / CD}
+					\begin{itemize}
+						\item Liczba bitów w pierścieniu $ N_{ring}=\frac{L}{\frac{2}{3}C}\times \frac{1}{V}$, gdzie: \emph{L} to długość kabla łącza; \emph{V} to szybkość nadawania; \emph{C} to prędkość światła
+						\item Liczba bitów pamiętanych na kablach $ n=\frac{T_p}{T_b} $
+						\item Dla Cambridge Ring: $ N_{ramek}=N_{ring}+N_{stacji}=\sfrac{4N}{40bit} $
+					\end{itemize}
+				\subsubsection{Sieć dwupierścieniowa (Token Ring)}
+					\includegraphics[width=7cm]{./images/image30.pdf}\\
+					Dwa pierścienie: jeden zewnętrzny, drugi wewnętrzny (rezerwowy). Jeśli jeden przesyła w lewo, to drugi w prawo. Jeżeli zewnętrzny zostanie przerwany, to wewnętrzny zajmuje się załataniem tego.\\
+					\textbf{Wada}: jeżeli w sieci nie ma Tokenu to występują kolizje.
 			\subsection{Kodowanie informacji}
 				Kodowanie dla sieci opartych o Token.\\
 				\includegraphics[width=7cm]{./images/image31.pdf}\\
@@ -764,11 +770,6 @@
 				\includegraphics[width=4cm]{./images/image32.pdf}\\
 				Pojemność informacyjna pierścienia $ 20\mu{s} $ gdy $ 4km $ sieci / 200 bit.\\
 				Każda stacja M generuje miniramki o długości 40 bit.\\
-				\begin{itemize}
-					\item Liczba bitów w pierścieniu $ N_{ring}=\frac{L}{\frac{2}{3}C}\times \frac{1}{V}$, gdzie: \emph{L} to długość kabla łącza; \emph{V} to szybkość nadawania.
-					\item Liczba bitów pamiętanych na kablach $ n=\frac{T_p}{T_b} $
-					\item $ N_{ramek}=N_{ring}+N_{stacji}=\sfrac{4N}{40bit}$
-				\end{itemize}
 				\includegraphics[width=7cm]{./images/image33.pdf}
 				\begin{itemize}
 					\item Sieć CR wykorzystuje monitor - wydzieloną stację.\\
@@ -1262,9 +1263,10 @@ Dla zwiększenia bezpieczeństwa transmisji (i kontroli otrzymywanych wiadomośc
 
 \subsubsection{Parametry czasowe}
 	\begin{itemize}
-		\item refresh - czas odświeżania
-		\item retry - czas po którym nastepuje kolejna próba połączenia
+		\item refresh - czas odświeżania, co jaki czas secondary pyta primary
+		\item retry - czas po którym następuje kolejna próba połączenia, powtórzenie refreshu, aż się pliki pobierze, albo aż minie expire.
 		\item expire - czas po którym połączenie się poddaje
+		\item TTL - czas życia w pamięci notatnikowej, jak DNS go pobierze do na tyle czasu trwa w DNS
 	\end{itemize}
 \subsubsection{Name Serwery}
 	\begin{itemize}

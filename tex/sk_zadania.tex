@@ -116,6 +116,8 @@
 		\subsubsection{Treść}
 			Chcemy zastosować protokół CSMA / CD przy budowie sieci o długości łącza 500 m przy szybkości transmisji 200 MBit/s. Jaka powinna być w tym przypadku minimalna długość ramki?
 		\subsubsection{Odpowiedź}
+		\begin{enumerate}
+			\item \textbf{Pierwsza metoda:}\\
 			Najpierw liczymy czas propagacji $$ t_p = \cfrac{dystans}{predkosc\_lacza} $$
 			Prędkości łącza nie mylić z szybkością transmisji. W przypadku światłowodu wynosi ono 2/3 prędkości światła czyli 200 000 000 m/s, tu takie założenie można dać. O tej wartości należy pamiętać na sztywno. Następnie liczmy czas propagacji sygnału przez 500 [m]:
 			$$ t_p=\frac{500\;[m]}{200\:000\:000\:[m/s]}=2.5\:\mu s $$
@@ -124,6 +126,36 @@
 			Aby CSMA/CD działało poprawnie cała ramka musi być wysłana w tych $5\:\mu s$, czyli wyliczamy jej długość:
 			$$ N=szybkosc\_transmisji\cdot t_p $$
 			$$ N=200\:000\:000\:[bit]\cdot \frac{5}{10^6} =200\cdot5=1000\:bit=125\:B $$
+			\item \textbf{Druga metoda:}\\
+			\begin{itemize}
+				\item $ L=500\;[m] $
+				\item $ V=200\;[Mbit/s] $
+				\item $ t=\cfrac{200\:000\:000\;[{m}]}{200\:000\:000\;[\cfrac{m}{s}]}=\;[s] $
+				\item $ N=2\cdot500=1000 $
+				\item $ \cfrac{1000}{8}=125 $ - długość ramki
+			\end{itemize}
+			{\small \emph{Forczu: ocenione na 1.0 / 1.0}}
+		\end{enumerate}
+			
+	% ================= ZADANIE 2.4 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			Określić maksymalną długość ramki powstającej w wyniku kolizji w sieci pierścieniowej o sumarycznej długości łączy $ L=6\:km $, $ n=50 $ stacji i szybkości transmisji równej 25 Mbitów/s, przy zastosowaniu rywalizacyjnego (CSMA / CD) algorytmu dostępu do łącza.
+		\subsubsection{Odpowiedź}
+		\begin{enumerate}
+			\item Czas propagacji: $ \cfrac{\cfrac{1}{2}\cdot L}{\cfrac{2}{3}\cdot C} = \cfrac{3\:[km]}{200\:000\:000\;[\cfrac{m}{s}]}=15 [\mu s]$
+			\item Liczba bitów w pierścieniu $ N_{ring} $: $ \cfrac{L}{\cfrac{2}{3}\cdot C}\cdot \cfrac{1}{V} = 30 [\mu s] \cdot \cfrac{1}{25\;[Mbit/s]}=75\;[Mbit] $
+			\item Rozmiar ramki: $ 25\;[Mbit/s]\cdot 2 \cdot 15 [\mu s]=750\;[b] $
+		\end{enumerate}
+	
+	% ================= ZADANIE 2.4 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			
+		\subsubsection{Odpowiedź}
+			
+			
+			
 			
 % ==================================================
 % --- 3. TCP / IP
@@ -138,6 +170,8 @@
 			\item \textbf{TCP} - kontrolowanie poprzez zmianę rozmiaru okna odbiorcy.
 			\item \textbf{SDLC / HDLC} - kontrolowanie przez sygnały typu WACK / ACK w protokole znakowym BSC (RR, RNR).
 		\end{itemize}
+		
+
 
 % ==================================================
 % --- 4. ROUTING
@@ -158,7 +192,10 @@
 					\hline 
 				\end{tabular}\\\\\\
 			Przykładowy zestaw pakietów zadziała następująco: stacja A wyśle potwierdzenia do węzłów F i D. Do węzłów B, C i E wyśle pakiet z F. Dlaczego?\\
-			Potwierdzenia wysyłane są do węzłów z których przyszły pakiety z najwyższym numerem sekwencyjnym (drugi wiersz). W tym przypadku są to węzły F i D, których $ seq $ są równie 214. Do sąsiadów, którzy nie otrzymali potwierdzenia (B, C i E) wysyłany jest ten spośród pakietów z najwyższym numerem sekwencyjnym, którego pole Age (trzeci wiersz) jest największe. Dlatego co tych trzech węzłów zostanie wysłany pakiet z F.
+			Potwierdzenia wysyłane są do węzłów z których przyszły pakiety z najwyższym numerem sekwencyjnym (drugi wiersz). W tym przypadku są to węzły F i D, których $ seq $ są równie 214. Do sąsiadów, którzy nie otrzymali potwierdzenia (B, C i E) wysyłany jest ten spośród pakietów z najwyższym numerem sekwencyjnym, którego pole Age (trzeci wiersz) jest największe. Dlatego co tych trzech węzłów zostanie wysłany pakiet z F.\\\\
+			Inna odpowiedź:\\
+			"Pakiet pochodzący z węzła H zostanie odrzucony ponieważ jego numer sekwencyjny jest niższy niż numer pochodzący z F i D czyli zawiera stare dane. Do węzła F oraz D zostanie wysłane potwierdzenie, natomiast do węzłów C, E, H zostanie wysłany pakiet pochodzący z węzła F ponieważ posiada on dłuższy czas życia od pakietu z węzła D. Ten pakiet zostanie również uwzględniony w liczeniu nowej tablicy routingu w węźle A"
+			{\small \emph{Forczu: ocenione na 1.0 / 1.0}}
 \newpage
 	% ================= ZADANIE 4.2 ==================
 	\subsection{Zadanie}
@@ -607,9 +644,24 @@
 				\item expire = 86400
 				\item default TTL = 7200
 			\end{itemize}
-			Administrator domeny zaplanował zastąpienie wysłużonego głównego \emph{name servera} nowym systemem (noy adres IP). Po jakim czasie (od dokonania zmiany rekordu NS) równoległej pracy obu \emph{name serverów} będzie można wyłączyć stary serwer.
+			Administrator domeny zaplanował zastąpienie wysłużonego głównego \emph{name servera} nowym systemem (nowy adres IP). Po jakim czasie (od dokonania zmiany rekordu NS) równoległej pracy obu \emph{name serverów} będzie można wyłączyć stary serwer.
 		\subsubsection{Odpowiedź}	
-			Po czasie TTL + refresh = 10 800 + 7200 = 18 000.
+			Po czasie TTL + refresh = 10 800 + 7200 = 18 000. Gdyby się składało z primary i secondary.
+	% ================= ZADANIE 6.5 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			Przedstaw jak przebiega proces tłumaczenia adresu IP na nazwę DNS. Jakie domeny TLD są w tym procesie zaangażowane. Ile czasu może maksymalnie zająć przetłumaczenie wcześniej nie znanego adresu, jeżeli odwiedź z NS następują w czasie nie dłuższym niż 0,7s.
+		\subsubsection{Odpowiedź}
+			Przykładowy adres: 137.57.25.13\\
+			Tłumaczenie: 13.25.57.137
+			\begin{enumerate}
+				\item NS(137) $ \rightarrow $ zapytanie o główny serwer
+				\item NS(137.57) $ \rightarrow $ zapytanie o port sieci
+				\item NS(137.57.25) $ \rightarrow $ zapytanie o podsieć
+				\item NS(137.57.25.13) $ \rightarrow $ zapytanie o nazwę jednostki w swojej podsieci
+			\end{enumerate}
+			Czas trwania tłumaczenia: $ 4\cdot NS=4\cdot0.7=2.8\:[s] $
+			{\small \emph{Forczu: z czyihś notatek.}}
 			
 % ==================================================
 % --- 7. POCZTA E-MAIL
@@ -666,7 +718,18 @@
 			$$ \cfrac{10}{100}\cdot5=\cfrac{33}{100}\cdot x \rightarrow x = \cfrac{10}{100}\cdot\cfrac{100}{33}\cdot 5 = 16.5 $$
 			znakach.
 			
-			
-			
+% ======================================================
+% --- 8. INNE
+% ======================================================
+\newpage
+% ================= ZADANIE 8.1 ==================
+\section{Inne}
+	\subsection{Zadanie}
+		\subsubsection{Treść}
+			Posłaniec przewozi nagrane płyty DVD (9 GB informacji) poruszając się ze średnią szybkością 60 km/h. Do jakiej odległości ma on szybkość przesyłu większą niż sieć 10 Mbitów/s.
+		\subsubsection{Odpowiedź}
+			$$ 60\:[\cfrac{km}{h}]=\cfrac{60\:000 [m]}{3600\:[s]}=16\frac{2}{3} [\frac{m}{s}] $$
+			$$ 6\:[GB] / 10\:[MBit/s] = \cfrac{768\:[Mbit]}{10\:[MBit/s]}=76.8\:[s]$$
+			$$ 16\frac{2}{3} [\frac{m}{s}] \cdot 76.8\:[s] \approx 1280.256 $$
 			
 			
