@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.5)  28 JAN 2015 22:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.5)  28 JAN 2015 22:54
 entering extended mode
 **sk_ultimate.tex
 ("F:\Uczelnia\Sem 5\SK\sk_ultimate\sk_ultimate.tex"
@@ -1719,10 +1719,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 1258--1260
 File: ./images/drawing10.pdf Graphic file (type pdf)
 
 <use ./images/drawing10.pdf>
-Package pdftex.def Info: ./images/drawing10.pdf used on input line 1301.
+Package pdftex.def Info: ./images/drawing10.pdf used on input line 1302.
 (pdftex.def)             Requested size: 256.0748pt x 250.39778pt.
  [43 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/drawing10.pdf>]
-Underfull \hbox (badness 1496) in paragraph at lines 1382--1383
+Underfull \hbox (badness 1496) in paragraph at lines 1383--1384
 \OT4/cmr/m/n/10 gned Da-ta; pkcs7-mime enve-lo-ped Da-ta; pkcs7-
  []
 
@@ -1730,7 +1730,7 @@ Underfull \hbox (badness 1496) in paragraph at lines 1382--1383
 File: ./images/drawing11.pdf Graphic file (type pdf)
 
 <use ./images/drawing11.pdf>
-Package pdftex.def Info: ./images/drawing11.pdf used on input line 1402.
+Package pdftex.def Info: ./images/drawing11.pdf used on input line 1403.
 (pdftex.def)             Requested size: 256.0748pt x 158.38882pt.
 )
 ("F:\Uczelnia\Sem 5\SK\sk_ultimate\tex\sk_zadania.tex" [45 <F:/Uczelnia/Sem 5/S
@@ -2127,7 +2127,7 @@ ic/pl/plsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plsy7.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plsy9.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/pl/plti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
 pe1/public/pl/plti9.pfb>
-Output written on sk_ultimate.pdf (73 pages, 5505723 bytes).
+Output written on sk_ultimate.pdf (73 pages, 5505936 bytes).
 PDF statistics:
  2720 PDF objects out of 2984 (max. 8388607)
  632 named destinations out of 1000 (max. 500000)

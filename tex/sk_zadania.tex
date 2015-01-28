@@ -147,16 +147,7 @@
 			\item Liczba bitów w pierścieniu $ N_{ring} $: $ \cfrac{L}{\cfrac{2}{3}\cdot C}\cdot \cfrac{1}{V} = 30 [\mu s] \cdot \cfrac{1}{25\;[Mbit/s]}=75\;[Mbit] $
 			\item Rozmiar ramki: $ 25\;[Mbit/s]\cdot 2 \cdot 15 [\mu s]=750\;[b] $
 		\end{enumerate}
-	
-	% ================= ZADANIE 2.4 ==================
-	\subsection{Zadanie}
-		\subsubsection{Treść}
-			
-		\subsubsection{Odpowiedź}
-			
-			
-			
-			
+
 % ==================================================
 % --- 3. TCP / IP
 % ==================================================
@@ -355,7 +346,7 @@
 				N  & L     & 3    
 			\end{tabular}
 		\end{wraptable}
-		W tym wszystkim interesują nas tylko drogi lokalnie najbliższe - te z punktu widzenia węzła K i "ofert" dróg sąsiadów. Jeśli dwie drogi mają ten sam koszt to wybór powinien być obojętny. Sąsiedzi (L, I, D) mają się w końcowej tabeli również znajdować.\\
+		W tym wszystkim interesują nas tylko drogi lokalnie najbliższe - te z punktu widzenia węzła K i "ofert" dróg sąsiadów. Jeśli dwie drogi mają ten sam koszt to wybór powinien być obojętny. Sąsiedzi (L, I, F) mają się w końcowej tabeli również znajdować.\\
 		\small{ \emph{Forczu: ocenione na 1.0 / 1.0}}.\\\\\\\\\\\\\\\\\\\\\\\\
 		
 \newpage
@@ -403,7 +394,7 @@
 				\end{enumerate}
 				\item W naszym zadaniu są to:
 				$$ SRET=\frac{(16-2)\cdot 768\;[B]}{5\cdot 40\;[ms]}=\frac{14\cdot 768\;[B]}{5\cdot 40\;[ms]}=\frac{14\cdot 768\;[B]}{5\cdot 40\cdot 10^{-3}\;[s]}=53760\;[\frac{B}{s}]=52.5\; [\frac{kB}{s}]$$\\
-				$$ GNB=\frac{(16-9)\cdot 768\;[B]}{5\cdot 40\;[ms]}=\frac{7\cdot 768\;[B]}{5\cdot 40\cdot 10^{-3}\;[s]}=26880\;[\frac{B}{s}]=26.25\;[\frac{kB}{s}] $$
+				$$ GBN=\frac{(16-9)\cdot 768\;[B]}{5\cdot 40\;[ms]}=\frac{7\cdot 768\;[B]}{5\cdot 40\cdot 10^{-3}\;[s]}=26880\;[\frac{B}{s}]=26.25\;[\frac{kB}{s}] $$
 			\end{enumerate}
 
 	% ================= ZADANIE 5.2 ==================
@@ -422,7 +413,7 @@
 			Możemy wyróżnić dwa parametry spełniające zadanie:
 			\begin{enumerate}
 				\item $$ SRET=\frac{(96-8)\cdot 768\;[B]}{29\cdot 45\;[ms]}=\frac{88\cdot 768\;[B]}{29\cdot 45\;[ms]} $$
-				\item $$ GND=\frac{(96-36)\cdot 768\;[B]}{29\cdot 45\;[ms]}=\frac{60\cdot 768\;[B]}{29\cdot 45\;[ms]} $$
+				\item $$ GBN=\frac{(96-36)\cdot 768\;[B]}{29\cdot 45\;[ms]}=\frac{60\cdot 768\;[B]}{29\cdot 45\;[ms]} $$
 			\end{enumerate}
 			\small{ \emph{Forczu: w tego typu zadaniach przepustowość chyba zawsze jest maksymalna, a protokoół standardowy, co ma upraszczać całość.
 			Ktoś tam napisał, że wielkość ramki we wzorach jest obojętna, ale należy zaznaczyć, czy bierzemy dane czy dane + narzut.}}.
