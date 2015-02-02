@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.5)  2 FEB 2015 23:25
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.5)  3 FEB 2015 00:34
 entering extended mode
 **sk_ultimate.tex
 ("F:\Uczelnia\Sem 5\SK\sk_ultimate\sk_ultimate.tex"
@@ -2098,12 +2098,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 558--559
  []
 
 [66 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie01.pdf>] [67] [68] [69]
-Underfull \hbox (badness 10000) in paragraph at lines 738--746
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 749--752
+Underfull \hbox (badness 10000) in paragraph at lines 748--751
 
  []
 
@@ -2153,7 +2148,7 @@ ic/pl/plsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plsy7.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plsy9.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/pl/plti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
 pe1/public/pl/plti9.pfb>
-Output written on sk_ultimate.pdf (75 pages, 5531649 bytes).
+Output written on sk_ultimate.pdf (75 pages, 5531682 bytes).
 PDF statistics:
  2771 PDF objects out of 2984 (max. 8388607)
  654 named destinations out of 1000 (max. 500000)
