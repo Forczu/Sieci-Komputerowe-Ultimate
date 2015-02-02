@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.5)  1 FEB 2015 21:10
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.5)  2 FEB 2015 23:25
 entering extended mode
 **sk_ultimate.tex
 ("F:\Uczelnia\Sem 5\SK\sk_ultimate\sk_ultimate.tex"
@@ -1739,25 +1739,25 @@ K/sk_ultimate/images/drawing11.pdf>]
 File: ./images/zadanie02.pdf Graphic file (type pdf)
 
 <use ./images/zadanie02.pdf>
-Package pdftex.def Info: ./images/zadanie02.pdf used on input line 17.
+Package pdftex.def Info: ./images/zadanie02.pdf used on input line 13.
 (pdftex.def)             Requested size: 156.49014pt x 71.96509pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
+Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
@@ -1765,10 +1765,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 File: ./images/zadanie03.pdf Graphic file (type pdf)
 
 <use ./images/zadanie03.pdf>
-Package pdftex.def Info: ./images/zadanie03.pdf used on input line 21.
+Package pdftex.def Info: ./images/zadanie03.pdf used on input line 17.
 (pdftex.def)             Requested size: 455.24408pt x 345.25644pt.
 
-Overfull \hbox (2.27626pt too wide) in paragraph at lines 21--23
+Overfull \hbox (2.27626pt too wide) in paragraph at lines 17--19
 [] 
  []
 
@@ -1782,15 +1782,15 @@ age
 File: ./images/zadanie04.pdf Graphic file (type pdf)
 
 <use ./images/zadanie04.pdf>
-Package pdftex.def Info: ./images/zadanie04.pdf used on input line 36.
+Package pdftex.def Info: ./images/zadanie04.pdf used on input line 32.
 (pdftex.def)             Requested size: 142.26378pt x 131.80313pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--57
+Underfull \hbox (badness 10000) in paragraph at lines 32--53
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--57
+Underfull \hbox (badness 10000) in paragraph at lines 32--53
 
  []
 
@@ -1798,69 +1798,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--57
 Underfull \vbox (badness 2173) has occurred while \output is active []
 
  [47 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie04.pdf>] [48]
-Overfull \hbox (18.81924pt too wide) in paragraph at lines 112--115
+Overfull \hbox (18.81924pt too wide) in paragraph at lines 109--111
 \OT4/cmr/m/it/10 z prze-dzia-ªu \OT4/cmr/bx/it/10 o wiel-ko-±ci ro-sn¡-cej z kw
 a-dra-tem do pew-ne-go nu-me-ru ko-li-zji, $[]$ 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 129--130
-
- []
-
-[49]
-Underfull \hbox (badness 10000) in paragraph at lines 176--190
+[49] [50]
+Underfull \hbox (badness 10000) in paragraph at lines 162--176
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--190
+Underfull \hbox (badness 10000) in paragraph at lines 162--176
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--190
+Underfull \hbox (badness 10000) in paragraph at lines 162--176
 
  []
 
-[50] [51] [52]
+[51] [52]
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <9> on input line 245.
+(Font)              <9> on input line 231.
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--264
+Underfull \hbox (badness 10000) in paragraph at lines 237--250
 
  []
 
 
-Overfull \hbox (33.07394pt too wide) in paragraph at lines 268--280
+Overfull \hbox (33.07394pt too wide) in paragraph at lines 254--266
 [] 
  []
 
-[53] <./images/zadanie05.pdf, id=2105, 703.32059pt x 679.90915pt>
+[53] <./images/zadanie05.pdf, id=2102, 703.32059pt x 679.90915pt>
 File: ./images/zadanie05.pdf Graphic file (type pdf)
 
 <use ./images/zadanie05.pdf>
-Package pdftex.def Info: ./images/zadanie05.pdf used on input line 299.
+Package pdftex.def Info: ./images/zadanie05.pdf used on input line 285.
 (pdftex.def)             Requested size: 227.62204pt x 220.04451pt.
 
-<./images/zadanie06.pdf, id=2106, 703.32059pt x 679.90915pt>
+<./images/zadanie06.pdf, id=2103, 703.32059pt x 679.90915pt>
 File: ./images/zadanie06.pdf Graphic file (type pdf)
 
 <use ./images/zadanie06.pdf>
-Package pdftex.def Info: ./images/zadanie06.pdf used on input line 300.
+Package pdftex.def Info: ./images/zadanie06.pdf used on input line 286.
 (pdftex.def)             Requested size: 227.62204pt x 220.04451pt.
 
-Overfull \hbox (4.49847pt too wide) in paragraph at lines 298--316
+Overfull \hbox (4.49847pt too wide) in paragraph at lines 284--302
 [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--316
+Underfull \hbox (badness 10000) in paragraph at lines 284--302
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 318--329
+Underfull \hbox (badness 10000) in paragraph at lines 304--315
 
  []
 
@@ -1871,238 +1866,247 @@ pdfTeX warning: pdflatex.exe (file F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zada
 nie06.pdf): PDF inclusion: multiple pdfs with page group included in a single p
 age
 >]
-Underfull \hbox (badness 1668) in paragraph at lines 349--351
+Underfull \hbox (badness 1668) in paragraph at lines 335--337
 []\OT4/cmr/m/n/9 W tym wszyst-kim in-te-re-su-j¡ nas tyl-ko dro-gi lo-kal-nie n
 aj-bli»-sze
  []
 
 
-Underfull \hbox (badness 1303) in paragraph at lines 349--351
+Underfull \hbox (badness 1303) in paragraph at lines 335--337
 \OT4/cmr/m/n/9 - te z punk-tu wi-dze-nia w¦-zªa K i "ofert" dróg s¡-sia-dów. Je
 -±li
  []
 
 
-Underfull \hbox (badness 1142) in paragraph at lines 349--351
+Underfull \hbox (badness 1142) in paragraph at lines 335--337
 \OT4/cmr/m/n/9 dwie dro-gi ma-j¡ ten sam koszt to wy-bór po-wi-nien by¢ obo-j¦t
 -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+Underfull \hbox (badness 10000) in paragraph at lines 335--337
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+Underfull \hbox (badness 10000) in paragraph at lines 335--337
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+Underfull \hbox (badness 10000) in paragraph at lines 335--337
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+Underfull \hbox (badness 10000) in paragraph at lines 335--337
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+Underfull \hbox (badness 10000) in paragraph at lines 335--337
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+Underfull \hbox (badness 10000) in paragraph at lines 335--337
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+Underfull \hbox (badness 10000) in paragraph at lines 335--337
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+Underfull \hbox (badness 10000) in paragraph at lines 335--337
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+Underfull \hbox (badness 10000) in paragraph at lines 335--337
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+Underfull \hbox (badness 10000) in paragraph at lines 335--337
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+Underfull \hbox (badness 10000) in paragraph at lines 335--337
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+Underfull \hbox (badness 10000) in paragraph at lines 335--337
 
  []
 
-[55] <./images/zadanie16.pdf, id=2135, 463.6746pt x 273.71541pt>
+[55] <./images/zadanie16.pdf, id=2132, 463.6746pt x 273.71541pt>
 File: ./images/zadanie16.pdf Graphic file (type pdf)
 
 <use ./images/zadanie16.pdf>
-Package pdftex.def Info: ./images/zadanie16.pdf used on input line 372.
+Package pdftex.def Info: ./images/zadanie16.pdf used on input line 358.
 (pdftex.def)             Requested size: 284.52756pt x 167.96434pt.
  [56 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie16.pdf>] <./images/zadanie
-07.pdf, id=2154, 275.0627pt x 171.89935pt>
+07.pdf, id=2151, 275.0627pt x 171.89935pt>
 File: ./images/zadanie07.pdf Graphic file (type pdf)
 
 <use ./images/zadanie07.pdf>
-Package pdftex.def Info: ./images/zadanie07.pdf used on input line 411.
+Package pdftex.def Info: ./images/zadanie07.pdf used on input line 397.
 (pdftex.def)             Requested size: 170.71652pt x 106.6919pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--413
+Underfull \hbox (badness 10000) in paragraph at lines 396--399
 
  []
 
 
-LaTeX Warning: Command \l invalid in math mode on input line 416.
+LaTeX Warning: Command \l invalid in math mode on input line 402.
 
 Missing character: There is no ª in font plmi9!
 [57 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie07.pdf>]
 
-LaTeX Warning: Command \l invalid in math mode on input line 418.
+LaTeX Warning: Command \l invalid in math mode on input line 404.
 
 Missing character: There is no ª in font plmi9!
 
-Overfull \hbox (23.38982pt too wide) detected at line 418
+Overfull \hbox (23.38982pt too wide) detected at line 404
 \OML/plm/m/it/9 GBN \OT4/cmr/m/n/9 = []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 421--422
+Underfull \hbox (badness 10000) in paragraph at lines 407--408
 
  []
 
-<./images/zadanie08.pdf, id=2181, 1370.33171pt x 171.89935pt>
+<./images/zadanie08.pdf, id=2178, 1370.33171pt x 171.89935pt>
 File: ./images/zadanie08.pdf Graphic file (type pdf)
 
 <use ./images/zadanie08.pdf>
-Package pdftex.def Info: ./images/zadanie08.pdf used on input line 436.
+Package pdftex.def Info: ./images/zadanie08.pdf used on input line 422.
 (pdftex.def)             Requested size: 455.24408pt x 57.10728pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 435--440
+Underfull \hbox (badness 10000) in paragraph at lines 421--426
 
  []
 
 
-Overfull \hbox (2.27626pt too wide) in paragraph at lines 435--440
+Overfull \hbox (2.27626pt too wide) in paragraph at lines 421--426
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 435--440
+Underfull \hbox (badness 10000) in paragraph at lines 421--426
 
  []
 
 [58 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie08.pdf>]
-<./images/zadanie14.pdf, id=2203, 743.22841pt x 317.70605pt>
+<./images/zadanie14.pdf, id=2200, 743.22841pt x 317.70605pt>
 File: ./images/zadanie14.pdf Graphic file (type pdf)
 
 <use ./images/zadanie14.pdf>
-Package pdftex.def Info: ./images/zadanie14.pdf used on input line 457.
+Package pdftex.def Info: ./images/zadanie14.pdf used on input line 443.
 (pdftex.def)             Requested size: 256.0748pt x 109.46327pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 462--463
+Underfull \hbox (badness 10000) in paragraph at lines 448--449
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 463--464
+Underfull \hbox (badness 10000) in paragraph at lines 449--450
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 463--464
+Underfull \hbox (badness 10000) in paragraph at lines 449--450
 
  []
 
 [59 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie14.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 472--474
+Underfull \hbox (badness 10000) in paragraph at lines 458--460
 
  []
 
-<./images/zadanie15.pdf, id=2222, 274.93315pt x 192.17697pt>
+<./images/zadanie15.pdf, id=2219, 274.93315pt x 192.17697pt>
 File: ./images/zadanie15.pdf Graphic file (type pdf)
 
 <use ./images/zadanie15.pdf>
-Package pdftex.def Info: ./images/zadanie15.pdf used on input line 477.
+Package pdftex.def Info: ./images/zadanie15.pdf used on input line 463.
 (pdftex.def)             Requested size: 227.62204pt x 159.11095pt.
  [60 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie15.pdf>] [61] <./images/za
-danie09.pdf, id=2249, 483.41737pt x 610.58693pt>
+danie09.pdf, id=2246, 483.41737pt x 610.58693pt>
 File: ./images/zadanie09.pdf Graphic file (type pdf)
 
 <use ./images/zadanie09.pdf>
-Package pdftex.def Info: ./images/zadanie09.pdf used on input line 510.
+Package pdftex.def Info: ./images/zadanie09.pdf used on input line 496.
 (pdftex.def)             Requested size: 256.0748pt x 323.44182pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 512--513
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
 
  []
 
 [62 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie09.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 522--523
+Underfull \hbox (badness 10000) in paragraph at lines 508--509
 
  []
 
-<./images/zadanie10.pdf, id=2269, 483.41737pt x 487.2917pt>
+<./images/zadanie10.pdf, id=2266, 483.41737pt x 487.2917pt>
 File: ./images/zadanie10.pdf Graphic file (type pdf)
 
 <use ./images/zadanie10.pdf>
-Package pdftex.def Info: ./images/zadanie10.pdf used on input line 525.
+Package pdftex.def Info: ./images/zadanie10.pdf used on input line 511.
 (pdftex.def)             Requested size: 227.62204pt x 229.45094pt.
  [63 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie10.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 534--537
+Underfull \hbox (badness 10000) in paragraph at lines 520--523
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 534--537
+Underfull \hbox (badness 10000) in paragraph at lines 520--523
 
  []
 
-<./images/zadanie12.pdf, id=2282, 486.7569pt x 586.4848pt>
+<./images/zadanie12.pdf, id=2279, 486.7569pt x 586.4848pt>
 File: ./images/zadanie12.pdf Graphic file (type pdf)
 
 <use ./images/zadanie12.pdf>
-Package pdftex.def Info: ./images/zadanie12.pdf used on input line 538.
+Package pdftex.def Info: ./images/zadanie12.pdf used on input line 524.
 (pdftex.def)             Requested size: 227.62204pt x 274.26079pt.
  [64 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie12.pdf>] <./images/zadanie
-13.pdf, id=2295, 1066.49529pt x 294.42554pt>
+13.pdf, id=2292, 1066.49529pt x 294.42554pt>
 File: ./images/zadanie13.pdf Graphic file (type pdf)
 
 <use ./images/zadanie13.pdf>
-Package pdftex.def Info: ./images/zadanie13.pdf used on input line 550.
+Package pdftex.def Info: ./images/zadanie13.pdf used on input line 536.
 (pdftex.def)             Requested size: 455.24408pt x 125.67952pt.
 
-Overfull \hbox (2.27626pt too wide) in paragraph at lines 550--551
+Overfull \hbox (2.27626pt too wide) in paragraph at lines 536--537
  [] 
  []
 
 [65 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie13.pdf>]
-<./images/zadanie01.pdf, id=2331, 539.05211pt x 381.49797pt>
+<./images/zadanie01.pdf, id=2328, 539.05211pt x 381.49797pt>
 File: ./images/zadanie01.pdf Graphic file (type pdf)
 
 <use ./images/zadanie01.pdf>
-Package pdftex.def Info: ./images/zadanie01.pdf used on input line 572.
+Package pdftex.def Info: ./images/zadanie01.pdf used on input line 558.
 (pdftex.def)             Requested size: 170.71652pt x 120.81863pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 572--573
+Underfull \hbox (badness 10000) in paragraph at lines 558--559
 
  []
 
 [66 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie01.pdf>] [67] [68] [69]
+Underfull \hbox (badness 10000) in paragraph at lines 738--746
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 749--752
+
+ []
+
 [70]) ("F:\Uczelnia\Sem 5\SK\sk_ultimate\tex\sk_slownik.tex" [71] [72] [73]
 [74])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 72.
@@ -2116,8 +2120,8 @@ Package rerunfilecheck Info: File `sk_ultimate.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 72.
  ) 
 Here is how much of TeX's memory you used:
- 20268 strings out of 493921
- 334382 string characters out of 3147285
+ 20276 strings out of 493921
+ 334446 string characters out of 3147285
  398209 words of memory out of 3000000
  22633 multiletter control sequences out of 15000+200000
  29935 words of font info for 78 fonts, out of 3000000 for 9000
@@ -2149,9 +2153,9 @@ ic/pl/plsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plsy7.pfb><C
 :/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plsy9.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/pl/plti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
 pe1/public/pl/plti9.pfb>
-Output written on sk_ultimate.pdf (75 pages, 5526226 bytes).
+Output written on sk_ultimate.pdf (75 pages, 5531649 bytes).
 PDF statistics:
- 2760 PDF objects out of 2984 (max. 8388607)
- 646 named destinations out of 1000 (max. 500000)
+ 2771 PDF objects out of 2984 (max. 8388607)
+ 654 named destinations out of 1000 (max. 500000)
  2733 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,10 +1,6 @@
 % !TeX spellcheck = pl_PL
 
 \newpage
-\begin{center}
-	{\LARGE \textbf{k - 1000, K - 1024 !!!}}
-\end{center}
-
 \part{Zadania}
 % ==================================================
 % --- 1. TOPOLOGIA SIECI
@@ -88,6 +84,7 @@
 				\item Błąd protokołu
 				\item Błąd protokołu
 			\end{enumerate}
+\newpage
 	% ================= ZADANIE 2.2 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
@@ -111,13 +108,12 @@
 			\end{itemize}
 			Dlatego poprawna odpowiedź to: \textit{Czas oczekiwania na retransmisję $ T_R $ generowany jest jako liczba losowa z przedziału \textbf{o wielkości rosnącej z kwadratem do pewnego numeru kolizji, \underline{a tym numerem jest 10}}}\\
 			{\small \emph{Forczu: jeszcze to sprawdzę}}.
+\newpage
 	% ================= ZADANIE 2.3 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Chcemy zastosować protokół CSMA / CD przy budowie sieci o długości łącza 500 m przy szybkości transmisji 200 MBit/s. Jaka powinna być w tym przypadku minimalna długość ramki?
 		\subsubsection{Odpowiedź}
-		\begin{enumerate}
-			\item \textbf{Pierwsza metoda:}\\
 			Najpierw liczymy czas propagacji $$ t_p = \cfrac{dystans}{predkosc\_lacza} $$
 			Prędkości łącza nie mylić z szybkością transmisji. W przypadku światłowodu wynosi ono 2/3 prędkości światła czyli 200 000 000 m/s, tu takie założenie można dać. O tej wartości należy pamiętać na sztywno. Następnie liczmy czas propagacji sygnału przez 500 [m]:
 			$$ t_p=\frac{500\;[m]}{200\:000\:000\:[m/s]}=2.5\:\mu s $$
@@ -125,17 +121,8 @@
 			Bierzemy czas 2 razy, ponieważ "istnieje możliwość, że dwa lub więcej urządzeń przystąpi do wysyłania danych w tej samej chwili lub zanim sygnał z pierwszego węzła dotrze do drugiego. W takiej sytuacji żadne z nich nie wykryje sygnału nośnego drugiego. W efekcie obydwa urządzenia wysyłając dane w (prawie) tym samym czasie spowodują kolizję w sieci Ethernet."\\
 			Aby CSMA/CD działało poprawnie cała ramka musi być wysłana w tych $5\:\mu s$, czyli wyliczamy jej długość:
 			$$ N=szybkosc\_transmisji\cdot t_p $$
-			$$ N=\cfrac{5\;[\mu s]}{200\:000\:000\:[\cfrac{b}{s}]} =200\cdot5\;bit=1000\:bit=125\:B $$
-			\item \textbf{Druga metoda:}\\
-			\begin{itemize}
-				\item $ L=500\;[m] $
-				\item $ V=200\;[Mbit/s] $
-				\item $ t=\cfrac{200\:000\:000\;[{m}]}{200\:000\:000\;[\cfrac{m}{s}]}=\;[s] $
-				\item $ N=2\cdot500=1000 $
-				\item $ \cfrac{1000}{8}=125 $ - długość ramki
-			\end{itemize}
-			{\small \emph{Forczu: ocenione na 1.0 / 1.0}}
-		\end{enumerate}
+			$$ N=200\:000\:000\:[\cfrac{b}{s}]\cdot5\;[\mu s] =200\cdot5\;bit=1000\:bit=125\:B $$
+			{\small \emph{Forczu: ocenione na 1.0 / 1.0 (chyba)}}
 			
 	% ================= ZADANIE 2.4 ==================
 	\subsection{Zadanie}
@@ -143,11 +130,10 @@
 			Określić maksymalną długość ramki powstającej w wyniku kolizji w sieci pierścieniowej o sumarycznej długości łączy $ L=6\:km $, $ n=50 $ stacji i szybkości transmisji równej 25 Mbitów/s, przy zastosowaniu rywalizacyjnego (CSMA / CD) algorytmu dostępu do łącza.
 		\subsubsection{Odpowiedź}
 		\begin{enumerate}
-			\item Czas propagacji: $ \cfrac{\cfrac{1}{2}\cdot L}{\cfrac{2}{3}\cdot C} = \cfrac{3\:[km]}{200\:000\:000\;[\cfrac{m}{s}]}=15 [\mu s]$
-			\item Liczba bitów w pierścieniu $ N_{ring} $: $ \cfrac{L}{\cfrac{2}{3}\cdot C}\cdot \cfrac{1}{V} = 30 [\mu s] \cdot \cfrac{1}{25\;[Mbit/s]}=75\;[Mbit] $
-			\item Rozmiar ramki: $ 25\;[Mbit/s]\cdot 2 \cdot 15 [\mu s]=750\;[b] $
+			\item Czas propagacji: $ \cfrac{L}{\cfrac{2}{3}\cdot C} = \cfrac{6\:[km]}{200\:000\:000\;[\cfrac{m}{s}]}=30 [\mu s]$
+			\item Rozmiar ramki: $ 25\;[Mbit/s] \cdot 30 [\mu s]=750\;[b] $
 		\end{enumerate}
-
+\newpage
 % ==================================================
 % --- 3. TCP / IP
 % ==================================================
@@ -299,16 +285,16 @@
 				\includegraphics[width=8.0cm]{./images/zadanie05.pdf}
 				\includegraphics[width=8.0cm]{./images/zadanie06.pdf}\\
 			Jeśli węzły da się połączyć na dwa różne sposoby, tworzymy średnią arytmetyczną. Wybieramy najkrótsze możliwe połączenie do każdego węzła, \textbf{pomijamy G}, i rysujemy tabelkę.\\\\ 
-			\begin{tabular}{c|c|c}
+			\begin{tabular}{c|c|l}
 				Cel & Koszt & Przez \\ \hline
-				A   & 4     & E     \\
-				B   & 3     & H     \\
-				C   & 1.5   & D     \\
-				D   & 0     &       \\
-				E   & 3     & C     \\
-				F   & 4     & E     \\
-				G   & -     &       \\
-				H   & 1.5   & D     
+				A   & 4     & c e a \\
+				B   & 3     & h b   \\
+				C   & 1.5   & c     \\
+				D   & 0     & -     \\
+				E   & 3     & c e   \\
+				F   & 4     & c e f \\
+				G   & -     & -     \\
+				H   & 1.5   & h     
 			\end{tabular}\\
 			\small{ \emph{Forczu: ocenione na 1.0 / 1.0\\
 					Podobno uwzględnienie G to 0.0 / 1.0}}.
@@ -658,7 +644,7 @@
 				\item \textbf{Maska podsieci}: 255.255.255.224 (albo /27)\\
 				Firma posiada 32 adresy, które różnią się 5 najmłodszymi bitami. 32 - 5 = 27.
 				\item \textbf{Adres IP}: 172.19.21.137
-				\item \textbf{Host}: 172.19.21.128 /27 (adres sieci)\\
+				\item \textbf{Adres sieci}: 172.19.21.128 /27 (to nie jest Host!! za to jest -0.1)\\
 				Adresem sieci wyliczamy zerując 5 ostatnich bitów. (albo ANDując adres z 1.1.1.11100000)
 				\item \textbf{Brama / Router}: 172.19.21.129\\
 				Adres routera dostępowego, pierwszy użyteczny adres (00001).
@@ -682,26 +668,28 @@
 			Administrator domeny zaplanował zastąpienie wysłużonego głównego \emph{name servera} nowym systemem (nowy adres IP). Po jakim czasie (od dokonania zmiany rekordu NS) równoległej pracy obu \emph{name serverów} będzie można wyłączyć stary serwer.
 		\subsubsection{Odpowiedź}	
 			Po czasie TTL + refresh = 10 800 + 7200 = 18 000. Gdyby się składało z primary i secondary.
+\newpage
 	% ================= ZADANIE 6.5 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Przedstaw jak przebiega proces tłumaczenia adresu IP na nazwę DNS. Jakie domeny TLD są w tym procesie zaangażowane. Ile czasu może maksymalnie zająć przetłumaczenie wcześniej nie znanego adresu, jeżeli odwiedź z NS następują w czasie nie dłuższym niż 0,7s.
 		\subsubsection{Odpowiedź}
 			Przykładowy adres: 137.57.25.13\\
-			Tłumaczenie: 13.25.57.137
+			Tłumaczenie: 13.25.57.137.in-addr.arpa
 			\begin{enumerate}
+				\item NS(arpa)
+				\item NS(in-addr)
 				\item NS(137) $ \rightarrow $ zapytanie o główny serwer
 				\item NS(137.57) $ \rightarrow $ zapytanie o port sieci
 				\item NS(137.57.25) $ \rightarrow $ zapytanie o podsieć
 				\item NS(137.57.25.13) $ \rightarrow $ zapytanie o nazwę jednostki w swojej podsieci
 			\end{enumerate}
-			Czas trwania tłumaczenia: $ 4\cdot NS=4\cdot0.7=2.8\:[s] $
-			{\small \emph{Forczu: z czyihś notatek.}}
+			Czas trwania tłumaczenia: $ 6\cdot NS=6\cdot0.7=4.2\:[s] $
+			{\small \emph{Forczu: należy pomnożyć przez 6: potwierdzone przez Skrzewskiego.}}
 			
 % ==================================================
 % --- 7. POCZTA E-MAIL
 % ==================================================
-\newpage
 \section{Poczta e-mail}
 	% ================= ZADANIE 7.1 ==================
 	\subsection{Zadanie}
@@ -719,7 +707,7 @@
 				\item Listy odbierane są za pomocą protokołów POP3. Klient żąda listy wiadomości poleceniem "list". Następnie pobiera cały żądany list i usuwa go z serwera : "Retr" i "Dele". Sesja kończy się poleceniem "quit". Oczywiście zanim to wszystko nastąpi musi zostać przeprowadzona autentyfikacja. Klient POP3 zaczyna sesję od podania nazwy użytkownika "user" i hasła "pass".
 			\end{enumerate}
 			\small{ \emph{Ocenione na 1.0 / 1.0}}
-	
+\newpage
 	% ================= ZADANIE 7.2 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
@@ -735,23 +723,49 @@
 				\item =B9 - dziesiętnie 185 - ą w ASCII
 				\item =F3 - dziesiętnie 243 - ó w ASCII
 			\end{itemize}
-			Dziesiętne kody w ASCII były podane w poleceniu, należało je zmienić na zapis szesnastkowy.	
-\newpage
+			Dziesiętne kody w ASCII były podane w poleceniu, należało je zmienić na zapis szesnastkowy.\\
+			{\small \emph{Forczu: należy wyraźnie zaznaczyć którą metodą kodowania się posługujemy, inaczej - 0.1}}
 	% ================= ZADANIE 7.2 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
-			Tekst w języku polskim zawiera średnio 5\% znaków narodowych. Porównać efektywność kodowania (zwiększenie objętości) przesyłek e-mailowych dla obu (dostępnych w MIME) metod bezpiecznego przesyłu rozszerzonego zestawu znaków ASCI. Przy jakim procencie znaków narodowych w przesyłanym tekście efektywność obu metod będzie taka sama?
+			Tekst w języku polskim zawiera średnio 5\% znaków narodowych. Porównać efektywność kodowania (zwiększenie objętości) przesyłek e-mailowych dla obu (dostępnych w MIME) metod bezpiecznego przesyłu rozszerzonego zestawu znaków ASCII. Przy jakim procencie znaków narodowych w przesyłanym tekście efektywność obu metod będzie taka sama?
 		\subsubsection{Odpowiedź}
-			1 znak polski = 3 znaki dla QP.\\
-			Np. 5\% polskich znaków - na 100 znaków przypada 5 polskich. Zostanie wysłanych 110 znaków - nadmiarowość QP wynosi 10\%.\\
-			Dostępne rozwiązania:
+			W treści mamy podane, że interesuje nas przypadek dla 5\% znaków narodowych. Innymi słowy, na 100 znaków mamy 5 polskich.
 			\begin{enumerate}
-				\item Queted Printable - nadmiarowość 10\%
-				\item Base64 - nadmiarowość 33\%
+				\item \textbf{QPE}: 1 znak polski = 3 zwykłe znaki. Oznacza to, że nadmiarowość QPE wynosi \textbf{200\%}.
+				\item \textbf{Base64}: koduje \textbf{każdy} zbiór trzech bitów w cztery. Czyli nadmiarowość wynosi $ \cfrac{1}{3}\cdot100\% $
 			\end{enumerate}
-			Oznacza to, że dla 5\% znaków obie metody będą miały równą sprawność przy
-			$$ \cfrac{10}{100}\cdot5=\cfrac{33}{100}\cdot x \rightarrow x = \cfrac{10}{100}\cdot\cfrac{100}{33}\cdot 5 = 16.5 $$
-			znakach.
+			Interesują nas znaki ASCII, które mają po \textbf{7 bitów}.\\\\
+			%Oznacza to, że dla 5\% znaków w 100 znakowej wiadomości obie metody będą miały efektywności:
+			%\begin{enumerate}
+				%\item \textbf{QPE}: $ 100 + %5\%\cdot200\%\cdot100=100+\cfrac{5}{100}\cdot\cfrac{200}{100}\cdot100= 100+10=110 $
+				%\item \textbf{Base64}: $ 100 + \cfrac{1}{3}\cdot100\%\cdot100=133\frac{1}{3} $
+			%\end{enumerate}
+			Oznacza to, że dla 5\% znaków w \emph{n} znakowej wiadomości obie metody będą miały efektywności:
+			\begin{enumerate}
+				\item \textbf{QPE}: $ n + 5\%\cdot200\%\cdot n=n+\cfrac{5}{100}\cdot\cfrac{200}{100}\cdot n= n+\cfrac{1}{10}\cdot n=\cfrac{11}{10}\cdot n $
+				\item \textbf{Base64}: $ n + \cfrac{1}{3}\cdot100\%\cdot n=\cfrac{4}{3}\cdot n $
+			\end{enumerate}
+			Wynika z tego, że dla 5\% znaków narodowych Base64 zawsze da więcej nadmiaru.\\\\
+			\textbf{Dla ilu \% znaków narodowych QPE i Base64 będą sobie równe w efektywności?}
+			\begin{enumerate}
+				\item \textbf{QPE}:
+				$ n + p\%\cdot200\%\cdot n = n+\cfrac{p}{100}\cdot\cfrac{200}{100}\cdot n=n\cdot(1+\cfrac{2\cdot p}{100})$
+				\item \textbf{Base64}:
+				$  n + \cfrac{1}{3}\cdot100\%\cdot n=\cfrac{4}{3}\cdot n $
+				\item \textbf{Porównanie}:
+				\begin{enumerate}
+					\item $ n\cdot(1+\cfrac{2\cdot p}{100})= \cfrac{4}{3}\cdot n $
+					\item $ \cfrac{2\cdot p}{100}=\cfrac{7}{3} $
+					\item $ p=\cfrac{7}{3}\cdot\cfrac{100}{2}=\cfrac{350}{3} $
+					\item $ p=116\frac{2}{3} $
+				\end{enumerate}
+			\end{enumerate}
+			Odpowiedź: efektywności tych dwóch metod będą równe dla 116 - 117 znaków.
+			
+			
+			
+		
 			
 % ======================================================
 % --- 8. INNE
@@ -763,8 +777,6 @@
 		\subsubsection{Treść}
 			Posłaniec przewozi nagrane płyty DVD (9 GB informacji) poruszając się ze średnią szybkością 60 km/h. Do jakiej odległości ma on szybkość przesyłu większą niż sieć 10 Mbitów/s.
 		\subsubsection{Odpowiedź}
-			$$ 60\:[\cfrac{km}{h}]=\cfrac{60\:000 [m]}{3600\:[s]}=16\frac{2}{3} [\frac{m}{s}] $$
-			$$ 6\:[GB] / 10\:[MBit/s] = \cfrac{768\:[Mbit]}{10\:[MBit/s]}=76.8\:[s]$$
-			$$ 16\frac{2}{3} [\frac{m}{s}] \cdot 76.8\:[s] \approx 1280.256 $$
+			
 			
 			
