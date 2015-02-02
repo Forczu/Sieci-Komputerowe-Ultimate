@@ -125,7 +125,7 @@
 			Bierzemy czas 2 razy, ponieważ "istnieje możliwość, że dwa lub więcej urządzeń przystąpi do wysyłania danych w tej samej chwili lub zanim sygnał z pierwszego węzła dotrze do drugiego. W takiej sytuacji żadne z nich nie wykryje sygnału nośnego drugiego. W efekcie obydwa urządzenia wysyłając dane w (prawie) tym samym czasie spowodują kolizję w sieci Ethernet."\\
 			Aby CSMA/CD działało poprawnie cała ramka musi być wysłana w tych $5\:\mu s$, czyli wyliczamy jej długość:
 			$$ N=szybkosc\_transmisji\cdot t_p $$
-			$$ N=200\:000\:000\:[bit]\cdot \frac{5}{10^6} =200\cdot5=1000\:bit=125\:B $$
+			$$ N=\cfrac{5\;[\mu s]}{200\:000\:000\:[\cfrac{b}{s}]} =200\cdot5\;bit=1000\:bit=125\:B $$
 			\item \textbf{Druga metoda:}\\
 			\begin{itemize}
 				\item $ L=500\;[m] $
@@ -357,6 +357,31 @@
 % ================= ZADANIE 5.1 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
+			Stacja robocza jest połączona z serwerem z prędkością 11 [Mbps] i stopą błędów BER = $ 7.3 \cdot 10 ^ {-6} $. Oblicz z jaką średnią prędkością mogą być wysyłane informacje z serwera używając wersji standardowej (\emph{plain vanilla}, \emph{Go Back N}) protokołu TCP. Wynegocjowany segment danych to 768 [B] (ramka w łączu 832 [B]), rozmiar okna to 18.5 [KB], a średni czas RTT to 55 [ms].
+		\subsubsection{Odpowiedź}
+			\begin{enumerate}
+				\item Notacja BER = $ 7.3 \cdot 10 ^ {-6} $ oznacza, że na 1 milion bitów 7.3 z nich są przekłamane. Wyliczamy z nich liczbę przekłamanych bajtów. Dzielimy obie strony przez 7.3, czyli 1 na 136986.3 bitów jest nieprawidłowy. Aby uzyskać bajty, dzielimy oba przez 8, czyli 1 na 17123.3 bajtów jest przekłamany.
+				\item Wyliczamy z tego liczbę przekłamanych ramek:
+				$$ \cfrac{17123.3\;[B]}{832\;[B]}\approx20.58 $$
+				Wybieramy ramkę w łączu, ponieważ interesują nas przesyłane informacje. Wynik oznacza, że 1 z 21 ramek jest przekłamana.
+				\item Teraz liczymy liczbę ramek jaka pomieści się w oknie:
+				$$ \cfrac{18.5\;[kB]}{768\;[B]}=\cfrac{18\:944\;[B]}{768\;[B]}\approx24.67 $$
+				Wybieramy liczbę danych w segmencie, ponieważ interesuje nas to co może pomieścić okno. Z obliczeń wynika, że wielkość okna jest równa 24 ramki + kawałek 25ej, połowa z tego to 12.
+				\item Możemy przystąpić do rysowania słupków:
+				\begin{center}
+					\includegraphics[width=10.0cm]{./images/zadanie16}
+				\end{center}
+				Liczba ramek rośnie eksponencjalne aż napotka limit w postaci \emph{slow start threshold}u. Nie przekracza go. Gdyby w piątej kolumnie nie wystąpił błąd, liczba ramek w kolejnych rosłaby liniowo. Wówczas, po napotkaniu błędu we wzroście liniowym, \emph{treshold} do kolejnego timeoutu byłby mniejszy o połowę.
+				\item Można przystąpić do wyliczenia szybkości:
+				$$ SRET=\cfrac{(42-2)\cdot832\;[B]}{9\cdot55\;[ms]}\approx537858.59\;[\frac{b}{s}]\approx0.5379\;[Mbps] $$
+				$$ GBN=\cfrac{(42-7)\cdot832\;[B]}{9\cdot55\;[ms]}\approx470626.26\;[\frac{b}{s}]\approx0.47069\;[Mbps]   $$
+			\end{enumerate}
+				
+			
+
+% ================= ZADANIE 5.1 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}
 			Stacja robocza połączona jest z serwerem łączem szeregowym o przepustowości 8 MBit/s, z bitową stopą błędów $ BER=2\cdot 10^{-5} $. Określić z jaką średnią szybkością transmisji danych protokołem TCP w wersji standardowej (\emph{plain vanilla}) można uzyskać jeśli uzgodniona maksymalna wielkość segmentu wynosi 768 B (ramki w łączu 832 B), wielkość danych odbiorcy wynosi 27 kB, czas $ RTT=40\;ms $.
 		\subsubsection{Odpowiedź}
 			Algorytm wykonywania zadań z przekłamaniem:
@@ -453,6 +478,22 @@
 				\item Na 24 ramki 1 została przekłamana. mamy więc 23 poprawne ramki oraz 5 słupków.
 				\item $$ SRET=\cfrac{23\cdot1460\:[B]}{5\cdot35\:[ms]}=\cfrac{33580000\:[B]}{175\:[s]}=191885\:[\cfrac{B}{s}]=187\;[\cfrac{kB}{s}] $$
 			\end{enumerate}
+			
+\newpage
+% ================= ZADANIE 5.5 ==================
+	\subsection{Zadanie}
+		\subsubsection{Treść}	
+			Stacja robocza jest połączona z serwerem z prędkością 11 [Mbps] i stopą błędów BER = $ 7.3 \cdot 10 ^ {-6} $. Oblicz z jaką średnią prędkością mogą być wysyłane informacje z serwera używając wersji standardowej (\emph{plain vanilla}, \emph{Go Back N}) protokołu TCP. Wynegocjowany segment danych to 768 [B] (ramka w łączu 832 [B]), rozmiar okna to 18.5 [KB], a średni czas RTT to 55 [ms].
+		\subsubsection{Odpowiedź}
+			\begin{enumerate}
+				\item BER = $ 7.3 \cdot 10 ^ {-6} \rightarrow\approx 136986.30\;[b] \approx 17123.29\;[B] $
+				\item $ \cfrac{17123.29\;[B]}{832\;[B]}=20.58 \rightarrow $ co 21 ramka przekłamana.\\
+				Ponieważ łączem przesyłamy pełne ramki, więc przekłamanie to dane + wszystkie śmiecie.
+				\item $ \cfrac{18.5\;[KB]}{832\;[B]}=\cfrac{18\:944\;[B]}{832\;[B]}\approx22.77 $\\
+				Oznacza, że SST1 = 23.
+			\end{enumerate}
+			
+			
 			
 \newpage
 	% ================= ZADANIE 5.5 ==================
