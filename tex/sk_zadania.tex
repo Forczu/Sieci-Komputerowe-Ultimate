@@ -104,7 +104,7 @@
 				\item $ T_{ob} $ - czas obiegu łącza, w najgorszym wypadku podwojony czas propagacji
 				\item $ k $ - liczba kolizji, czyli który raz się te ramki już zderzyły.
 				\item Wraz ze zwiększaniem się liczby kolizji, możliwy zakres rośnie ekspotencjalnie. Jednak maksymalna wielkość $ k $ jest równa \textbf{10}. Dla $ k > 10 $ przyjmuje się $ k=10 $.
-				\item Próbujemy szczęścia aż $ k < 15 $, potem próby są przerywane.
+				\item Próbujemy szczęścia aż $ k >= 16 $, potem próby są przerywane. Po 16 kolizjach sterownik poddaje się i zgłasza niepowodzenie.
 			\end{itemize}
 			Dlatego poprawna odpowiedź to: \textit{Czas oczekiwania na retransmisję $ T_R $ generowany jest jako liczba losowa z przedziału \textbf{o wielkości rosnącej z kwadratem do pewnego numeru kolizji, \underline{a tym numerem jest 10}}}\\
 			{\small \emph{Forczu: jeszcze to sprawdzę}}.
@@ -410,8 +410,8 @@
 			Na 96 pakietów 8 zostaje przekłamanych.\\
 			Możemy wyróżnić dwa parametry spełniające zadanie:
 			\begin{enumerate}
-				\item $$ SRET=\frac{(96-8)\cdot 768\;[B]}{29\cdot 45\;[ms]}=\frac{88\cdot 768\;[B]}{29\cdot 45\;[ms]} $$
-				\item $$ GBN=\frac{(96-36)\cdot 768\;[B]}{29\cdot 45\;[ms]}=\frac{60\cdot 768\;[B]}{29\cdot 45\;[ms]} $$
+				\item $$ SRET=\frac{(96-8)\cdot 832\;[B]}{29\cdot 45\;[ms]} $$
+				\item $$ GBN=\frac{(96-36)\cdot 832\;[B]}{29\cdot 45\;[ms]} $$
 			\end{enumerate}
 \newpage
 	% ================= ZADANIE 5.4 ==================
@@ -447,7 +447,7 @@
 				\item $ \cfrac{27\:648\;[B]}{1500\;[B]}\approx18.4 $ - w oknie maksymalnie zmieści się 18 ramek. Połowa z tego to 9.\\Widać z tego, że okno TCP niewiele nas interesuje - nigdy nie dotrzemy do \emph{treshold}a, bo bufor nam na to nie pozwala.
 				\item \includegraphics[width=8.0cm]{./images/zadanie15.pdf}\\\\
 				Na 24 ramki 1 została przekłamana. mamy więc 23 poprawne ramki oraz 5 słupków.
-				\item $$ SRET=\cfrac{23\cdot1460\:[B]}{5\cdot35\:[ms]}=\cfrac{33580000\:[B]}{175\:[s]}=191885\:[\cfrac{B}{s}]=187\;[\cfrac{kB}{s}] $$
+				\item $$ SRET=\cfrac{23\cdot1518\:[B]}{5\cdot35\:[ms]}=\cfrac{34914000\:[B]}{175\:[s]}=199509\:[\cfrac{B}{s}]\approx200\;[\cfrac{kB}{s}] $$                                 
 				\item \emph{Forczu}: gdyby było na odwrót i nasz bufor byłby większy niż \emph{treshold}, to wtedy słupki rosną eksponencjalne do niego, a potem liniowo aż bufor się przepełni.
 			\end{enumerate}
 						

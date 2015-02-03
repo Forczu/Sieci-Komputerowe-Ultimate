@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.5)  3 FEB 2015 17:45
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.5)  3 FEB 2015 19:49
 entering extended mode
 **sk_example.tex
 ("F:\Uczelnia\Sem 5\SK\sk_ultimate\sk_example.tex"
@@ -1094,71 +1094,424 @@ Package: fr-subfig 2007/12/24 v0.1g (beta) floatrow: additions for subfig
 \FBsc@max=\skip79
 \FBso@max=\skip80
 )
-LaTeX Font Info:    Try loading font information for OML+plm on input line 59.
+<./images/zadanie02.pdf, id=383, 548.29463pt x 252.142pt>
+File: ./images/zadanie02.pdf Graphic file (type pdf)
+
+<use ./images/zadanie02.pdf>
+Package pdftex.def Info: ./images/zadanie02.pdf used on input line 61.
+(pdftex.def)             Requested size: 156.49014pt x 71.96509pt.
+LaTeX Font Info:    Try loading font information for OML+plm on input line 63.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omlplm.fd"
 File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Try loading font information for OMS+plsy on input line 59.
+LaTeX Font Info:    Try loading font information for OMS+plsy on input line 63.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omsplsy.fd"
 File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Try loading font information for OMX+plex on input line 59.
+LaTeX Font Info:    Try loading font information for OMX+plex on input line 63.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omxplex.fd"
 File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <10> on input line 59.
+(Font)              <10> on input line 63.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <7> on input line 59.
+(Font)              <7> on input line 63.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <5> on input line 59.
+(Font)              <5> on input line 63.
 
-<./images/zadanie16.pdf, id=3, 463.6746pt x 273.71541pt>
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
+
+ []
+
+<./images/zadanie03.pdf, id=384, 1251.92119pt x 949.46841pt>
+File: ./images/zadanie03.pdf Graphic file (type pdf)
+
+<use ./images/zadanie03.pdf>
+Package pdftex.def Info: ./images/zadanie03.pdf used on input line 65.
+(pdftex.def)             Requested size: 455.24408pt x 345.25644pt.
+
+Overfull \hbox (2.27626pt too wide) in paragraph at lines 65--67
+[] 
+ []
+
+[1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <F:/Uczelnia/Sem 5/SK/sk_u
+ltimate/images/zadanie02.pdf> <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie0
+3.pdf
+
+pdfTeX warning: pdflatex.exe (file F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zada
+nie03.pdf): PDF inclusion: multiple pdfs with page group included in a single p
+age
+>] <./images/zadanie04.pdf, id=419, 364.15855pt x 337.39049pt>
+File: ./images/zadanie04.pdf Graphic file (type pdf)
+
+<use ./images/zadanie04.pdf>
+Package pdftex.def Info: ./images/zadanie04.pdf used on input line 80.
+(pdftex.def)             Requested size: 142.26378pt x 131.80313pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--101
+
+ []
+
+
+Underfull \vbox (badness 2173) has occurred while \output is active []
+
+ [2 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie04.pdf>] [3]
+Overfull \hbox (18.81924pt too wide) in paragraph at lines 157--159
+\OT4/cmr/m/it/10 z prze-dzia-ªu \OT4/cmr/bx/it/10 o wiel-ko-±ci ro-sn¡-cej z kw
+a-dra-tem do pew-ne-go nu-me-ru ko-li-zji, $[]$ 
+ []
+
+[4] [5]
+Underfull \hbox (badness 1320) in paragraph at lines 223--224
+\OT4/cmr/m/n/10 Link Sta-te. Przed-staw dzia-ªa-nie al-go-ryt-mu w w¦¹-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--224
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--233
+
+ []
+
+[6] [7]
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <9> on input line 288.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <6> on input line 288.
+
+Underfull \hbox (badness 10000) in paragraph at lines 294--307
+
+ []
+
+
+Overfull \hbox (33.07394pt too wide) in paragraph at lines 311--323
+[] 
+ []
+
+[8] <./images/zadanie05.pdf, id=491, 703.32059pt x 679.90915pt>
+File: ./images/zadanie05.pdf Graphic file (type pdf)
+
+<use ./images/zadanie05.pdf>
+Package pdftex.def Info: ./images/zadanie05.pdf used on input line 342.
+(pdftex.def)             Requested size: 227.62204pt x 220.04451pt.
+
+<./images/zadanie06.pdf, id=492, 703.32059pt x 679.90915pt>
+File: ./images/zadanie06.pdf Graphic file (type pdf)
+
+<use ./images/zadanie06.pdf>
+Package pdftex.def Info: ./images/zadanie06.pdf used on input line 343.
+(pdftex.def)             Requested size: 227.62204pt x 220.04451pt.
+
+Overfull \hbox (4.49847pt too wide) in paragraph at lines 341--359
+[] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--359
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--372
+
+ []
+
+[9 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie05.pdf> <F:/Uczelnia/Sem 5/S
+K/sk_ultimate/images/zadanie06.pdf
+
+pdfTeX warning: pdflatex.exe (file F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zada
+nie06.pdf): PDF inclusion: multiple pdfs with page group included in a single p
+age
+>]
+Underfull \hbox (badness 1668) in paragraph at lines 392--394
+[]\OT4/cmr/m/n/9 W tym wszyst-kim in-te-re-su-j¡ nas tyl-ko dro-gi lo-kal-nie n
+aj-bli»-sze
+ []
+
+
+Underfull \hbox (badness 1303) in paragraph at lines 392--394
+\OT4/cmr/m/n/9 - te z punk-tu wi-dze-nia w¦-zªa K i "ofert" dróg s¡-sia-dów. Je
+-±li
+ []
+
+
+Underfull \hbox (badness 1142) in paragraph at lines 392--394
+\OT4/cmr/m/n/9 dwie dro-gi ma-j¡ ten sam koszt to wy-bór po-wi-nien by¢ obo-j¦t
+-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--394
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--394
+
+ []
+
+[10] <./images/zadanie16.pdf, id=520, 463.6746pt x 273.71541pt>
 File: ./images/zadanie16.pdf Graphic file (type pdf)
 
 <use ./images/zadanie16.pdf>
-Package pdftex.def Info: ./images/zadanie16.pdf used on input line 71.
+Package pdftex.def Info: ./images/zadanie16.pdf used on input line 415.
 (pdftex.def)             Requested size: 284.52756pt x 167.96434pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 80.
- [1
+ [11 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie16.pdf>] <./images/zadanie
+07.pdf, id=539, 269.53021pt x 304.56642pt>
+File: ./images/zadanie07.pdf Graphic file (type pdf)
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <F:/Uczelnia/Sem 5/SK/sk_u
-ltimate/images/zadanie16.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 80.
+<use ./images/zadanie07.pdf>
+Package pdftex.def Info: ./images/zadanie07.pdf used on input line 438.
+(pdftex.def)             Requested size: 170.71652pt x 192.9142pt.
 
-("F:\Uczelnia\Sem 5\SK\sk_ultimate\sk_example.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 80.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 80.
+Underfull \hbox (badness 10000) in paragraph at lines 437--440
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 441--442
+
+ []
+
+[12 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie07.pdf>]
+<./images/zadanie08.pdf, id=557, 1372.80775pt x 338.99678pt>
+File: ./images/zadanie08.pdf Graphic file (type pdf)
+
+<use ./images/zadanie08.pdf>
+Package pdftex.def Info: ./images/zadanie08.pdf used on input line 457.
+(pdftex.def)             Requested size: 455.24408pt x 112.41757pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 456--461
+
+ []
+
+
+Overfull \hbox (2.27626pt too wide) in paragraph at lines 456--461
+[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 456--461
+
+ []
+
+[13 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie08.pdf>]
+<./images/zadanie14.pdf, id=576, 796.57059pt x 252.31891pt>
+File: ./images/zadanie14.pdf Graphic file (type pdf)
+
+<use ./images/zadanie14.pdf>
+Package pdftex.def Info: ./images/zadanie14.pdf used on input line 476.
+(pdftex.def)             Requested size: 256.0748pt x 81.1133pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 481--482
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 482--483
+
+ []
+
+[14 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie14.pdf>]
+<./images/zadanie15.pdf, id=595, 274.93315pt x 192.17697pt>
+File: ./images/zadanie15.pdf Graphic file (type pdf)
+
+<use ./images/zadanie15.pdf>
+Package pdftex.def Info: ./images/zadanie15.pdf used on input line 496.
+(pdftex.def)             Requested size: 227.62204pt x 159.11095pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--498
+
+ []
+
+[15 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie15.pdf>]
+<./images/zadanie09.pdf, id=615, 483.41737pt x 610.58693pt>
+File: ./images/zadanie09.pdf Graphic file (type pdf)
+
+<use ./images/zadanie09.pdf>
+Package pdftex.def Info: ./images/zadanie09.pdf used on input line 514.
+(pdftex.def)             Requested size: 256.0748pt x 323.44182pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 516--517
+
+ []
+
+[16 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie09.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 526--527
+
+ []
+
+<./images/zadanie10.pdf, id=635, 483.41737pt x 487.2917pt>
+File: ./images/zadanie10.pdf Graphic file (type pdf)
+
+<use ./images/zadanie10.pdf>
+Package pdftex.def Info: ./images/zadanie10.pdf used on input line 529.
+(pdftex.def)             Requested size: 227.62204pt x 229.45094pt.
+ [17 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie10.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 538--541
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 538--541
+
+ []
+
+<./images/zadanie12.pdf, id=648, 486.7569pt x 586.4848pt>
+File: ./images/zadanie12.pdf Graphic file (type pdf)
+
+<use ./images/zadanie12.pdf>
+Package pdftex.def Info: ./images/zadanie12.pdf used on input line 542.
+(pdftex.def)             Requested size: 227.62204pt x 274.26079pt.
+ [18 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie12.pdf>] <./images/zadanie
+13.pdf, id=661, 1066.49529pt x 294.42554pt>
+File: ./images/zadanie13.pdf Graphic file (type pdf)
+
+<use ./images/zadanie13.pdf>
+Package pdftex.def Info: ./images/zadanie13.pdf used on input line 554.
+(pdftex.def)             Requested size: 455.24408pt x 125.67952pt.
+
+Overfull \hbox (2.27626pt too wide) in paragraph at lines 554--555
+ [] 
+ []
+
+[19 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie13.pdf>]
+<./images/zadanie01.pdf, id=698, 539.05211pt x 381.49797pt>
+File: ./images/zadanie01.pdf Graphic file (type pdf)
+
+<use ./images/zadanie01.pdf>
+Package pdftex.def Info: ./images/zadanie01.pdf used on input line 576.
+(pdftex.def)             Requested size: 170.71652pt x 120.81863pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 576--577
+
+ []
+
+[20 <F:/Uczelnia/Sem 5/SK/sk_ultimate/images/zadanie01.pdf>] [21] [22] [23]
+Underfull \hbox (badness 10000) in paragraph at lines 766--769
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 784.
+[24]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 784.
+ ("F:\Uczelnia\Sem 5\SK\sk_ultimate\sk_example.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 784.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 784.
 Package rerunfilecheck Info: File `sk_example.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 80.
+(rerunfilecheck)             Checksum: E5BFD6F724C2AE49AD57585D0F2105DA;10219.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 784.
  ) 
 Here is how much of TeX's memory you used:
- 18872 strings out of 493921
- 311203 string characters out of 3147285
- 373184 words of memory out of 3000000
- 21969 multiletter control sequences out of 15000+200000
- 10353 words of font info for 30 fonts, out of 3000000 for 9000
+ 19325 strings out of 493921
+ 318371 string characters out of 3147285
+ 398184 words of memory out of 3000000
+ 22174 multiletter control sequences out of 15000+200000
+ 16938 words of font info for 45 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 68i,5n,98p,10442b,334s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plit.enc}{C:/Program Files/Mi
-KTeX 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvi
-ps/pl/plms.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plmi.enc}<C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/pl/plbx10.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/pl/plmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr10.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr7.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/pl/plsy10.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/public/pl/plsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/
-plti10.pfb>
-Output written on sk_example.pdf (1 page, 68479 bytes).
+ 68i,9n,98p,10442b,398s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plmi.enc} <C:\Users\Mati\AppD
+ata\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm0900.pk>{C:/Program
+ Files/MiKTeX 2.9/fonts/enc/dvips/pl/plms.enc}{C:/Program Files/MiKTeX 2.9/font
+s/enc/dvips/pl/plrm.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plit.en
+c} <C:\Users\Mati\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\t
+crm1000.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plbx10.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/pl/plbx9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/pl/plbxti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plmi1
+0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plmi6.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/pl/plmi7.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/pl/plmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+pl/plr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr6.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/pl/plr7.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/pl/plr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/pl/plsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plsy6.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plsy9.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/pl/plti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/pl/plti9.pfb>
+Output written on sk_example.pdf (24 pages, 511495 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
- 7 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 893 PDF objects out of 1000 (max. 8388607)
+ 227 named destinations out of 1000 (max. 500000)
+ 836 words of extra memory for PDF output out of 10000 (max. 10000000)
 
