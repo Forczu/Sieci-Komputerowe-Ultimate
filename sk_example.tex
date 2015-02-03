@@ -70,10 +70,10 @@
 		\begin{center}
 			\includegraphics[width=10.0cm]{./images/zadanie16}
 		\end{center}
-		Liczba ramek rośnie eksponencjalne aż napotka limit w postaci \emph{slow start threshold}u. Nie przekracza go. Gdyby w piątej kolumnie nie wystąpił błąd, liczba ramek w kolejnych rosłaby liniowo. Wówczas, po napotkaniu błędu we wzroście liniowym, \emph{treshold} dla kolejnego \emph{timeout}u byłby mniejszy o połowę.
-		\item Można przystąpić do wyliczenia szybkości:
-		$$ SRET=\cfrac{(42-2)\cdot832\;[B]}{9\cdot55\;[ms]}\approx537858.59\;[\frac{b}{s}]\approx0.5379\;[Mbps] $$
-		$$ GBN=\cfrac{(42-7)\cdot832\;[B]}{9\cdot55\;[ms]}\approx470626.26\;[\frac{b}{s}]\approx0.47069\;[Mbps]   $$
+		Liczba ramek rośnie eksponencjalne aż napotka limit w postaci \emph{slow start threshold}u. Nie przekracza go. Gdyby w piątej kolumnie nie wystąpił błąd, liczba ramek w kolejnych rosłaby liniowo. W protokole standardowym, \emph{plain vanilla}, rozmiar okna oraz treshold się nie zmieniają.
+		\item Można przystąpić do wyliczenia szybkości. Ponieważ w treści zadania interesuje nas "retransmisja grupowa", obliczamy tylko GNB.
+		$$ GBN=\cfrac{(42-8)\cdot832\;[B]}{9\cdot55\;[ms]}\approx470626.26\;[\frac{b}{s}]\approx0.47069\;[Mbps]   $$
+		
 	\end{enumerate}
 	
 	

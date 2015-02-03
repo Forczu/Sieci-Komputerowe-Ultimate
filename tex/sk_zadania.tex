@@ -367,62 +367,43 @@
 					\includegraphics[width=10.0cm]{./images/zadanie16}
 				\end{center}
 				Liczba ramek rośnie eksponencjalne aż napotka limit w postaci \emph{slow start threshold}u. Nie przekracza go. Gdyby w piątej kolumnie nie wystąpił błąd, liczba ramek w kolejnych rosłaby liniowo. Wówczas, po napotkaniu błędu we wzroście liniowym, \emph{treshold} do kolejnego timeoutu byłby mniejszy o połowę.
-				\item Można przystąpić do wyliczenia szybkości:
-				$$ SRET=\cfrac{(42-2)\cdot832\;[B]}{9\cdot55\;[ms]}\approx537858.59\;[\frac{b}{s}]\approx0.5379\;[Mbps] $$
+				\item Można przystąpić do wyliczenia szybkości, z treści zadania wynika, że interesuje nas tylko GBN:
 				$$ GBN=\cfrac{(42-7)\cdot832\;[B]}{9\cdot55\;[ms]}\approx470626.26\;[\frac{b}{s}]\approx0.47069\;[Mbps]   $$
 			\end{enumerate}
 				
 			
-
+\newpage
 % ================= ZADANIE 5.2 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
-			Stacja robocza połączona jest z serwerem łączem szeregowym o przepustowości 8 MBit/s, z bitową stopą błędów $ BER=2\cdot 10^{-5} $. Określić z jaką średnią szybkością transmisji danych protokołem TCP w wersji standardowej (\emph{plain vanilla}) można uzyskać jeśli uzgodniona maksymalna wielkość segmentu wynosi 768 B (ramki w łączu 832 B), wielkość danych odbiorcy wynosi 27 kB, czas $ RTT=40\;ms $.
+			Stacja robocza połączona jest z serwerem łączem szeregowym o przepustowości 8 MBit/s, z bitową stopą błędów $ BER=2\cdot 10^{-5} $. Określić z jaką średnią szybkością transmisji danych protokołem TCP w wersji standardowej (\emph{plain vanilla}) można uzyskać jeśli uzgodniona maksymalna wielkość segmentu wynosi 768 [B] (ramki w łączu 832 [B]), wielkość danych odbiorcy wynosi 27 [KB], czas $ RTT=40\;[ms] $.
 		\subsubsection{Odpowiedź}
 			\begin{enumerate}
 				\item Stopa błędów: 2 na 100 000 bitów są przekłamane $ \rightarrow $ 1 bit na 50 000 $ \rightarrow $ 1 bajt na 6250 jest przekłamany.
 				\item Obliczamy ile ramek zostaje przekłamanych jako:
 				$$ \cfrac{6250\;[B]}{832\;[B]}=7.51 $$
-				\item Powyższy wynik oznacza, że 7 ramek zostało wysłanych poprawie, a 8 jest przekłamana. Czyli zakładamy, że \textbf{co 8 ramka} jest błędna (bierzemy sufit wyniku).
+				Powyższy wynik oznacza, że 7 ramek zostało wysłanych poprawie, a 8 jest przekłamana. Zakładamy, że \textbf{co 8 ramka} jest błędna (bierzemy sufit wyniku).
 				\item Obliczamy liczbę ramek jaką można maksymalnie przesłać w jednym RTT jako:
-				$$ \cfrac{Rozmiar\;okna}{Rozmiar\;ramki\;w\;laczu} $$
-				Czyli u nas: $ \cfrac{27\:000}{832}\approx32 $
-				\item Następnie stosujemy \textbf{metodę słupków} do wyznaczenia właściwego stosunku liczby ramek, jakie można wysłać.
-				\begin{enumerate}
-					\item Rysujemy kolejne transmitowane ramki w postaci słupków złożonych z $ 2^n $ ramek: 1, 2, 4, 8 itd.
-					\begin{enumerate}
-						\item Jeżeli protokół jest typu \emph{slow start} - naliczamy bezwzględnie wg $ 2^n $ - kolejne słupki mają 16, 32 itd. wysokości
-						\item Jeżeli protokół jest typu \emph{congestion avoidance} - po przekroczeniu połowy okna zaczynamy zwiększać wysokość \textbf{liniowo}, czyli np. dla granicy (\emph{thresholdu}) 8 kolejne słupki będą mieć 9, 10, 11 itd. wysokości.
-						\item \emph{Congestion avoidance} wykorzystujemy, gdy w poleceniu mamy bufor (podobno).
-					\end{enumerate}
-					\item Gdy napotykamy przekłamaną ramkę zaczynamy naliczać od nowa.
-					\item Liczba ramek w słupku nie może przekroczyć maksymalnej liczby ramek jaką można wysłać w czasie RTT.
-					\item Kończymy naliczanie gdy przekłamana ramka znajdzie się na szczycie jednego ze słupków, czyli po zakończeniu jednego cyklu.
-				\end{enumerate}
-				\item Przystępując do rysowania słupków należy zaznaczyć jaki algorytm wybraliśmy. Niech będzie "slow start", ale podobno jest zalecany CA na examie.\\
+				$$ \cfrac{27\:648\;[B]}{768\;[B]}=36 $$
+				Połowa z tego to \textbf{18} - to jest nasz treshold.
+				\item Stosujemy \textbf{metodę słupków} do wyznaczenia właściwego stosunku liczby ramek, jakie można wysłać.
 				\includegraphics[width=6.0cm]{./images/zadanie07.pdf}\\\\
-				Wynika z tego, że na 16 pakietów 2 zostają przekłamane. $ 16 - 2 = 14 $ - nieprzekłamane pakiety. Liczba ta nie powinna zostać przekroczona w wysyłaniu danych do okna.
+				Wynika z tego, że na 16 pakietów 2 zostają przekłamane. $ 16 - 2 = 14 $ - nieprzekłamane pakiety. Jak widać, treshold jest duży, a błędy częste, więc nigdy do niego nie dojdziemy.
 				\item Na koniec pozostaje obliczyć efektywną prędkość. Może ona zostać obliczona wg dwóch wzorów:
-				\begin{enumerate}
-					\item \textbf{SRET}
-					$$ SRET=\frac{((Liczba\;ramek - liczba\;ramek\;przekłamanych)\cdot Rozmiar\;segmentu}{Liczba\;kolumn\;w\;cyklu\cdot RTT} $$
-					\item \textbf{GBN} - Go-Back-N
-					$$ GBN=\frac{((Liczba\;ramek - (Ramki\;przekłamane + Ramki\;w\;slupkach\;ponad\;nimi))\cdot Rozmiar\;segmentu}{Liczba\;kolumn\;w\;cyklu\cdot RTT} $$
-				\end{enumerate}
-				\item W naszym zadaniu są to:
-				$$ SRET=\frac{(16-2)\cdot 768\;[B]}{5\cdot 40\;[ms]}=\frac{14\cdot 768\;[B]}{5\cdot 40\;[ms]}=\frac{14\cdot 768\;[B]}{5\cdot 40\cdot 10^{-3}\;[s]}=53760\;[\frac{B}{s}]=52.5\; [\frac{kB}{s}]$$\\
-				$$ GBN=\frac{(16-9)\cdot 768\;[B]}{5\cdot 40\;[ms]}=\frac{7\cdot 768\;[B]}{5\cdot 40\cdot 10^{-3}\;[s]}=26880\;[\frac{B}{s}]=26.25\;[\frac{kB}{s}] $$
+				$$ SRET=\frac{(16-2)\cdot 832\;[B]}{5\cdot 40\;[ms]}=\frac{14\cdot 832\;[B]}{5\cdot 40\;[ms]}=\frac{14\cdot 832\;[B]}{5\cdot 40\cdot 10^{-3}\;[s]}=58240\;[\frac{B}{s}]=56.9\; [\frac{kB}{s}]$$\\
+				$$ GBN=\frac{(16-9)\cdot 832\;[B]}{5\cdot 40\;[ms]}=\frac{7\cdot 832\;[B]}{5\cdot 40\cdot 10^{-3}\;[s]}=29120\;[\frac{B}{s}]=28.4\;[\frac{kB}{s}] $$
 			\end{enumerate}
-
+\newpage
 	% ================= ZADANIE 5.3 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Stacja robocza połączona jest z serwerem łączem szeregowym o przepustowości $ 10\;Mbit/s $, z bitową stopą błędów $ BER=1.3\cdot 10^{-5} $. Określ z jaką średnią szybkością można przesyłać dane z serwera protokołem TCP w wersji standardowej, jeśli wielkość segmentu wynosi 768 B (ramki 832 B), wielkość okna odbiorcy 29 kB, średni czas $ RTT=45\;ms $.
 		\subsubsection{Odpowiedź}
 			\begin{enumerate}
-				\item $ \cfrac{1}{1.3\cdot 10^{-5}}\approx 76\;923 $ - 1 bit na 76923 jest przekłamany, ok. 1 bajt na 9600 B.
-				\item $ \cfrac{9600\:[B]}{832\:[B]}\approx11.54 $ - co 12 ramka jest przekłamana.
-				\item $ \cfrac{29\;[kB]}{832\;[B]}=\cfrac{29\:000\;[B]}{832\;[B]}\approx 35 $ - tyle ramek można maksymalnie przesłać do okna.
+				\item $ \cfrac{1}{1.3\cdot 10^{-5}}\approx 76\;923 $ - 1 bit na 76923 jest przekłamany, ok. 1 bajt na 9615 B.
+				\item $ \cfrac{9615\:[B]}{832\:[B]}\approx11.56 $ - co 12 ramka jest przekłamana.
+				\item $ \cfrac{29\;[kB]}{768\;[B]}=\cfrac{29\:696\;[B]}{768\;[B]}\approx 38.67 $ - do okna można przesłać maksymalnie 38 ramek, 39ta jest przekłamana.\\
+				Połowa okna wynosi wtedy 19.
 			\end{enumerate}
 			Ilustracja przekłamania ramek metodą słupków:\\\\
 			\includegraphics[width=16.0cm]{./images/zadanie08.pdf}\\\\
@@ -432,8 +413,6 @@
 				\item $$ SRET=\frac{(96-8)\cdot 768\;[B]}{29\cdot 45\;[ms]}=\frac{88\cdot 768\;[B]}{29\cdot 45\;[ms]} $$
 				\item $$ GBN=\frac{(96-36)\cdot 768\;[B]}{29\cdot 45\;[ms]}=\frac{60\cdot 768\;[B]}{29\cdot 45\;[ms]} $$
 			\end{enumerate}
-			\small{ \emph{Forczu: w tego typu zadaniach przepustowość chyba zawsze jest maksymalna, a protokoół standardowy, co ma upraszczać całość.
-			Ktoś tam napisał, że wielkość ramki we wzorach jest obojętna, ale należy zaznaczyć, czy bierzemy dane czy dane + narzut.}}.
 \newpage
 	% ================= ZADANIE 5.4 ==================
 	\subsection{Zadanie}
@@ -443,17 +422,17 @@
 		\begin{enumerate}
 			\item $ \cfrac{1}{BER}=\cfrac{1}{6.6\cdot 10^{-6}}=151515$, co oznacza, że 1 na 151515 bitów jest przekłamany $ \rightarrow $ 1 na 18939 bajtów.
 			\item $ \cfrac{18939\;[B]}{1\:088\;[B]}\approx17.41 \rightarrow $ co 18 ramka jest przekłamana.
-			\item $ \cfrac{27\;[kB]}{1\:088\;[B]}=\cfrac{27\:000\;[B]}{1088\;[B]}=24.82 \rightarrow $, co oznacza maksymalnie 24 ramki w słupku.
+			\item $ \cfrac{27\;[kB]}{1\:024\;[B]}=\cfrac{27\:648\;[B]}{1024\;[B]}=27 \rightarrow $, co oznacza maksymalnie 27 ramek w słupku. A więc połowa okna to 13.
 			\item
 				\begin{center}
 					\includegraphics[width=9.0cm]{./images/zadanie14.pdf}
 				\end{center}
 			\item Odpowiedź
-			$$ SRET=\cfrac{68\cdot1024\:[B]}{15\cdot40\:[ms]}\approx113\;[\cfrac{kB}{s}]$$
-			$$\\\\ GNB=\cfrac{38\cdot1024\:[B]}{15\cdot40\:[ms]}\approx63\;[\cfrac{kB}{s}]$$
+			$$ SRET=\cfrac{68\cdot1088\:[B]}{17\cdot40\:[ms]}\approx106\;[\cfrac{kB}{s}]$$
+			$$\\\\ GNB=\cfrac{38\cdot1088\:[B]}{17\cdot40\:[ms]}\approx59\;[\cfrac{kB}{s}]$$
 			\item Czas przesyłu 1 MB:\\
-			$$ 1024\:[kB] : 113\;[\cfrac{kB}{s}]\approx9.06\;[s] $$\\\\
-			$$ 1024\:[kB] : 63\;[\cfrac{kB}{s}]\approx16.25\;[s] $$
+			$$ 1024\:[kB] : 106\;[\cfrac{kB}{s}]\approx9.66\;[s] $$\\
+			$$ 1024\:[kB] : 59\;[\cfrac{kB}{s}]\approx17.36\;[s] $$
 		\end{enumerate}
 	% ================= ZADANIE 5.5 ==================
 \newpage
@@ -461,34 +440,19 @@
 		\subsubsection{Treść}
 			Użytkownik połączony jest z routerem łączem sieci lokalnej 10 Mbps Ethernet, czas RTT = 35 ms, router dostępowy na obsługę użytkownika przeznacza bufor 12 kB, rozmiar okna protokołu TCP = 27 kB. Określić maksymalną średnią szybkość transmisji możliwą do uzyskania przez użytkownika przez standardowej wersji protokołu TCP.
 		\subsubsection{Odpowiedź}
-			{\small \emph{Forczu: ponieważ w treści zadania jest podane, że mamy do czynienia z użytkownikiem łączącej się przez router z Internetem to WYDAJE MI SIĘ, że należy wykorzystać algorytm \emph{congestion avoidance}, który ma zastosowanie m.in. w przeglądarkach internetowych. Stąd ta różnica.}}\\
 			\begin{enumerate}
-				\item Ramka w Ethernecie: 1500 [B] (1460 [B] dla danych)
-				\item W routerze jest dostępne 12000 [B].
-				\item $ \cfrac{12\:000\;[B]}{1500\;[B]}=8 \rightarrow $ oznacza, że razem można wysłać 8 ramek, przy 9tej przepełni się bufor.
-				\item \includegraphics[width=8.0cm]{./images/zadanie15.pdf}
-				\item Na 24 ramki 1 została przekłamana. mamy więc 23 poprawne ramki oraz 5 słupków.
+				\item Maksymalna ramka w Ethernecie: 1518 [B] (1500 [B] dla danych)
+				\item W routerze jest dostępne 12 288 [B].
+				\item $ \cfrac{12\:288\;[B]}{1518\;[B]}=8.09 \rightarrow $ oznacza, że razem można wysłać 8 ramek, przy 9tej przepełni się bufor.
+				\item $ \cfrac{27\:648\;[B]}{1500\;[B]}\approx18.4 $ - w oknie maksymalnie zmieści się 18 ramek. Połowa z tego to 9.\\Widać z tego, że okno TCP niewiele nas interesuje - nigdy nie dotrzemy do \emph{treshold}a, bo bufor nam na to nie pozwala.
+				\item \includegraphics[width=8.0cm]{./images/zadanie15.pdf}\\\\
+				Na 24 ramki 1 została przekłamana. mamy więc 23 poprawne ramki oraz 5 słupków.
 				\item $$ SRET=\cfrac{23\cdot1460\:[B]}{5\cdot35\:[ms]}=\cfrac{33580000\:[B]}{175\:[s]}=191885\:[\cfrac{B}{s}]=187\;[\cfrac{kB}{s}] $$
+				\item \emph{Forczu}: gdyby było na odwrót i nasz bufor byłby większy niż \emph{treshold}, to wtedy słupki rosną eksponencjalne do niego, a potem liniowo aż bufor się przepełni.
 			\end{enumerate}
-			
+						
 \newpage
-% ================= ZADANIE 5.6 ==================
-	\subsection{Zadanie}
-		\subsubsection{Treść}	
-			Stacja robocza jest połączona z serwerem z prędkością 11 [Mbps] i stopą błędów BER = $ 7.3 \cdot 10 ^ {-6} $. Oblicz z jaką średnią prędkością mogą być wysyłane informacje z serwera używając wersji standardowej (\emph{plain vanilla}, \emph{Go Back N}) protokołu TCP. Wynegocjowany segment danych to 768 [B] (ramka w łączu 832 [B]), rozmiar okna to 18.5 [KB], a średni czas RTT to 55 [ms].
-		\subsubsection{Odpowiedź}
-			\begin{enumerate}
-				\item BER = $ 7.3 \cdot 10 ^ {-6} \rightarrow\approx 136986.30\;[b] \approx 17123.29\;[B] $
-				\item $ \cfrac{17123.29\;[B]}{832\;[B]}=20.58 \rightarrow $ co 21 ramka przekłamana.\\
-				Ponieważ łączem przesyłamy pełne ramki, więc przekłamanie to dane + wszystkie śmiecie.
-				\item $ \cfrac{18.5\;[KB]}{832\;[B]}=\cfrac{18\:944\;[B]}{832\;[B]}\approx22.77 $\\
-				Oznacza, że SST1 = 23.
-			\end{enumerate}
-			
-			
-			
-\newpage
-	% ================= ZADANIE 5.7 ==================
+	% ================= ZADANIE 5.6 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			W systemie transmisji posługującym się protokołem SDLC / HDLC (tryb NRM, w=3, retransmisja grupowa) w łączu ze stopą błędów $ p=10^{-4} $ przesyłane są dane ramkami z polem danych 256 B, ze stacji nadrzędnej do stacji podrzędnej. Przedstaw przebieg transmisji w przesyle \textbf{4.5 kB} danych, pomiń nawiązanie / zrywanie połączenia. Ile kosztuje (narzut protokołu) obsługa błędów w transmisji?
@@ -506,7 +470,7 @@
 			\small{ \emph{Forczu: ocenione na 1.0 / 1.0}}.
 
 \newpage
-	% ================= ZADANIE 5.8 ==================
+	% ================= ZADANIE 5.7 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			W systemie z protokołem SDLC (tryb NRM, w=3, retransmisja grupowa), ze stopą błędów $ p=10^{-4} $, ramki są wysyłane z polem danych 256 B ze stacji nadrzędnej do podrzędnej. Przedstaw przebieg transmisji przy przesyle \textbf{4 kB} danych. Pomiń nawiązanie i zerwanie połączenia. Ile kosztuje (narzut protokołu) obsługa błędów w transmisji?
@@ -518,7 +482,7 @@
 			\end{center}
 			Wysłaliśmy łącznie 24 ramki. Narzut: 24 - 16 = 8 ramek = 2048 B = 2 kB
 \newpage
-	% ================= ZADANIE 5.9 ==================
+	% ================= ZADANIE 5.8 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			W systemie transmisji z protokołem HDLC średnio jeden na 9000 bitów jest przekłamany. Jaki będzie koszt obsługi błędów transmisji przy przesyle bloku 4 kB danych ze stacji B do stacji A w tym systemie, jeśli wielkość pola danych to 256 B, okno w=4, tryb NRM z retransmisją grupową.
@@ -531,7 +495,7 @@
 			\end{center}
 			Wysłano 28 ramek. Narzut: 28 - 16 = 12 ramek = 3072 B = 3 kB.
 \newpage		
-	% ================= ZADANIE 5.8 ==================
+	% ================= ZADANIE 5.9 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Drukarka wierszowa posiada jeden bufor na 80 znaków (1 wiersz tekstu). Wydruk bufora zajmuje 25 ms, w czasie których drukarka nie przyjmuje danych. Stacja nadrzędna przesyła notatkę - 3 wiesze (bloki po 80 znaków) łączem o szybkości transmisji 19200 bitów / s, protokół BSC (2 znaki SYN). Przedstaw przebieg komunikacji SN-SP (drukarka). Załóż brak przekłamań, pomiń fazę nawiązania połączenia. Przyjmij czas przetwarzania żądania / odpowiedzi i propagacji sygnału łączem 2.5 $ \mu s $.
