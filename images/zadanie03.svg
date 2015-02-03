@@ -718,17 +718,17 @@
          x="625"
          y="665.47327"
          id="tspan4868"
-         style="font-size:32px">Teraz wreszcie A widzi aktualizację B, od  którego zależy jego</tspan><tspan
+         style="font-size:31px">Teraz wreszcie A widzi aktualizację B, od  którego zależy jego</tspan><tspan
          sodipodi:role="line"
          x="625"
          y="705.47327"
          id="tspan4874"
-         style="font-size:32px">droga do F. Uaktualnia się, 1 + 6 = 7. To samo robią C i D,</tspan><tspan
+         style="font-size:31px">droga do F. Uaktualnia się, 1 + 6 = 7. To samo robią C i D,</tspan><tspan
          sodipodi:role="line"
          x="625"
          y="745.47327"
          id="tspan4876"
-         style="font-size:32px">których droga do F zależy, po awarii, przez B.</tspan></text>
+         style="font-size:31px">których droga do F zależy, po awarii, przez E, które się uaktualniło.</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"

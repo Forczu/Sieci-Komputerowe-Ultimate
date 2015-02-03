@@ -152,7 +152,7 @@ $$ T_{R} = r(x)\times (2^{k}-1)\times T_{ob}$$Gdzie:
 	\item $ T_{ob} $ - czas obiegu łącza, w najgorszym wypadku podwojony czas propagacji
 	\item $ k $ - liczba kolizji, czyli który raz się te ramki już zderzyły.
 	\item Wraz ze zwiększaniem się liczby kolizji, możliwy zakres rośnie ekspotencjalnie. Jednak maksymalna wielkość $ k $ jest równa \textbf{10}. Dla $ k > 10 $ przyjmuje się $ k=10 $.
-	\item Próbujemy szczęścia aż $ k < 15 $, potem próby są przerywane.
+	\item Próbujemy szczęścia aż $ k >= 16 $, potem próby są przerywane. Po 16 kolizjach sterownik poddaje się i zgłasza niepowodzenie.
 \end{itemize}
 Dlatego poprawna odpowiedź to: \textit{Czas oczekiwania na retransmisję $ T_R $ generowany jest jako liczba losowa z przedziału \textbf{o wielkości rosnącej z kwadratem do pewnego numeru kolizji, \underline{a tym numerem jest 10}}}\\
 {\small \emph{Forczu: jeszcze to sprawdzę}}.
