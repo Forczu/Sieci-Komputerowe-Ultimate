@@ -122,17 +122,21 @@
 			Aby CSMA/CD działało poprawnie cała ramka musi być wysłana w tych $5\:\mu s$, czyli wyliczamy jej długość:
 			$$ N=szybkosc\_transmisji\cdot t_p $$
 			$$ N=200\:000\:000\:[\cfrac{b}{s}]\cdot5\;[\mu s] =200\cdot5\;bit=1000\:bit=125\:B $$
-			{\small \emph{Forczu: ocenione na 1.0 / 1.0 (chyba)}}
+			{\small \emph{Forczu: ocenione na 1.0 / 1.0 (chyba)}}\\
+			Podobno żeby mieć max. należy jeszcze uwzględnić wykrycie kolizji, czyli przesłanie dodatkowych 32 bitów przez stację. Wynik:
+			$$ 125\:B+4\:B=129\:B $$
 			
 	% ================= ZADANIE 2.4 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Określić maksymalną długość ramki powstającej w wyniku kolizji w sieci pierścieniowej o sumarycznej długości łączy $ L=6\:km $, $ n=50 $ stacji i szybkości transmisji równej 25 Mbitów/s, przy zastosowaniu rywalizacyjnego (CSMA / CD) algorytmu dostępu do łącza.
 		\subsubsection{Odpowiedź}
-		\begin{enumerate}
-			\item Czas propagacji: $ \cfrac{L}{\cfrac{2}{3}\cdot C} = \cfrac{6\:[km]}{200\:000\:000\;[\cfrac{m}{s}]}=30 [\mu s]$
-			\item Rozmiar ramki: $ 25\;[Mbit/s] \cdot 30 [\mu s]=750\;[b] $
-		\end{enumerate}
+			Treść tego typu oznacza, że ramka musi przejść przez całą sieć pierścieniową (która idzie tylko w 1 kierunku). Po drodze przechodzi ona przez 49 stacji, które dodatkowo opóźniają sygnał. Odległość między sąsiednimi stacjami to $ \cfrac{6\:[km]}{50}=120\:[m]  $.\\
+			Musimy wziąć więc pod uwagę 2 czynniki: opóźnienie na kablu oraz opóźnienie w węzłach.
+			\begin{enumerate}
+				\item Czas propagacji: $ \cfrac{L}{\cfrac{2}{3}\cdot C} = \cfrac{6\:[km]}{200\:000\:000\;[\cfrac{m}{s}]}=30 [\mu s]$
+				\item Rozmiar ramki: $ 25\;[Mbit/s] \cdot 30 [\mu s]=750\;[b] $
+			\end{enumerate}
 \newpage
 % ==================================================
 % --- 3. TCP / IP
@@ -157,8 +161,7 @@
 	% ================= ZADANIE 4.1 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
-			Opisz zasadę działa algorytmu dystrybucji pakietów Link State. Przedstaw działanie algorytmu w węźle A w przypadku, gdy węzeł ma jako sąsiadów węzły B, C, D, E i F oraz otrzymał w czasie ostatnich 5 ms pakiety z węzłów C, F i D. Przyjąć, że maksymalny czas oczekiwania na kolejne kopie to 10 ms i węzeł nie odebrał w tym czasie innych pakietów.
-		\subsubsection{Odpowiedź}
+			\begin{wraptable}{l}{7cm}
 				\begin{tabular}{|c|c|c|c|c|c|c|c|}
 					\hline \multicolumn{2}{|c|}{\textbf{C}}  & & \multicolumn{2}{|c|}{\textbf{F}} & & \multicolumn{2}{|c|}{\textbf{D}}\\ 
 					\hline \multicolumn{2}{|c|}{213} & &\multicolumn{2}{|c|}{214} & &\multicolumn{2}{|c|}{214} \\ 
@@ -167,12 +170,18 @@
 					\hline V & 5 & & V & 4 & & V & 4\\
 					\hline Z & 4 & & Z & 5 & & Z & 5\\
 					\hline 
-				\end{tabular}\\\\\\
-			Przykładowy zestaw pakietów zadziała następująco: stacja A wyśle potwierdzenia do węzłów F i D. Do węzłów B, C i E wyśle pakiet z F. Dlaczego?\\
-			Potwierdzenia wysyłane są do węzłów z których przyszły pakiety z najwyższym numerem sekwencyjnym (drugi wiersz). W tym przypadku są to węzły F i D, których $ seq $ są równie 214. Do sąsiadów, którzy nie otrzymali potwierdzenia (B, C i E) wysyłany jest ten spośród pakietów z najwyższym numerem sekwencyjnym, którego pole Age (trzeci wiersz) jest największe. Dlatego co tych trzech węzłów zostanie wysłany pakiet z F.\\\\
-			Inna odpowiedź:\\
+				\end{tabular}
+			\end{wraptable}
+			Opisz zasadę działa algorytmu dystrybucji pakietów Link State. Przedstaw działanie algorytmu w węźle A w przypadku, gdy węzeł ma jako sąsiadów węzły B, C, D, E i F oraz otrzymał w czasie ostatnich 5 ms pakiety z węzłów C, F i D. Przyjąć, że maksymalny czas oczekiwania na kolejne kopie to 10 ms i węzeł nie odebrał w tym czasie innych pakietów.\\
+			
+		\subsubsection{Odpowiedź}
+			
+			Przykładowy zestaw pakietów zadziała następująco: stacja A wyśle potwierdzenia do węzłów F i D. Do węzłów B, C i E wyśle pakiet o najwyższym numerze sekwencyjnym (bezpieczniejsza odpowiedź). Dlaczego?\\
+			Potwierdzenia wysyłane są do węzłów z których przyszły pakiety z najwyższym numerem sekwencyjnym (drugi wiersz). W tym przypadku są to węzły F i D, których $ seq $ są równie 214. Do sąsiadów, którzy nie otrzymali potwierdzenia (B, C i E) wysyłany jest ten spośród pakietów z najwyższym numerem sekwencyjnym, którego pole Age (trzeci wiersz) jest największe. Dlatego do tych trzech węzłów zostanie wysłany pakiet o największym \emph{seq}.\\\\
+			\textbf{Inna odpowiedź}:\\
 			"Pakiet pochodzący z węzła H zostanie odrzucony ponieważ jego numer sekwencyjny jest niższy niż numer pochodzący z F i D czyli zawiera stare dane. Do węzła F oraz D zostanie wysłane potwierdzenie, natomiast do węzłów C, E, H zostanie wysłany pakiet pochodzący z węzła F ponieważ posiada on dłuższy czas życia od pakietu z węzła D. Ten pakiet zostanie również uwzględniony w liczeniu nowej tablicy routingu w węźle A"
-			{\small \emph{Forczu: ocenione na 1.0 / 1.0}}
+			{\small \emph{Forczu: ocenione na 1.0 / 1.0\\
+					Ale czas życia nie ma tutaj żadnego znaczenia (Skrzewski potwierdza)}}
 \newpage
 	% ================= ZADANIE 4.2 ==================
 	\subsection{Zadanie}
@@ -189,7 +198,7 @@
 			\end{tabular}
 		\subsubsection{Odpowiedź}
 			Do węzłów, których pakiety miały największy nr sekwencyjny (2gi wiersz) wysyła potwierdzenie
-			Do pozostałych wysyła pakiet tego węzła, który miał największy nr sekwencyjny i age (3ci wiersz).
+			Do pozostałych wysyła pakiet tego węzła, który miał największy nr sekwencyjny. Age (3ci wiersz) nie gra roli.
 			\begin{itemize}
 				\item Do węzła D wyśle: potwierdzenie.
 				\item Do węzła C wyśle: E.
@@ -321,13 +330,13 @@
 				C  & F     & 3     \\
 				D  & L     & 4     \\
 				E  & F     & 4     \\
-				F  & -     & 2     \\
+				F  & F     & 2     \\
 				G  & L     & 3     \\
 				H  & L     & 2     \\
-				I  & -     & 1     \\
+				I  & I     & 1     \\
 				J  & I     & 3     \\
 				K  & -     & -     \\
-				L  & -     & 1     \\
+				L  & L     & 1     \\
 				M  & I     & 5     \\
 				N  & L     & 3    
 			\end{tabular}
@@ -365,18 +374,15 @@
 				
 			
 
-% ================= ZADANIE 5.1 ==================
+% ================= ZADANIE 5.2 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Stacja robocza połączona jest z serwerem łączem szeregowym o przepustowości 8 MBit/s, z bitową stopą błędów $ BER=2\cdot 10^{-5} $. Określić z jaką średnią szybkością transmisji danych protokołem TCP w wersji standardowej (\emph{plain vanilla}) można uzyskać jeśli uzgodniona maksymalna wielkość segmentu wynosi 768 B (ramki w łączu 832 B), wielkość danych odbiorcy wynosi 27 kB, czas $ RTT=40\;ms $.
 		\subsubsection{Odpowiedź}
-			Algorytm wykonywania zadań z przekłamaniem:
 			\begin{enumerate}
-				\item Obliczamy liczbę przekłamań w jednostce czasu jako odwrotność BERu:
-				$ \cfrac{1}{BER} = \cfrac{1}{2\cdot 10^{-5}}=50000 \rightarrow$ - oznacza to, że 1 na 50k bitów jest przekłamany $ \rightarrow $ co 6250 bajt jest przekłamany.
-				\item Następnie obliczamy ile ramek zostaje przekłamanych jako:
-				$$ \cfrac{Odwrotnosc\;BERu}{Rozmiar\;ramki\;w\;laczu} $$
-				W naszym przypadku jest to $ \cfrac{6250\;[B]}{832\;[B]}=7.51$
+				\item Stopa błędów: 2 na 100 000 bitów są przekłamane $ \rightarrow $ 1 bit na 50 000 $ \rightarrow $ 1 bajt na 6250 jest przekłamany.
+				\item Obliczamy ile ramek zostaje przekłamanych jako:
+				$$ \cfrac{6250\;[B]}{832\;[B]}=7.51 $$
 				\item Powyższy wynik oznacza, że 7 ramek zostało wysłanych poprawie, a 8 jest przekłamana. Czyli zakładamy, że \textbf{co 8 ramka} jest błędna (bierzemy sufit wyniku).
 				\item Obliczamy liczbę ramek jaką można maksymalnie przesłać w jednym RTT jako:
 				$$ \cfrac{Rozmiar\;okna}{Rozmiar\;ramki\;w\;laczu} $$
@@ -408,7 +414,7 @@
 				$$ GBN=\frac{(16-9)\cdot 768\;[B]}{5\cdot 40\;[ms]}=\frac{7\cdot 768\;[B]}{5\cdot 40\cdot 10^{-3}\;[s]}=26880\;[\frac{B}{s}]=26.25\;[\frac{kB}{s}] $$
 			\end{enumerate}
 
-	% ================= ZADANIE 5.2 ==================
+	% ================= ZADANIE 5.3 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Stacja robocza połączona jest z serwerem łączem szeregowym o przepustowości $ 10\;Mbit/s $, z bitową stopą błędów $ BER=1.3\cdot 10^{-5} $. Określ z jaką średnią szybkością można przesyłać dane z serwera protokołem TCP w wersji standardowej, jeśli wielkość segmentu wynosi 768 B (ramki 832 B), wielkość okna odbiorcy 29 kB, średni czas $ RTT=45\;ms $.
@@ -429,7 +435,7 @@
 			\small{ \emph{Forczu: w tego typu zadaniach przepustowość chyba zawsze jest maksymalna, a protokoół standardowy, co ma upraszczać całość.
 			Ktoś tam napisał, że wielkość ramki we wzorach jest obojętna, ale należy zaznaczyć, czy bierzemy dane czy dane + narzut.}}.
 \newpage
-	% ================= ZADANIE 5.3 ==================
+	% ================= ZADANIE 5.4 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			Stacja robocza podłączona jest z serwerem łączem Fast Ethernet o przepustowości $100\;Mbit/s $, z bitową stopą błędów $ BER=6.6\cdot 10^{-6} $. Uzgodniona wielkość segmentu to 1024 [B] (1088 [B] w łączu), wielkość okna odbiorcy wynosi 27 [kB], czas RTT wynosi 40 [ms]. Określić, ile czasu zajmie przesył 1 [MB] tym łączem protokołu TCP w wersji standardowej.
@@ -449,7 +455,7 @@
 			$$ 1024\:[kB] : 113\;[\cfrac{kB}{s}]\approx9.06\;[s] $$\\\\
 			$$ 1024\:[kB] : 63\;[\cfrac{kB}{s}]\approx16.25\;[s] $$
 		\end{enumerate}
-	% ================= ZADANIE 5.4 ==================
+	% ================= ZADANIE 5.5 ==================
 \newpage
 	\subsection{Zadanie}
 		\subsubsection{Treść}
@@ -466,7 +472,7 @@
 			\end{enumerate}
 			
 \newpage
-% ================= ZADANIE 5.5 ==================
+% ================= ZADANIE 5.6 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}	
 			Stacja robocza jest połączona z serwerem z prędkością 11 [Mbps] i stopą błędów BER = $ 7.3 \cdot 10 ^ {-6} $. Oblicz z jaką średnią prędkością mogą być wysyłane informacje z serwera używając wersji standardowej (\emph{plain vanilla}, \emph{Go Back N}) protokołu TCP. Wynegocjowany segment danych to 768 [B] (ramka w łączu 832 [B]), rozmiar okna to 18.5 [KB], a średni czas RTT to 55 [ms].
@@ -482,7 +488,7 @@
 			
 			
 \newpage
-	% ================= ZADANIE 5.5 ==================
+	% ================= ZADANIE 5.7 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			W systemie transmisji posługującym się protokołem SDLC / HDLC (tryb NRM, w=3, retransmisja grupowa) w łączu ze stopą błędów $ p=10^{-4} $ przesyłane są dane ramkami z polem danych 256 B, ze stacji nadrzędnej do stacji podrzędnej. Przedstaw przebieg transmisji w przesyle \textbf{4.5 kB} danych, pomiń nawiązanie / zrywanie połączenia. Ile kosztuje (narzut protokołu) obsługa błędów w transmisji?
@@ -500,7 +506,7 @@
 			\small{ \emph{Forczu: ocenione na 1.0 / 1.0}}.
 
 \newpage
-	% ================= ZADANIE 5.6 ==================
+	% ================= ZADANIE 5.8 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			W systemie z protokołem SDLC (tryb NRM, w=3, retransmisja grupowa), ze stopą błędów $ p=10^{-4} $, ramki są wysyłane z polem danych 256 B ze stacji nadrzędnej do podrzędnej. Przedstaw przebieg transmisji przy przesyle \textbf{4 kB} danych. Pomiń nawiązanie i zerwanie połączenia. Ile kosztuje (narzut protokołu) obsługa błędów w transmisji?
@@ -512,7 +518,7 @@
 			\end{center}
 			Wysłaliśmy łącznie 24 ramki. Narzut: 24 - 16 = 8 ramek = 2048 B = 2 kB
 \newpage
-	% ================= ZADANIE 5.7 ==================
+	% ================= ZADANIE 5.9 ==================
 	\subsection{Zadanie}
 		\subsubsection{Treść}
 			W systemie transmisji z protokołem HDLC średnio jeden na 9000 bitów jest przekłamany. Jaki będzie koszt obsługi błędów transmisji przy przesyle bloku 4 kB danych ze stacji B do stacji A w tym systemie, jeśli wielkość pola danych to 256 B, okno w=4, tryb NRM z retransmisją grupową.
@@ -520,7 +526,7 @@
 			$$ \cfrac{4\;[kB]}{256\;[B]}=16\;[ramek] $$
 			Musimy przesłać 16 ramek.\\
 			$ \cfrac{1}{9000} $ bitów przekłamanych $ \rightarrow \cfrac{1}{1125}\;[B] \rightarrow $ co 5 ramka przekłamana.\\\\
-			\begin{center}
+			\begin{center}+
 				\includegraphics[width=8.0cm]{./images/zadanie12.pdf}
 			\end{center}
 			Wysłano 28 ramek. Narzut: 28 - 16 = 12 ramek = 3072 B = 3 kB.
@@ -754,7 +760,7 @@
 				$  n + \cfrac{1}{3}\cdot100\%\cdot n=\cfrac{4}{3}\cdot n $
 				\item \textbf{Porównanie}:
 				\begin{enumerate}
-					\item $ n\cdot(1+\cfrac{2\cdot p}{100})= \cfrac{4}{3}\cdot n $
+					\item $ n\cdot(1+\cfrac{2\cdot p}{100})= \cfrac{4}{3}\cdot n $, dla $ n!=0 $
 					\item $ \cfrac{2\cdot p}{100}=\cfrac{1}{3} $
 					\item $ p=\cfrac{1}{3}\cdot\cfrac{100}{2}=\cfrac{50}{3} $
 					\item $ p=16\frac{2}{3} $
